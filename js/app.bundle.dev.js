@@ -1,0 +1,1005 @@
+/*!
+  App Bundle — Dev (concatenated)
+  Generated: 2025-08-24T11:38:45
+  Notes:
+  - File riordinato per leggibilità e performance (IIFE, 'use strict').
+  - La logica resta invariata.
+*/
+
+
+/*
+  Settings UI: Dark mode + Language (IT/EN)
+  - Injects a navbar "Impostazioni/Settings" item that opens an offcanvas
+  - Persists theme and language in localStorage
+  - Applies Bootstrap 5.3 color mode via data-bs-theme on <html>
+  - Uses i18next (+ http-backend + language detector) for translations
+  - Translates common navbar labels and Settings UI
+*/
+(function () {
+  'use strict';
+  // Cusdis: set your App ID here to enable moderated comments on articles
+  // To obtain an App ID, create a project on https://cusdis.com and copy the App ID.
+  // Leave empty to disable the comments widget.
+  window.CUSDIS_APP_ID = window.CUSDIS_APP_ID || '5d4b1f03-575d-4fb3-93fc-f18bed01d7df';
+  // Flag per CSS: abilita stile "JS attivo" (per disattivare fallback no-JS)
+  try { document.documentElement.classList.add('js-enabled'); } catch (_) {}
+  const STORAGE_KEYS = { theme: 'scaledia_theme', themeAuto: 'scaledia_theme_auto', lang: 'scaledia_lang', a11yContrast: 'scaledia_a11y_contrast', a11yMotion: 'scaledia_reduce_motion', a11yLargeText: 'scaledia_large_text', a11yUnderlineLinks: 'scaledia_underline_links', a11yTextSpacing: 'scaledia_text_spacing', a11yDyslexic: 'scaledia_dyslexic_font' };
+  const THEMES = { LIGHT: 'light', DARK: 'dark' };
+  const DEFAULT_LANG = 'it';
+
+  // Read saved prefs early
+  const savedLang = (localStorage.getItem(STORAGE_KEYS.lang) || DEFAULT_LANG).toLowerCase();
+  const savedTheme = (localStorage.getItem(STORAGE_KEYS.theme) || THEMES.LIGHT).toLowerCase();
+  const savedThemeAuto = localStorage.getItem(STORAGE_KEYS.themeAuto) === 'true';
+
+  // Apply theme ASAP (respect High Contrast and "Follow system" if set)
+  try {
+    const hc = localStorage.getItem(STORAGE_KEYS.a11yContrast) === 'true';
+    if (!hc && savedThemeAuto && typeof window.matchMedia === 'function') {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? THEMES.DARK : THEMES.LIGHT);
+    } else {
+      applyTheme(savedTheme);
+    }
+  } catch (_) {
+    applyTheme(savedTheme);
+  }
+  // Set lang attribute ASAP (will be updated after i18next init)
+  document.documentElement.setAttribute('lang', savedLang);
+  // Apply saved accessibility preferences ASAP
+  (function applyEarlyA11yPrefs(){
+    try {
+      const root = document.documentElement;
+      const hasHC = localStorage.getItem(STORAGE_KEYS.a11yContrast) === 'true';
+      if (hasHC) {
+        root.classList.add('a11y-contrast');
+        // Enforce light theme when high-contrast is enabled
+        applyTheme(THEMES.LIGHT);
+      }
+      if (localStorage.getItem(STORAGE_KEYS.a11yMotion) === 'true') root.classList.add('a11y-reduce-motion');
+      if (localStorage.getItem(STORAGE_KEYS.a11yLargeText) === 'true') root.classList.add('a11y-large-text');
+      if (localStorage.getItem(STORAGE_KEYS.a11yUnderlineLinks) === 'true') root.classList.add('a11y-underline-links');
+      if (localStorage.getItem(STORAGE_KEYS.a11yTextSpacing) === 'true') root.classList.add('a11y-text-spacing');
+      if (localStorage.getItem(STORAGE_KEYS.a11yDyslexic) === 'true') root.classList.add('a11y-dyslexic');
+    } catch (_) {}
+    // Ensure minimal CSS for accessibility toggles
+    if (!document.getElementById('a11yPrefsStyles')) {
+      const style = document.createElement('style');
+      style.id = 'a11yPrefsStyles';
+      style.textContent = `
+html.a11y-large-text { font-size: 112.5%; }
+html.a11y-underline-links a { text-decoration: underline !important; }
+html.a11y-text-spacing { letter-spacing: 0.0125em; word-spacing: 0.16em; line-height: 1.6; }
+html.a11y-dyslexic { font-family: "OpenDyslexic", "Atkinson Hyperlegible", "Comic Sans MS", "Arial", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+@media (prefers-reduced-motion: no-preference) {
+  html.a11y-reduce-motion * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+html.a11y-contrast { --bs-body-color: #000; --bs-body-bg: #fff; --bs-link-color: #003399; --bs-border-color: #000; }
+`;
+      document.head.appendChild(style);
+    }
+  })();
+  // Inject scoped typography styles for Settings offcanvas to improve readability and hierarchy
+  (function injectSettingsTypography(){
+    if (!document.getElementById('settingsTypographyStyles')) {
+      const style = document.createElement('style');
+      style.id = 'settingsTypographyStyles';
+      style.textContent = `
+#offcanvasSettings .offcanvas-title { font-size: 1.25rem; line-height: 1.3; font-weight: 700; letter-spacing: 0.005em; color: var(--bs-heading-color); }
+#offcanvasSettings .offcanvas-header { padding-bottom: 0.75rem; }
+#offcanvasSettings .offcanvas-body { font-size: 1rem; line-height: 1.6; letter-spacing: 0.005em; }
+#offcanvasSettings fieldset + fieldset { margin-top: 1rem; }
+#offcanvasSettings legend { font-size: 1rem; font-weight: 600; color: var(--bs-heading-color); letter-spacing: 0.01em; margin-bottom: 0.5rem; }
+#offcanvasSettings .form-check-label, #offcanvasSettings label.form-label { font-weight: 500; line-height: 1.5; }
+#offcanvasSettings .form-check { margin-bottom: 0.25rem; }
+#offcanvasSettings .form-select { font-size: 1rem; }
+`;
+      document.head.appendChild(style);
+    }
+  })();
+
+  function applyTheme(theme) {
+    const root = document.documentElement;
+    const hcActive = root.classList.contains('a11y-contrast') || localStorage.getItem(STORAGE_KEYS.a11yContrast) === 'true';
+    const requested = theme === THEMES.DARK ? THEMES.DARK : THEMES.LIGHT;
+    const val = hcActive ? THEMES.LIGHT : requested;
+    if (root.getAttribute('data-bs-theme') !== val) {
+      root.setAttribute('data-bs-theme', val);
+    }
+    try {
+      localStorage.setItem(STORAGE_KEYS.theme, val);
+    } catch (_) {}
+    // Sync Cusdis comments theme to match the site theme
+    try { if (typeof updateCusdisTheme === 'function') updateCusdisTheme(val); } catch (_) {}
+  }
+
+  // Keep Cusdis comments theme consistent with site theme
+  function updateCusdisTheme(theme) {
+    try {
+      var t = (theme === THEMES.DARK || theme === 'dark') ? 'dark' : 'light';
+      var doc = document;
+      var el = doc.getElementById('cusdis_thread');
+      if (el) {
+        try { el.setAttribute('data-theme', t); } catch (_) {}
+      }
+      // Prefer official API if available
+      try {
+        if (window.CUSDIS && typeof window.CUSDIS.setTheme === 'function') {
+          window.CUSDIS.setTheme(t);
+          return;
+        }
+      } catch (_) {}
+      // Fallback: postMessage directly to the iframe
+      var host = (el && (el.getAttribute('data-host') || 'https://cusdis.com')) || 'https://cusdis.com';
+      var iframe = el && el.querySelector('iframe');
+      if (iframe && iframe.contentWindow) {
+        try {
+          iframe.contentWindow.postMessage({ type: 'set-theme', theme: t }, host);
+          return;
+        } catch (_) {}
+      }
+      // Retry a few times if iframe/API not ready yet
+      if (!updateCusdisTheme._retries) updateCusdisTheme._retries = 0;
+      if (updateCusdisTheme._retries < 10) {
+        updateCusdisTheme._retries += 1;
+        setTimeout(function () { updateCusdisTheme(theme); }, 300);
+      }
+    } catch (_) {}
+  }
+
+  // Ensure initial sync after DOM is ready (in case Cusdis loads after initial attributes set)
+  document.addEventListener('DOMContentLoaded', function () {
+    try {
+      var current = (document.documentElement.getAttribute('data-bs-theme') === 'dark') ? THEMES.DARK : THEMES.LIGHT;
+      updateCusdisTheme(current);
+    } catch (_) {}
+  });
+
+  function setText(selector, text) {
+    const el = document.querySelector(selector);
+    if (el && typeof text === 'string') el.textContent = text;
+  }
+
+  function translateCommonUI() {
+    if (!window.i18next) {
+      // Even if i18n not ready, still localize dates
+      formatDates();
+      return;
+    }
+    // Navbar items by href (use ends-with to support relative paths like ../index.html)
+    setText('a.nav-link[href$="index.html"]', i18next.t('nav.home'));
+    setText('a.nav-link[href$="articoli.html"]', i18next.t('nav.articles'));
+    setText('a.nav-link[href$="servizi.html"]', i18next.t('nav.services'));
+    setText('a.nav-link[href$="chi-siamo.html"]', i18next.t('nav.about'));
+    setText('a.nav-link[href$="contatti.html"]', i18next.t('nav.contact'));
+    // Skip link
+    setText('a.visually-hidden-focusable[href^="#"]', i18next.t('skip'));
+    // Settings menu (injected)
+    setText('#moreDropdown', i18next.t('more'));
+    setText('#menuSettings', i18next.t('settings'));
+    // Offcanvas UI (injected)
+    setText('#offcanvasSettingsLabel', i18next.t('settingsTitle'));
+    setText('label[for="toggleThemeAuto"]', i18next.t('followSystem'));
+    setText('label[for="toggleDarkMode"]', i18next.t('darkMode'));
+    setText('label[for="toggleHighContrast"]', i18next.t('highContrast'));
+    setText('label[for="toggleReduceMotion"]', i18next.t('reduceMotion'));
+    setText('label[for="toggleLargeText"]', i18next.t('largeText'));
+    setText('label[for="toggleUnderlineLinks"]', i18next.t('underlineLinks'));
+    setText('label[for="toggleTextSpacing"]', i18next.t('textSpacing'));
+    setText('label[for="toggleDyslexicFont"]', i18next.t('dyslexicFont'));
+    setText('label[for="selectLang"]', i18next.t('language'));
+    const langSelect = document.querySelector('#selectLang');
+    if (langSelect) {
+      const optIt = langSelect.querySelector('option[value="it"]');
+      const optEn = langSelect.querySelector('option[value="en"]');
+      const optEs = langSelect.querySelector('option[value="es"]');
+      if (optIt) optIt.textContent = i18next.t('lang_it');
+      if (optEn) optEn.textContent = i18next.t('lang_en');
+      if (optEs) optEs.textContent = i18next.t('lang_es');
+      langSelect.setAttribute('aria-label', i18next.t('language'));
+    }
+
+    // Apply generic data-i18n bindings (text and attributes)
+    applyDataI18n();
+    // Localize share blocks and buttons
+    if (window.ShareUI && typeof window.ShareUI.translate === 'function') { window.ShareUI.translate(); }
+    // Localize dates in any <time> elements
+    formatDates();
+  }
+
+
+  // Apply translations to any element with data-i18n / data-i18n-html
+  // - data-i18n="key": sets textContent = t(key)
+  // - data-i18n-html="key": sets innerHTML = t(key)
+  // - data-i18n-attr="title,placeholder,aria-label": sets given attributes using
+  //     key from data-i18n-<attr> if present, otherwise from data-i18n
+  function tWithDefault(key, def) {
+    if (!window.i18next) return def || '';
+    const val = i18next.t(key, { defaultValue: def || '' });
+    return typeof val === 'string' ? val : (def || '');
+  }
+  function applyDataI18n(root) {
+    const scope = root || document;
+    if (!window.i18next) return;
+    // Fast path: skip if no i18n markers in scope and scope itself isn't marked
+    try {
+      const el = scope && scope.nodeType === 1 ? scope : null;
+      if (!(((el && (el.hasAttribute('data-i18n') || el.hasAttribute('data-i18n-html') || el.hasAttribute('data-i18n-attr')))) || scope.querySelector('[data-i18n],[data-i18n-html],[data-i18n-attr]'))) {
+        return;
+      }
+    } catch (_) {}
+
+    // textContent
+    scope.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (!key) return;
+      const current = el.textContent;
+      const val = tWithDefault(key, current || '');
+      if (typeof val === 'string' && val !== current) el.textContent = val;
+      // attributes mapping
+      const attrs = (el.getAttribute('data-i18n-attr') || '')
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean);
+      attrs.forEach((attr) => {
+        const aKey = el.getAttribute(`data-i18n-${attr}`) || key;
+        const curAttr = el.getAttribute(attr) || '';
+        const aVal = tWithDefault(aKey, curAttr);
+        if (typeof aVal === 'string' && aVal !== curAttr) el.setAttribute(attr, aVal);
+      });
+    });
+
+    // innerHTML
+    scope.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-html');
+      if (!key) return;
+      const currentHtml = el.innerHTML;
+      const val = tWithDefault(key, currentHtml || '');
+      if (typeof val === 'string' && val !== currentHtml) el.innerHTML = val;
+    });
+
+    // attributes-only mapping (elements without data-i18n)
+    scope.querySelectorAll('[data-i18n-attr]:not([data-i18n])').forEach((el) => {
+      const attrs = (el.getAttribute('data-i18n-attr') || '')
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean);
+      attrs.forEach((attr) => {
+        const aKey = el.getAttribute(`data-i18n-${attr}`);
+        if (!aKey) return;
+        const curAttr = el.getAttribute(attr) || '';
+        const aVal = tWithDefault(aKey, curAttr);
+        if (typeof aVal === 'string' && aVal !== curAttr) el.setAttribute(attr, aVal);
+      });
+    });
+  }
+
+  // Localize <time> elements using Intl.DateTimeFormat based on current language
+  function formatDates(root) {
+    const scope = root || document;
+    const currentLang =
+      (window.i18next && (i18next.resolvedLanguage || i18next.language)) ||
+      document.documentElement.getAttribute('lang') ||
+      'it';
+    let formatter;
+    try {
+      formatter = new Intl.DateTimeFormat(currentLang, {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+      });
+    } catch (_) {
+      formatter = new Intl.DateTimeFormat('it', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+      });
+    }
+    scope.querySelectorAll('time[datetime]:not(#year)').forEach((t) => {
+      const iso = (t.getAttribute('datetime') || '').trim();
+      if (!iso) return;
+      // Parse YYYY-MM-DD safely as local date to avoid timezone shifts
+      let date;
+      const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (m) {
+        const y = parseInt(m[1], 10),
+          mo = parseInt(m[2], 10) - 1,
+          d = parseInt(m[3], 10);
+        date = new Date(y, mo, d);
+      } else {
+        date = new Date(iso);
+      }
+      if (isNaN(date)) return;
+      t.textContent = formatter.format(date);
+    });
+  }
+
+  function injectSettingsUI() {
+    // Inject Settings offcanvas if not present
+    (function injectOffcanvasMenus(){
+      const tSettingsTitle = tWithDefault('settingsTitle', 'Impostazioni');
+      const tDarkMode = tWithDefault('darkMode', 'Tema scuro');
+      const tLanguage = tWithDefault('language', 'Lingua');
+      const tLangIt = tWithDefault('lang_it', 'Italiano');
+      const tLangEn = tWithDefault('lang_en', 'Inglese');
+      const tLangEs = tWithDefault('lang_es', 'Spagnolo');
+      const tAccessibility = tWithDefault('accessibility', 'Accessibilità');
+
+      if (!document.getElementById('offcanvasSettings')) {
+        const wrapS = document.createElement('div');
+        wrapS.innerHTML = `
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettingsLabel">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title h5" id="offcanvasSettingsLabel">${tSettingsTitle}</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <section>
+            <form class="vstack gap-4" onsubmit="return false;">
+              <fieldset>
+                <legend class="h6 mb-2" data-i18n="appearance">${tWithDefault('appearance','Aspetto')}</legend>
+                <div class="form-check form-switch mb-2">
+                  <input class="form-check-input" type="checkbox" role="switch" id="toggleThemeAuto">
+                  <label class="form-check-label" for="toggleThemeAuto">${tWithDefault('followSystem','Segui sistema')}</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="toggleDarkMode">
+                  <label class="form-check-label" for="toggleDarkMode">${tDarkMode}</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend class="h6 mb-2" data-i18n="accessibility">${tAccessibility}</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="toggleHighContrast">
+                  <label class="form-check-label" for="toggleHighContrast">${tWithDefault('highContrast','Alto contrasto')}</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="toggleReduceMotion">
+                  <label class="form-check-label" for="toggleReduceMotion">${tWithDefault('reduceMotion','Riduci animazioni')}</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="toggleLargeText">
+                  <label class="form-check-label" for="toggleLargeText">${tWithDefault('largeText','Testo grande')}</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="toggleUnderlineLinks">
+                  <label class="form-check-label" for="toggleUnderlineLinks">${tWithDefault('underlineLinks','Sottolinea i link')}</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="toggleTextSpacing">
+                  <label class="form-check-label" for="toggleTextSpacing">${tWithDefault('textSpacing','Spaziatura del testo aumentata')}</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="toggleDyslexicFont">
+                  <label class="form-check-label" for="toggleDyslexicFont">${tWithDefault('dyslexicFont','Font per dislessia')}</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend class="h6 mb-2" data-i18n="language">${tLanguage}</legend>
+                <select id="selectLang" class="form-select" aria-label="${tLanguage}">
+                  <option value="it">${tLangIt}</option>
+                  <option value="en">${tLangEn}</option>
+                  <option value="es">${tLangEs}</option>
+                </select>
+              </fieldset>
+            </form>
+          </section>
+        </div>
+      </div>`;
+        document.body.appendChild(wrapS.firstElementChild);
+      }
+    })();
+
+    // Inject navbar "Altro/More" dropdown (as last item)
+    const navList = document.querySelector('.navbar .navbar-nav');
+    if (navList && !document.getElementById('moreDropdown')) {
+      const li = document.createElement('li');
+      li.className = 'nav-item dropdown';
+      const moreText = tWithDefault('more', 'Altro');
+      const tClientsTitle = tWithDefault('clients_title', 'I nostri clienti');
+      const tSettingsTitle = tWithDefault('settings', 'Impostazioni');
+      li.innerHTML = `
+        <a id="moreDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">${moreText}</a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a id="menuSettings" class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings" aria-controls="offcanvasSettings">${tSettingsTitle}</a></li>
+        </ul>`;
+      navList.appendChild(li);
+    }
+
+    // Wire controls
+    // Theme: Follow system (auto) + Manual dark
+    const autoToggle = document.getElementById('toggleThemeAuto');
+    const darkToggle = document.getElementById('toggleDarkMode');
+    let themeMqlObj = null; // { mql, handler }
+    const rootHasHC = () => document.documentElement.classList.contains('a11y-contrast') || localStorage.getItem(STORAGE_KEYS.a11yContrast) === 'true';
+    const attachThemeMql = () => {
+      if (typeof window.matchMedia !== 'function') return;
+      const mql = window.matchMedia('(prefers-color-scheme: dark)');
+      const handler = () => {
+        if (!rootHasHC() && (localStorage.getItem(STORAGE_KEYS.themeAuto) === 'true')) {
+          applyTheme(mql.matches ? THEMES.DARK : THEMES.LIGHT);
+        }
+      };
+      if (mql.addEventListener) mql.addEventListener('change', handler);
+      else if (mql.addListener) mql.addListener(handler);
+      themeMqlObj = { mql, handler };
+      handler();
+    };
+    const detachThemeMql = () => {
+      if (themeMqlObj && themeMqlObj.mql) {
+        const { mql, handler } = themeMqlObj;
+        if (mql.removeEventListener) mql.removeEventListener('change', handler);
+        else if (mql.removeListener) mql.removeListener(handler);
+      }
+      themeMqlObj = null;
+    };
+
+    if (autoToggle) {
+      const hcActive = rootHasHC();
+      const savedAuto = localStorage.getItem(STORAGE_KEYS.themeAuto) === 'true';
+      autoToggle.checked = savedAuto && !hcActive;
+      if (hcActive) {
+        autoToggle.disabled = true;
+      }
+      if (autoToggle.checked) {
+        if (darkToggle) darkToggle.disabled = true;
+        attachThemeMql();
+      }
+      autoToggle.addEventListener('change', () => {
+        const hcNow = rootHasHC();
+        if (hcNow) {
+          autoToggle.checked = false;
+          autoToggle.disabled = true;
+          try { localStorage.setItem(STORAGE_KEYS.themeAuto, 'false'); } catch (_) {}
+          if (darkToggle) { darkToggle.disabled = true; darkToggle.checked = false; }
+          applyTheme(THEMES.LIGHT);
+          detachThemeMql();
+          return;
+        }
+        if (autoToggle.checked) {
+          try { localStorage.setItem(STORAGE_KEYS.themeAuto, 'true'); } catch (_) {}
+          if (darkToggle) darkToggle.disabled = true;
+          attachThemeMql();
+        } else {
+          try { localStorage.setItem(STORAGE_KEYS.themeAuto, 'false'); } catch (_) {}
+          detachThemeMql();
+          if (darkToggle) darkToggle.disabled = false;
+          // Re-apply theme based on current dark toggle state
+          if (darkToggle) {
+            applyTheme(darkToggle.checked ? THEMES.DARK : THEMES.LIGHT);
+          }
+        }
+      });
+    }
+
+    if (darkToggle) {
+      const hcActive = rootHasHC();
+      darkToggle.checked = (localStorage.getItem(STORAGE_KEYS.theme) || THEMES.LIGHT) === THEMES.DARK;
+      if (hcActive) {
+        darkToggle.checked = false;
+        darkToggle.disabled = true;
+      }
+      // If auto theme is enabled, disable manual toggle
+      if (autoToggle && autoToggle.checked) darkToggle.disabled = true;
+      darkToggle.addEventListener('change', () => {
+        const hcNow = rootHasHC();
+        if (hcNow) {
+          // Prevent activating dark mode while high-contrast is active
+          darkToggle.checked = false;
+          applyTheme(THEMES.LIGHT);
+          return;
+        }
+        // If auto was enabled, disable it
+        if (autoToggle && autoToggle.checked) {
+          autoToggle.checked = false;
+          autoToggle.disabled = false;
+          try { localStorage.setItem(STORAGE_KEYS.themeAuto, 'false'); } catch (_) {}
+          detachThemeMql();
+        }
+        applyTheme(darkToggle.checked ? THEMES.DARK : THEMES.LIGHT);
+      });
+    }
+
+    function bindA11yToggle(id, className, storageKey) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const root = document.documentElement;
+      const saved = localStorage.getItem(storageKey) === 'true';
+      el.checked = saved;
+      if (saved) root.classList.add(className);
+      el.addEventListener('change', () => {
+        if (el.checked) {
+          root.classList.add(className);
+          try { localStorage.setItem(storageKey, 'true'); } catch (_) {}
+          // If high-contrast is being enabled, force light theme and disable theme toggles
+          if (storageKey === STORAGE_KEYS.a11yContrast) {
+            const darkToggle = document.getElementById('toggleDarkMode');
+            const autoToggle = document.getElementById('toggleThemeAuto');
+            if (darkToggle) {
+              darkToggle.checked = false;
+              darkToggle.disabled = true;
+            }
+            if (autoToggle) {
+              autoToggle.checked = false;
+              autoToggle.disabled = true;
+              try { localStorage.setItem(STORAGE_KEYS.themeAuto, 'false'); } catch (_) {}
+            }
+            applyTheme(THEMES.LIGHT);
+          }
+        } else {
+          root.classList.remove(className);
+          try { localStorage.setItem(storageKey, 'false'); } catch (_) {}
+          // If high-contrast is being disabled, re-enable theme toggles
+          if (storageKey === STORAGE_KEYS.a11yContrast) {
+            const darkToggle = document.getElementById('toggleDarkMode');
+            const autoToggle = document.getElementById('toggleThemeAuto');
+            if (darkToggle) {
+              darkToggle.disabled = false;
+            }
+            if (autoToggle) {
+              autoToggle.disabled = false;
+            }
+          }
+        }
+      });
+    }
+
+    bindA11yToggle('toggleHighContrast', 'a11y-contrast', STORAGE_KEYS.a11yContrast);
+    bindA11yToggle('toggleReduceMotion', 'a11y-reduce-motion', STORAGE_KEYS.a11yMotion);
+    bindA11yToggle('toggleLargeText', 'a11y-large-text', STORAGE_KEYS.a11yLargeText);
+    bindA11yToggle('toggleUnderlineLinks', 'a11y-underline-links', STORAGE_KEYS.a11yUnderlineLinks);
+    bindA11yToggle('toggleTextSpacing', 'a11y-text-spacing', STORAGE_KEYS.a11yTextSpacing);
+    bindA11yToggle('toggleDyslexicFont', 'a11y-dyslexic', STORAGE_KEYS.a11yDyslexic);
+
+    const langSel = document.getElementById('selectLang');
+    if (langSel) {
+      const currentLang =
+        (window.i18next && (i18next.resolvedLanguage || i18next.language)) ||
+        document.documentElement.getAttribute('lang') ||
+        (typeof savedLang === 'string' ? savedLang : DEFAULT_LANG) ||
+        DEFAULT_LANG;
+      langSel.value = currentLang;
+      langSel.addEventListener('change', () => {
+        changeLanguage(langSel.value);
+      });
+    }
+
+    // Ensure translations applied on first load as well
+    translateCommonUI();
+  }
+
+  function changeLanguage(lang) {
+    // If i18next is available, use it for full translation updates
+    if (window.i18next && typeof i18next.changeLanguage === 'function') {
+      i18next.changeLanguage(lang).then(() => {
+        try {
+          localStorage.setItem(STORAGE_KEYS.lang, i18next.language);
+        } catch (_) {}
+        document.documentElement.setAttribute('lang', i18next.language || DEFAULT_LANG);
+        translateCommonUI();
+      });
+      return;
+    }
+    // Fallback: persist and update document language, reformat dates
+    const safeLang = (typeof lang === 'string' && lang.trim()) ? lang.trim() : DEFAULT_LANG;
+    try {
+      localStorage.setItem(STORAGE_KEYS.lang, safeLang);
+    } catch (_) {}
+    document.documentElement.setAttribute('lang', safeLang);
+    // We cannot re-translate without i18next, but we can reformat dates and update UI where possible
+    translateCommonUI();
+  }
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.async = true; // ensure non-blocking for dynamically injected scripts
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error('Failed to load ' + src));
+      document.head.appendChild(s);
+    });
+  }
+
+  function setupI18nObserver() {
+    if (window.__i18nObserver) return; // singleton
+    try {
+      const pending = new Set();
+      let scheduled = false;
+      const scheduleFlush = () => {
+        if (scheduled) return;
+        scheduled = true;
+        const run = () => {
+          scheduled = false;
+          const nodes = Array.from(pending);
+          pending.clear();
+          for (const n of nodes) {
+            applyDataI18n(n);
+            formatDates(n);
+          }
+        };
+        if (typeof window.requestIdleCallback === 'function') {
+          window.requestIdleCallback(run, { timeout: 200 });
+        } else if (typeof window.requestAnimationFrame === 'function') {
+          window.requestAnimationFrame(run);
+        } else {
+          setTimeout(run, 0);
+        }
+      };
+
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          if (m.type === 'childList') {
+            m.addedNodes.forEach((node) => {
+              if (node && node.nodeType === 1) {
+                pending.add(node);
+              }
+            });
+          } else if (m.type === 'attributes') {
+            // only react to i18n-related attribute changes
+            if (m.attributeName && m.attributeName.indexOf('data-i18n') === 0) {
+              if (m.target && m.target.nodeType === 1) pending.add(m.target);
+            }
+          }
+        }
+        if (pending.size) scheduleFlush();
+      });
+      const target = document.body || document.documentElement;
+      observer.observe(target, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: [
+          'data-i18n',
+          'data-i18n-html',
+          'data-i18n-attr',
+          'data-i18n-title',
+          'data-i18n-placeholder',
+          'data-i18n-aria-label',
+          'data-i18n-content'
+        ],
+      });
+      window.__i18nObserver = observer;
+    } catch (_) {
+      // No-op if MutationObserver not available
+    }
+  }
+
+  function initI18next() {
+    if (!window.i18next) return Promise.reject(new Error('i18next not available'));
+    const i18n = window.i18next;
+    if (window.i18nextHttpBackend) i18n.use(window.i18nextHttpBackend);
+    if (window.i18nextBrowserLanguageDetector) i18n.use(window.i18nextBrowserLanguageDetector);
+
+    return i18n
+      .init({
+        fallbackLng: DEFAULT_LANG,
+        supportedLngs: ['it', 'en', 'es'],
+        debug: false,
+        backend: { loadPath: '/assets/i18n/{{lng}}.json' },
+        detection: {
+          order: ['querystring', 'localStorage', 'htmlTag', 'navigator'],
+          caches: ['localStorage'],
+          lookupQuerystring: 'lng',
+          lookupLocalStorage: STORAGE_KEYS.lang,
+        },
+      })
+      .then(() => {
+        document.documentElement.setAttribute('lang', i18next.language || DEFAULT_LANG);
+        // Apply translations immediately (including <head> metas/title)
+        translateCommonUI();
+        // Re-apply translations whenever language changes
+        i18next.on('languageChanged', () => {
+          try {
+            localStorage.setItem(STORAGE_KEYS.lang, i18next.language);
+          } catch (_) {}
+          document.documentElement.setAttribute('lang', i18next.language || DEFAULT_LANG);
+          translateCommonUI();
+        });
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => {
+            injectSettingsUI();
+            setupI18nObserver();
+          }, { once: true });
+        } else {
+          injectSettingsUI();
+          setupI18nObserver();
+        }
+      });
+  }
+
+  // Boot: load i18next libs from CDN, then init
+  (function boot() {
+    Promise.all([
+      loadScript('https://unpkg.com/i18next@23.11.5/dist/umd/i18next.min.js'),
+      loadScript('https://unpkg.com/i18next-http-backend@2.6.1/i18nextHttpBackend.min.js'),
+      loadScript('https://unpkg.com/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js')
+    ])
+      .then(() => initI18next())
+      .catch((err) => {
+        console.error('i18next load/init failed', err);
+        // Fallback: still inject settings UI without translations
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', injectSettingsUI, { once: true });
+        } else {
+          injectSettingsUI();
+        }
+      });
+  })();
+
+  // Footer year: centralize update of <time id="year"> across pages
+  function updateFooterYear() {
+    try {
+      var y = String(new Date().getFullYear());
+      var nodes = document.querySelectorAll('time#year');
+      if (!nodes || !nodes.length) return;
+      nodes.forEach(function (el) {
+        el.textContent = y;
+        try { el.setAttribute('datetime', y); } catch (_) {}
+      });
+    } catch (_) {}
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateFooterYear, { once: true });
+  } else {
+    updateFooterYear();
+  }
+
+  // Accessibility: prevent page jump for anchors with href="#"
+  document.addEventListener('click', function (e) {
+    const a = e.target && e.target.closest ? e.target.closest('a[href="#"]') : null;
+    if (a) {
+      e.preventDefault();
+    }
+  }, true);
+
+  // Global service notice (once per session)
+  (function setupServiceNotice(){
+    var KEY = 'scaledia_service_notice_dismissed';
+
+    function injectNotice() {
+      try { if (sessionStorage.getItem(KEY) === '1') return; } catch (_) {}
+      if (document.getElementById('globalServiceNotice')) return;
+
+      var bar = document.createElement('div');
+      bar.id = 'globalServiceNotice';
+      bar.className = 'alert alert-warning alert-dismissible fade show mb-0 text-center small';
+      bar.setAttribute('role', 'alert');
+
+      var inner = document.createElement('div');
+      inner.className = 'container';
+      inner.innerHTML = '<strong>Avviso:</strong> il servizio front‑end non è ancora attivo, ma puoi comunque goderti il nostro blog gratuito.';
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'btn-close';
+      btn.setAttribute('aria-label', 'Chiudi avviso');
+      btn.addEventListener('click', function(){
+        try { sessionStorage.setItem(KEY, '1'); } catch (_) {}
+        if (bar && bar.parentNode) bar.parentNode.removeChild(bar);
+      });
+
+      bar.appendChild(inner);
+      bar.appendChild(btn);
+
+      var body = document.body || document.documentElement;
+      if (body.firstChild) {
+        body.insertBefore(bar, body.firstChild);
+      } else {
+        body.appendChild(bar);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', injectNotice, { once: true });
+    } else {
+      injectNotice();
+    }
+  })();
+
+})();
+
+
+'use strict';
+(function(){
+  // Localize share blocks and buttons (label, aria, native/copy text)
+  function translateShareUI() {
+    if (!window.i18next) return;
+    const t = (key, def) => i18next.t(key, { defaultValue: def });
+    document.querySelectorAll('.share-article').forEach((c) => {
+      const p = c.querySelector('p');
+      if (p) p.textContent = t('share.label', 'Condividi:');
+      const setAria = (sel, key, def) => {
+        const el = c.querySelector(sel);
+        if (!el) return;
+        el.setAttribute('aria-label', t(key, def));
+      };
+      setAria('[data-share="whatsapp"]', 'share.whatsapp_aria', 'Condividi su WhatsApp');
+      setAria('[data-share="telegram"]', 'share.telegram_aria', 'Condividi su Telegram');
+      setAria('[data-share="facebook"]', 'share.facebook_aria', 'Condividi su Facebook');
+      setAria('[data-share="linkedin"]', 'share.linkedin_aria', 'Condividi su LinkedIn');
+      const nativeBtn = c.querySelector('[data-share="native"]');
+      if (nativeBtn) {
+        nativeBtn.textContent = t('share.native', 'Condividi');
+        nativeBtn.setAttribute('aria-label', t('share.native', 'Condividi'));
+      }
+      const copyBtn = c.querySelector('[data-share="copy"]');
+      if (copyBtn) {
+        copyBtn.setAttribute('aria-label', t('share.copy', 'Copia link'));
+        if (copyBtn.dataset.state !== 'feedback') {
+          copyBtn.textContent = t('share.copy', 'Copia link');
+        }
+      }
+    });
+  }
+
+  // Share buttons: populate links and enable Web Share API if available
+  function initShare() {
+    try {
+      const containers = document.querySelectorAll('.share-article');
+      if (!containers.length) return;
+      const canonicalEl = document.querySelector('link[rel="canonical"]');
+      const ogTitleEl = document.querySelector('meta[property="og:title"]');
+      const url = canonicalEl ? canonicalEl.getAttribute('href') : location.href;
+      const title = (ogTitleEl ? ogTitleEl.getAttribute('content') : document.title) || '';
+      const u = encodeURIComponent(url);
+      const t = encodeURIComponent(title);
+
+      const copyToClipboard = (text) => {
+        try {
+          if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+            return navigator.clipboard.writeText(text).then(() => true).catch(() => false);
+          }
+        } catch (_) {}
+        return new Promise((resolve) => {
+          try {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'absolute';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            ta.setSelectionRange(0, ta.value.length);
+            let ok = false;
+            try { ok = document.execCommand('copy'); } catch (_) {}
+            document.body.removeChild(ta);
+            resolve(!!ok);
+          } catch (_) {
+            resolve(false);
+          }
+        });
+      };
+
+      containers.forEach((c) => {
+        const setHref = (key, href) => {
+          const el = c.querySelector(`[data-share="${key}"]`);
+          if (!el) return;
+          if (el.tagName && el.tagName.toLowerCase() === 'a') {
+            el.setAttribute('href', href);
+            el.setAttribute('target', '_blank');
+            el.setAttribute('rel', 'noopener noreferrer');
+          } else {
+            el.dataset.href = href;
+          }
+        };
+        setHref('whatsapp', `https://api.whatsapp.com/send?text=${t}%20${u}`);
+        setHref('telegram', `https://t.me/share/url?url=${u}&text=${t}`);
+        setHref('facebook', `https://www.facebook.com/sharer/sharer.php?u=${u}`);
+        setHref('linkedin', `https://www.linkedin.com/sharing/share-offsite/?url=${u}`);
+
+        // Native share
+        const nativeBtn = c.querySelector('[data-share="native"]');
+        if (nativeBtn) {
+          if (navigator.share) {
+            nativeBtn.addEventListener('click', (e) => {
+              e.preventDefault();
+              navigator.share({ title, url }).catch(() => {});
+            }, { once: true });
+          } else {
+            nativeBtn.classList.add('d-none');
+          }
+        }
+
+        // Copy link button (inject if missing)
+        if (!c.querySelector('[data-share="copy"]')) {
+          const row = c.querySelector('.d-flex.flex-wrap.gap-2') || c.querySelector('.d-flex') || c;
+          const copyBtn = document.createElement('button');
+          copyBtn.type = 'button';
+          copyBtn.className = 'btn btn-outline-secondary btn-sm';
+          copyBtn.setAttribute('data-share', 'copy');
+          const tCopy = (k, def)=> (window.i18next ? i18next.t(k,{ defaultValue: def }) : def);
+          copyBtn.setAttribute('aria-label', tCopy('share.copy','Copia link'));
+          copyBtn.textContent = tCopy('share.copy','Copia link');
+          copyBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const ok = await copyToClipboard(url);
+            copyBtn.dataset.state = 'feedback';
+            copyBtn.textContent = ok ? tCopy('share.copied','Copiato!') : tCopy('share.error','Errore');
+            try { copyBtn.disabled = true; } catch (_) {}
+            setTimeout(() => {
+              delete copyBtn.dataset.state;
+              copyBtn.textContent = tCopy('share.copy','Copia link');
+              try { copyBtn.disabled = false; } catch (_) {}
+            }, 1200);
+          });
+          row.appendChild(copyBtn);
+        }
+      });
+    } catch (_) { /* no-op */ }
+  }
+
+  // Expose API
+  window.ShareUI = {
+    translate: translateShareUI,
+    init: initShare
+  };
+
+  // Auto-init share buttons when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initShare, { once: true });
+  } else {
+    initShare();
+  }
+})();
+
+
+/* ---- Privacy & Cookie preferences (Enzuzo) ---- */
+(function () {
+  'use strict';
+  function openCookiePreferences() {
+    try {
+      if (window.EnzuzoCMP && typeof window.EnzuzoCMP.openPreferences === 'function') {
+        window.EnzuzoCMP.openPreferences();
+        return;
+      }
+      if (window.enzuzo && typeof window.enzuzo.open === 'function') {
+        try { window.enzuzo.open('preferences'); return; } catch (_) {}
+      }
+      // Try generic triggers if available
+      var trigger = document.querySelector('[data-enzuzo-open],[data-cookie-preferences],[data-enz-open]');
+      if (trigger) { trigger.click(); return; }
+    } catch (e) {}
+    // Fallback: clear Enzuzo consent cookies and reload
+    try {
+      document.cookie.split(';').forEach(function (c) {
+        var k = c.trim().split('=')[0];
+        if (/^cookies\-/i.test(k)) {
+          document.cookie = k + '=; Max-Age=0; path=/';
+        }
+      });
+    } catch (_) {}
+    location.reload();
+  }
+
+  // After the "Altro" dropdown is injected, add Privacy item once
+  function addPrivacyItem() {
+    var dropdown = document.getElementById('moreDropdown');
+    var menu = dropdown ? dropdown.parentElement.querySelector('.dropdown-menu') : null;
+    if (!menu) return;
+    if (!document.getElementById('menuPrivacy')) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.id = 'menuPrivacy';
+      a.className = 'dropdown-item';
+      a.href = '#privacy';
+      a.setAttribute('role','button');
+      a.textContent = 'Privacy & cookie';
+      a.addEventListener('click', function (ev) { ev.preventDefault(); openCookiePreferences(); });
+      li.appendChild(a);
+      menu.appendChild(li);
+    }
+  }
+
+  // Run after DOM ready (and again after a short delay to catch late navbar injection)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addPrivacyItem, { once: true });
+  } else {
+    addPrivacyItem();
+  }
+  setTimeout(addPrivacyItem, 500);
+  setTimeout(addPrivacyItem, 1500);
+
+  // expose (optional)
+  window.openCookiePreferences = openCookiePreferences;
+})();

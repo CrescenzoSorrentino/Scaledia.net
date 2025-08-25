@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title data-i18n="contact.title_tag">Contatti – Scaledia</title>
+    <meta
+      name="description"
+      content="Contatta Scaledia: scrivici via email o utilizza il modulo per inviare un messaggio. Siamo felici di ricevere suggerimenti e proposte di collaborazione."
+      data-i18n-attr="content"
+      data-i18n-content="contact.meta_desc"
+    />
+    <link rel="canonical" href="https://scaledia.net/contatti.html" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="theme-color" content="#0d6efd" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Contatti – Scaledia"
+      data-i18n-attr="content"
+      data-i18n-content="contact.og_title"
+    />
+    <meta
+      property="og:description"
+      content="Contatta Scaledia via email o usando il modulo di contatto."
+      data-i18n-attr="content"
+      data-i18n-content="contact.og_desc"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://scaledia.net/contatti.html" />
+    <meta property="og:image" content="https://scaledia.net/assets/img/og/og-hero-1200x630.jpg" />
+    <meta
+      property="og:image:alt"
+      content="Scaledia: guide e tutorial su HTML, CSS e JavaScript"
+      data-i18n-attr="content"
+      data-i18n-content="contact.og_image_alt"
+    />
+    <meta property="og:site_name" content="Scaledia" />
+    <meta property="og:locale" content="it_IT" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Contatti – Scaledia"
+      data-i18n-attr="content"
+      data-i18n-content="contact.twitter_title"
+    />
+    <meta
+      name="twitter:description"
+      content="Scrivici per suggerimenti, feedback o collaborazioni."
+      data-i18n-attr="content"
+      data-i18n-content="contact.twitter_desc"
+    />
+    <meta name="twitter:image" content="https://scaledia.net/assets/img/og/og-hero-1200x630.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Scaledia: guide e tutorial su HTML, CSS e JavaScript"
+      data-i18n-attr="content"
+      data-i18n-content="contact.twitter_image_alt"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="//unpkg.com" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="preconnect" href="https://app.enzuzo.com" crossorigin>
+    <link rel="dns-prefetch" href="//app.enzuzo.com">
+
+    <!-- Enzuzo Cookie Bar (CSS non-blocking) -->
+    <link rel="stylesheet"
+          href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"
+          media="print"
+          onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261">
+    </noscript>
+
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/theme.min.css" />
+
+    <!-- JSON‑LD: ContactPage + Breadcrumb -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ContactPage",
+            "@id": "https://scaledia.net/contatti.html#webpage",
+            "url": "https://scaledia.net/contatti.html",
+            "name": "Contatti – Scaledia",
+            "isPartOf": { "@id": "https://scaledia.net/#website" },
+            "about": { "@id": "https://scaledia.net/#organization" },
+            "inLanguage": "it-IT"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://scaledia.net/contatti.html#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scaledia.net/" },
+              { "@type": "ListItem", "position": 2, "name": "Contatti", "item": "https://scaledia.net/contatti.html" }
+            ]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://scaledia.net/#organization",
+            "name": "Scaledia",
+            "contactPoint": [{
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "info@scaledia.net",
+              "availableLanguage": ["it","en"]
+            }]
+          },
+          { "@type": "WebSite", "@id": "https://scaledia.net/#website", "url": "https://scaledia.net/", "name": "Scaledia", "inLanguage": "it-IT" }
+        ]
+      }
+    </script>
+
+  </head>
+  <body>
+    <a class="visually-hidden-focusable" href="#contenuto" data-i18n="skip">Salta al contenuto</a>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" aria-label="Navigazione principale" data-i18n-attr="aria-label" data-i18n-aria-label="nav.primary_aria">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="index.html" data-i18n="site.brand"
+          >Scaledia.net</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#primaryNav"
+          aria-controls="primaryNav"
+          aria-expanded="false"
+          aria-label="Apri/chiudi navigazione"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="nav.toggler_label"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primaryNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="articoli.html" data-i18n="nav.articles">Articoli</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="servizi.html" data-i18n="nav.services">Servizi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chi-siamo.html" data-i18n="nav.about">Chi siamo</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="contatti.html"
+                aria-current="page"
+                data-i18n="nav.contact"
+                >Contatti</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- BREADCRUMB + INTRO -->
+    <header class="py-4 border-bottom" role="banner">
+      <nav class="container" aria-label="breadcrumb" data-i18n-attr="aria-label" data-i18n-aria-label="aria.breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page" data-i18n="nav.contact">
+            Contatti
+          </li>
+        </ol>
+        <h1 id="page-title" class="h2 mb-1" data-i18n="contact.title">Contatti</h1>
+        <p class="text-muted mb-0" data-i18n="contact.intro">
+          Scrivici per feedback, suggerimenti o proposte di collaborazione.
+        </p>
+      </nav>
+    </header>
+
+    <main id="contenuto" class="py-5" aria-labelledby="page-title" tabindex="-1">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <section aria-labelledby="scrivici">
+              <h2 id="scrivici" class="h3" data-i18n="contact.write.title">Scrivici</h2>
+              <address class="mb-3" data-i18n-html="contact.write.text_html">
+                Puoi contattarci direttamente via email:
+                <a href="mailto:info@scaledia.net">info@scaledia.net</a>.
+              </address>
+              <div class="card shadow-sm">
+                <div class="card-body">
+                  <h3 id="form-title" class="h5" data-i18n="contact.form.title">
+                    Modulo di contatto
+                  </h3>
+                  <p id="formHelp" class="text-muted small" data-i18n-html="contact.form.help_html">
+                    L’invio apre il tuo client email con i dati precompilati. Hai dubbi sui
+                    pacchetti? Consulta
+                    <a href="servizi.html#prezzi" class="link-secondary">Servizi</a>.
+                  </p>
+                  <form
+                    action="mailto:info@scaledia.net?subject=Richiesta%20preventivo%20-%20Scaledia"
+                    method="post"
+                    enctype="text/plain"
+                    aria-labelledby="form-title"
+                    aria-describedby="formHelp"
+                  >
+                    <fieldset>
+                      <legend class="visually-hidden" data-i18n="contact.form.legend">Dati per il contatto</legend>
+                    <div class="mb-3">
+                      <label for="nome" class="form-label" data-i18n="contact.form.name_label"
+                        >Nome</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nome"
+                        name="Nome"
+                        autocomplete="name"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label" data-i18n="contact.form.email_label"
+                        >Email</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="Email"
+                        autocomplete="email"
+                        inputmode="email"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="pacchetto"
+                        class="form-label"
+                        data-i18n="contact.form.package_label"
+                        >Servizio/Pacchetto</label
+                      >
+                      <select
+                        class="form-select"
+                        id="pacchetto"
+                        name="Pacchetto"
+                        aria-describedby="pacchettoHelp"
+                        required
+                      >
+                        <option
+                          value=""
+                          selected
+                          disabled
+                          data-i18n="contact.form.package_placeholder"
+                        >
+                          Seleziona un’opzione
+                        </option>
+                        <option data-i18n="contact.form.package_starter">Starter</option>
+                        <option data-i18n="contact.form.package_business">Business</option>
+                        <option data-i18n="contact.form.package_pro">Pro</option>
+                      </select>
+                      <div
+                        id="pacchettoHelp"
+                        class="form-text"
+                        data-i18n-html="contact.form.package_help_html"
+                      >
+                        Vedi i dettagli dei pacchetti in <a href="servizi.html#prezzi">Servizi</a>.
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="messaggio"
+                        class="form-label"
+                        data-i18n="contact.form.message_label"
+                        >Messaggio</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="messaggio"
+                        name="Messaggio"
+                        rows="5"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="ok"
+                        id="privacy"
+                        name="Privacy"
+                        required
+                      />
+                      <label
+                        class="form-check-label"
+                        for="privacy"
+                        data-i18n="contact.form.privacy_label"
+                      >
+                        Ho letto l’informativa sulla privacy e acconsento al trattamento dei dati.
+                      </label>
+                    </div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">
+                      Invia
+                    </button>
+                  </form>
+                  <noscript>
+                    <p class="text-muted small mt-3">
+                      Se JavaScript è disabilitato il modulo apre il client email. In alternativa
+                      scrivi a <a href="mailto:info@scaledia.net">info@scaledia.net</a>.
+                    </p>
+                  </noscript>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="col-lg-6">
+            <section aria-labelledby="altri-contatti" class="h-100">
+              <h2 id="altri-contatti" class="h3" data-i18n="contact.more.title">Altri contatti</h2>
+              <ul class="list-unstyled mb-4">
+                <li class="mb-2">
+                  GitHub: <a href="https://github.com/CrescenzoSorrentino">@CrescenzoSorrentino</a>
+                </li>
+                <li>
+                  LinkedIn:
+                  <a
+                    href="https://www.linkedin.com/in/crescenzo-sorrentino-989808354"
+                    data-i18n="contact.more.linkedin_profile"
+                    >Profilo</a
+                  >
+                </li>
+              </ul>
+              <div class="alert alert-info" role="status" data-i18n-html="contact.more.alert_html">
+                Preferisci non usare il modulo? Scrivi direttamente a
+                <a href="mailto:info@scaledia.net" class="alert-link">info@scaledia.net</a>.
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER (mini) -->
+    <footer class="py-4 border-top" role="contentinfo">
+      <div
+        class="container d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3"
+      >
+        <small class="text-muted"
+          >&copy;
+          <time id="year" datetime="2025">2025</time>
+          Scaledia</small
+        >
+        <nav
+          aria-label="Link social"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="footer.social_aria"
+        >
+          <a
+            class="text-muted me-3"
+            href="https://github.com/CrescenzoSorrentino"
+            data-i18n="social.github"
+            >GitHub</a
+          >
+          <a
+            class="text-muted"
+            href="https://www.linkedin.com/in/crescenzo-sorrentino-989808354"
+            data-i18n="social.linkedin"
+            >LinkedIn</a
+          >
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/app.bundle.min.js" defer></script>
+    <script defer src="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"></script>
+  </body>
+</html>

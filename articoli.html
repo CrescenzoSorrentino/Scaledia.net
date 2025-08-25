@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title data-i18n="articles.title_tag">Articoli – Scaledia: guide HTML, CSS e JavaScript</title>
+    <meta
+      name="description"
+      content="Tutti gli articoli del blog Scaledia su sviluppo web: HTML, CSS, JavaScript, performance, accessibilità e best practice."
+      data-i18n-attr="content"
+      data-i18n-content="articles.meta_desc"
+    />
+    <link rel="canonical" href="https://scaledia.net/articoli.html" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="theme-color" content="#0d6efd" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Articoli – Scaledia"
+      data-i18n-attr="content"
+      data-i18n-content="articles.og_title"
+    />
+    <meta
+      property="og:description"
+      content="Tutte le guide e i tutorial su HTML, CSS e JavaScript."
+      data-i18n-attr="content"
+      data-i18n-content="articles.og_desc"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://scaledia.net/articoli.html" />
+    <meta property="og:image" content="https://scaledia.net/assets/img/og/og-hero-1200x630.jpg" />
+    <meta
+      property="og:image:alt"
+      content="Scaledia: elenco articoli su HTML, CSS e JavaScript"
+      data-i18n-attr="content"
+      data-i18n-content="articles.og_image_alt"
+    />
+    <meta property="og:site_name" content="Scaledia" />
+    <meta property="og:locale" content="it_IT" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Articoli – Scaledia: guide HTML, CSS e JavaScript"
+      data-i18n-attr="content"
+      data-i18n-content="articles.twitter_title"
+    />
+    <meta
+      name="twitter:description"
+      content="Tutti gli articoli e le guide su HTML, CSS e JavaScript."
+      data-i18n-attr="content"
+      data-i18n-content="articles.twitter_desc"
+    />
+    <meta name="twitter:image" content="https://scaledia.net/assets/img/og/og-hero-1200x630.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Scaledia: elenco articoli su HTML, CSS e JavaScript"
+      data-i18n-attr="content"
+      data-i18n-content="articles.twitter_image_alt"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="//unpkg.com" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="preconnect" href="https://app.enzuzo.com" crossorigin>
+    <link rel="dns-prefetch" href="//app.enzuzo.com">
+
+    <!-- Enzuzo Cookie Bar (CSS non-blocking) -->
+    <link rel="stylesheet"
+          href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"
+          media="print"
+          onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261">
+    </noscript>
+
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/theme.min.css" />
+
+    <!-- JSON‑LD: CollectionPage + Breadcrumb -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://scaledia.net/articoli.html#webpage",
+            "url": "https://scaledia.net/articoli.html",
+            "name": "Articoli – Scaledia",
+            "isPartOf": { "@id": "https://scaledia.net/#website" },
+            "about": { "@id": "https://scaledia.net/#blog" },
+            "breadcrumb": { "@id": "https://scaledia.net/articoli.html#breadcrumb" },
+            "hasPart": { "@id": "https://scaledia.net/articoli.html#list" },
+            "inLanguage": "it-IT"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://scaledia.net/articoli.html#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scaledia.net/" },
+              { "@type": "ListItem", "position": 2, "name": "Articoli", "item": "https://scaledia.net/articoli.html" }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://scaledia.net/articoli.html#list",
+            "name": "Elenco articoli",
+            "itemListOrder": "https://schema.org/ItemListOrderDescending",
+            "numberOfItems": 0,
+            "itemListElement": []
+          },
+          {
+            "@type": "Blog",
+            "@id": "https://scaledia.net/#blog",
+            "name": "Scaledia – Blog di sviluppo web",
+            "url": "https://scaledia.net/articoli.html",
+            "inLanguage": "it-IT"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://scaledia.net/#website",
+            "url": "https://scaledia.net/",
+            "name": "Scaledia",
+            "inLanguage": "it-IT"
+          }
+        ]
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <a class="visually-hidden-focusable" href="#contenuto" data-i18n="skip"
+      >Salta al contenuto</a
+    >
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" aria-label="Navigazione principale" data-i18n-attr="aria-label" data-i18n-aria-label="nav.primary_aria">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="index.html" data-i18n="site.brand"
+          >Scaledia.net</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#primaryNav"
+          aria-controls="primaryNav"
+          aria-expanded="false"
+          aria-label="Apri/chiudi navigazione"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="nav.toggler_label"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primaryNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="articoli.html"
+                data-i18n="nav.articles"
+                >Articoli</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="servizi.html" data-i18n="nav.services">Servizi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chi-siamo.html" data-i18n="nav.about">Chi siamo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contatti.html" data-i18n="nav.contact">Contatti</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="py-4 border-bottom" role="banner">
+      <nav class="container" aria-label="breadcrumb" data-i18n-attr="aria-label" data-i18n-aria-label="aria.breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page" data-i18n="nav.articles">
+            Articoli
+          </li>
+        </ol>
+        <h1 id="page-title" class="h2 mb-1" data-i18n="articles.title">Tutti gli articoli</h1>
+        <p class="text-muted mb-0" data-i18n="articles.intro">
+          Guide, tutorial ed esempi su HTML, CSS, JavaScript, performance e accessibilità.
+        </p>
+      </nav>
+    </header>
+
+    <main id="contenuto" class="py-4" aria-labelledby="page-title" tabindex="-1">
+      <div class="container">
+        <!-- FILTRI (GET, action omessa -> ricarica l'URL corrente) -->
+        <form
+          class="filters row g-2 align-items-center mb-4"
+          method="get"
+          role="search"
+          aria-controls="lista-articoli"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="articles.filters.aria_label"
+          aria-label="Filtra articoli"
+        >
+          <div class="col-12 col-md-auto">
+            <label class="visually-hidden" for="q" data-i18n="articles.filters.search_label"
+              >Cerca</label
+            >
+            <input
+              class="form-control"
+              type="search"
+              id="q"
+              name="q"
+              placeholder="Cerca articoli…"
+              value=""
+              data-i18n-attr="placeholder"
+              data-i18n-placeholder="articles.filters.search_placeholder"
+            />
+          </div>
+          <div class="col-12 col-md-auto">
+            <label
+              class="visually-hidden"
+              for="categoria"
+              data-i18n="articles.filters.category_label"
+              >Categoria</label
+            >
+            <select class="form-select" id="categoria" name="categoria">
+              <option value="" data-i18n="articles.filters.category_all">Tutte le categorie</option>
+              <option value="html" data-i18n="articles.categories.html">HTML</option>
+              <option value="css" data-i18n="articles.categories.css">CSS</option>
+              <option value="javascript" data-i18n="articles.categories.javascript">
+                JavaScript
+              </option>
+              <option value="performance" data-i18n="articles.categories.performance">
+                Performance
+              </option>
+              <option value="accessibilita" data-i18n="articles.categories.accessibilita">
+                Accessibilità
+              </option>
+            </select>
+          </div>
+          <div class="col-12 col-md-auto">
+            <label class="visually-hidden" for="sort" data-i18n="articles.filters.sort_label"
+              >Ordina</label
+            >
+            <select class="form-select" id="sort" name="sort">
+              <option value="recenti" data-i18n="articles.filters.sort_recent">Più recenti</option>
+              <option value="vecchi" data-i18n="articles.filters.sort_old">Meno recenti</option>
+              <option value="alfabetico" data-i18n="articles.filters.sort_az">Titolo A‑Z</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-auto">
+            <button class="btn btn-primary w-100" type="submit" data-i18n="articles.filters.apply">
+              Applica
+            </button>
+          </div>
+        </form>
+
+        <!-- DONAZIONI -->
+        <section id="donazioni" class="mb-4" aria-labelledby="donazioni-title" role="region">
+          <div class="card shadow-sm border-0 bg-light">
+            <div
+              class="card-body d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3"
+            >
+              <div>
+                <h2 id="donazioni-title" class="h5 mb-1" data-i18n="articles.donate.title">
+                  Supporta il blog
+                </h2>
+                <p class="mb-0 text-muted" data-i18n="articles.donate.text">
+                  Se i contenuti di Scaledia ti sono utili, considera una piccola donazione. Grazie!
+                </p>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <a
+                  class="btn btn-primary"
+                  href="https://paypal.me/TUO_USERNAME"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  data-i18n="articles.donate.paypal"
+                  >Dona con PayPal</a
+                >
+                <a
+                  class="btn btn-outline-primary"
+                  href="https://ko-fi.com/TUO_USERNAME"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  data-i18n="articles.donate.coffee"
+                  >Offri un caffè</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Suggerimento: sostituisci i link con i tuoi (PayPal.me, PayPal Donate o Stripe Payment Link, Ko‑fi/BuyMeACoffee) -->
+        </section>
+
+        <!-- LISTA ARTICOLI -->
+        <section aria-labelledby="lista-articoli">
+          <h2 id="lista-articoli" class="visually-hidden" data-i18n="articles.list.heading">
+            Elenco articoli
+          </h2>
+          <div class="text-muted mb-3" aria-live="polite">
+            <span id="risultati-filtro" data-i18n="articles.list.status_all"
+              >Tutti gli articoli</span
+            >
+          </div>
+
+          <div class="row g-4">
+            <!-- Articolo -->
+            <article
+              class="col-md-6 col-lg-4"
+              data-category="performance"
+              data-title="chatgpt prompt engineering modelli esempi sviluppatori guida 2025"
+              data-date="2025-08-17"
+            >
+              <div class="card h-100 shadow-sm">
+                <a href="articoli/chatgpt-prompt-engineering-2025.html" class="ratio ratio-16x9" aria-hidden="true" tabindex="-1">
+                  <svg class="object-fit-cover rounded-top" width="640" height="360">
+                    <defs>
+                      <linearGradient id="vitalsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#9933ff" />
+                        <stop offset="100%" stop-color="#6610f2" />
+                      </linearGradient>
+                      <filter id="shadow5">
+                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3" />
+                      </filter>
+                      <pattern
+                        id="pattern5"
+                        x="0"
+                        y="0"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.2)" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#vitalsGradient)" />
+                    <rect width="100%" height="100%" fill="url(#pattern5)" />
+                    <text
+                      x="50%"
+                      y="50%"
+                      font-size="32"
+                      font-weight="bold"
+                      fill="white"
+                      text-anchor="middle"
+                      filter="url(#shadow5)"
+                      data-i18n="articles.cards.chatgpt.svg"
+                      dominant-baseline="middle"
+                    >
+                      ChatGPT e Prompt
+                    </text>
+                  </svg>
+                </a>
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <a
+                      href="articoli.html?categoria=performance"
+                      class="badge rounded-pill text-bg-light text-secondary"
+                      data-i18n="articles.categories.performance"
+                      >Performance</a
+                    >
+                  </div>
+                  <h3 class="h5">
+                    <a
+                      class="stretched-link text-decoration-none link-dark"
+                      data-i18n="articles.cards.chatgpt.title"
+                      href="articoli/chatgpt-prompt-engineering-2025.html"
+                    >
+                      ChatGPT e Prompt Engineering 2025
+                    </a>
+                  </h3>
+                  <p class="text-muted mb-3" data-i18n="articles.cards.chatgpt.desc">
+                    Tecniche e modelli di prompt con esempi pratici per sviluppatori.
+                  </p>
+                  <div class="mt-auto text-muted small d-flex gap-2 align-items-center">
+                    <time datetime="2025-08-17">17 ago 2025</time>
+                    · ~10 min
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Articolo -->
+            <article
+              class="col-md-6 col-lg-4"
+              data-category="performance"
+              data-title="core web vitals 2025 lcp inp cls guida performance"
+              data-date="2025-08-17"
+            >
+              <div class="card h-100 shadow-sm">
+                <a href="articoli/core-web-vitals-2025.html" class="ratio ratio-16x9" aria-hidden="true" tabindex="-1">
+                  <svg class="object-fit-cover rounded-top" width="640" height="360">
+                    <defs>
+                      <linearGradient id="vitalsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#9933ff" />
+                        <stop offset="100%" stop-color="#6610f2" />
+                      </linearGradient>
+                      <filter id="shadow5">
+                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3" />
+                      </filter>
+                      <pattern
+                        id="pattern5"
+                        x="0"
+                        y="0"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.2)" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#vitalsGradient)" />
+                    <rect width="100%" height="100%" fill="url(#pattern5)" />
+                    <text
+                      x="50%"
+                      y="50%"
+                      font-size="32"
+                      font-weight="bold"
+                      fill="white"
+                      text-anchor="middle"
+                      filter="url(#shadow5)"
+                      data-i18n="articles.cards.vitals.svg"
+                      dominant-baseline="middle"
+                    >
+                      Vitals
+                    </text>
+                  </svg>
+                </a>
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <a
+                      href="articoli.html?categoria=performance"
+                      class="badge rounded-pill text-bg-light text-secondary"
+                      data-i18n="articles.categories.performance"
+                      >Performance</a
+                    >
+                  </div>
+                  <h3 class="h5">
+                    <a
+                      class="stretched-link text-decoration-none link-dark"
+                      data-i18n="articles.cards.vitals.title"
+                      href="articoli/core-web-vitals-2025.html"
+                    >
+                      Core Web Vitals 2025
+                    </a>
+                  </h3>
+                  <p class="text-muted mb-3" data-i18n="articles.cards.vitals.desc">
+                    Guida aggiornata a LCP, INP e CLS con strumenti e best practice.
+                  </p>
+                  <div class="mt-auto text-muted small d-flex gap-2 align-items-center">
+                    <time datetime="2025-08-17">17 ago 2025</time>
+                    · ~12 min
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Articolo -->
+            <article
+              class="col-md-6 col-lg-4"
+              data-category="html"
+              data-title="html semantico guida pratica struttura corretta pagina"
+              data-date="2025-08-17"
+            >
+              <div class="card h-100 shadow-sm">
+                <a href="articoli/html-semantico-guida-pratica.html" class="ratio ratio-16x9" aria-hidden="true" tabindex="-1">
+                  <svg class="object-fit-cover rounded-top" width="640" height="360">
+                    <defs>
+                      <linearGradient id="htmlGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ff4d4d" />
+                        <stop offset="100%" stop-color="#dc3545" />
+                      </linearGradient>
+                      <filter id="shadow">
+                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3" />
+                      </filter>
+                      <pattern
+                        id="pattern"
+                        x="0"
+                        y="0"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.2)" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#htmlGradient)" />
+                    <rect width="100%" height="100%" fill="url(#pattern)" />
+                    <text
+                      x="50%"
+                      y="50%"
+                      font-size="32"
+                      font-weight="bold"
+                      fill="white"
+                      text-anchor="middle"
+                      filter="url(#shadow)"
+                      data-i18n="articles.cards.html.svg"
+                      dominant-baseline="middle"
+                    >
+                      HTML semantico
+                    </text>
+                  </svg>
+                </a>
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <a
+                      href="articoli.html?categoria=html"
+                      class="badge rounded-pill text-bg-light text-secondary"
+                      data-i18n="articles.categories.html"
+                      >HTML</a
+                    >
+                  </div>
+                  <h3 class="h5">
+                    <a
+                      class="stretched-link text-decoration-none link-dark"
+                      data-i18n="articles.cards.html.title"
+                      href="articoli/html-semantico-guida-pratica.html"
+                    >
+                      HTML semantico: guida pratica
+                    </a>
+                  </h3>
+                  <p class="text-muted mb-3" data-i18n="articles.cards.html.desc">
+                    Una guida completa all'HTML semantico per creare pagine web accessibili e
+                    SEO-friendly.
+                  </p>
+                  <div class="mt-auto text-muted small d-flex gap-2 align-items-center">
+                    <time datetime="2025-07-20">17 ago 2025</time>
+                    · ~12 min
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Articolo -->
+            <article
+              class="col-md-6 col-lg-4"
+              data-category="css"
+              data-title="flexbox vs css grid layout responsive pattern esempi"
+              data-date="2025-08-17"
+            >
+              <div class="card h-100 shadow-sm">
+                <a href="articoli/flexbox-vs-grid.html" class="ratio ratio-16x9" aria-hidden="true" tabindex="-1">
+                  <svg class="object-fit-cover rounded-top" width="640" height="360">
+                    <defs>
+                      <linearGradient id="cssGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#66a3ff" />
+                        <stop offset="100%" stop-color="#0d6efd" />
+                      </linearGradient>
+                      <filter id="shadow2">
+                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3" />
+                      </filter>
+                      <pattern
+                        id="pattern2"
+                        x="0"
+                        y="0"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.2)" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#cssGradient)" />
+                    <rect width="100%" height="100%" fill="url(#pattern2)" />
+                    <text
+                      x="50%"
+                      y="50%"
+                      font-size="32"
+                      font-weight="bold"
+                      fill="white"
+                      text-anchor="middle"
+                      filter="url(#shadow2)"
+                      data-i18n="articles.cards.grid.svg"
+                      dominant-baseline="middle"
+                    >
+                      Flexbox vs CSS Grid
+                    </text>
+                  </svg>
+                </a>
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <a
+                      href="articoli.html?categoria=css"
+                      class="badge rounded-pill text-bg-light text-secondary"
+                      data-i18n="articles.categories.css"
+                      >CSS</a
+                    >
+                  </div>
+                  <h3 class="h5">
+                    <a
+                      class="stretched-link text-decoration-none link-dark"
+                      data-i18n="articles.cards.grid.title"
+                      href="articoli/flexbox-vs-grid.html"
+                    >
+                      Flexbox vs CSS Grid
+                    </a>
+                  </h3>
+                  <p class="text-muted mb-3" data-i18n="articles.cards.grid.desc">
+                    Pattern comuni, esempi riutilizzabili e trucchi per layout responsive.
+                  </p>
+                  <div class="mt-auto text-muted small d-flex gap-2 align-items-center">
+                    <time datetime="2025-07-10">17 ago 2025</time>
+                    · ~12 min
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Articolo -->
+            <article
+              class="col-md-6 col-lg-4"
+              data-category="accessibilita"
+              data-title="accessibilita web aria wai wcag inclusione"
+              data-date="2025-08-17"
+            >
+              <div class="card h-100 shadow-sm">
+                <a href="articoli/accessibilita-web-guida-completa.html" class="ratio ratio-16x9" aria-hidden="true" tabindex="-1">
+                  <svg class="object-fit-cover rounded-top" width="640" height="360">
+                    <defs>
+                      <linearGradient
+                        id="accessibilityGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stop-color="#2eb82e" />
+                        <stop offset="100%" stop-color="#198754" />
+                      </linearGradient>
+                      <filter id="shadow3">
+                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3" />
+                      </filter>
+                      <pattern
+                        id="pattern3"
+                        x="0"
+                        y="0"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.2)" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#accessibilityGradient)" />
+                    <rect width="100%" height="100%" fill="url(#pattern3)" />
+                    <text
+                      x="50%"
+                      y="50%"
+                      font-size="32"
+                      font-weight="bold"
+                      fill="white"
+                      text-anchor="middle"
+                      filter="url(#shadow3)"
+                      data-i18n="articles.cards.accessibility.svg"
+                      dominant-baseline="middle"
+                    >
+                      Accessibilità web
+                    </text>
+                  </svg>
+                </a>
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <a
+                      href="articoli.html?categoria=accessibilita"
+                      class="badge rounded-pill text-bg-light text-secondary"
+                      data-i18n="articles.categories.accessibilita"
+                      >Accessibilità</a
+                    >
+                  </div>
+                  <h3 class="h5">
+                    <a
+                      class="stretched-link text-decoration-none link-dark"
+                      data-i18n="articles.cards.accessibility.title"
+                      href="articoli/accessibilita-web-guida-completa.html"
+                    >
+                      Accessibilità web: la guida completa
+                    </a>
+                  </h3>
+                  <p class="text-muted mb-3" data-i18n="articles.cards.accessibility.desc">
+                    ARIA, WAI e WCAG: come rendere il web inclusivo per tutti.
+                  </p>
+                  <div class="mt-auto text-muted small d-flex gap-2 align-items-center">
+                    <time datetime="2025-08-17">17 ago 2025</time>
+                    · ~12 min
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Articolo -->
+            <article
+              class="col-md-6 col-lg-4"
+              data-category="javascript"
+              data-title="performance javascript split codice lazy loading debounce throttle metriche"
+              data-date="2025-06-28"
+            >
+              <div class="card h-100 shadow-sm">
+                <a href="articoli/js-performance.html" class="ratio ratio-16x9" aria-hidden="true" tabindex="-1">
+                  <svg class="object-fit-cover rounded-top" width="640" height="360">
+                    <defs>
+                      <linearGradient id="perfGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ffcc80" />
+                        <stop offset="100%" stop-color="#ff9800" />
+                      </linearGradient>
+                      <filter id="shadow4">
+                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3" />
+                      </filter>
+                      <pattern
+                        id="pattern4"
+                        x="0"
+                        y="0"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.2)" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#perfGradient)" />
+                    <rect width="100%" height="100%" fill="url(#pattern4)" />
+                    <text
+                      x="50%"
+                      y="50%"
+                      font-size="32"
+                      font-weight="bold"
+                      fill="white"
+                      text-anchor="middle"
+                      filter="url(#shadow4)"
+                      data-i18n="articles.cards.js_performance.svg"
+                      dominant-baseline="middle"
+                    >
+                      JS performance
+                    </text>
+                  </svg>
+                </a>
+                <div class="card-body d-flex flex-column">
+                  <div class="mb-2">
+                    <a
+                      href="articoli.html?categoria=javascript"
+                      class="badge rounded-pill text-bg-light text-secondary"
+                      data-i18n="articles.categories.javascript"
+                      >JavaScript</a
+                    >
+                  </div>
+                  <h3 class="h5">
+                    <a
+                      class="stretched-link text-decoration-none link-dark"
+                      data-i18n="articles.cards.js_performance.title"
+                      href="articoli/js-performance.html"
+                    >
+                      Performance JavaScript
+                    </a>
+                  </h3>
+                  <p class="text-muted mb-3" data-i18n="articles.cards.js_performance.desc">
+                    Split del codice, lazy‑loading, debounce/throttle e metriche.
+                  </p>
+                  <div class="mt-auto text-muted small d-flex gap-2 align-items-center">
+                    <time datetime="2025-06-28">28 giu 2025</time>
+                    · ~15 min
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- DUPLICA QUESTE CARD PER ALTRI ARTICOLI, ricordando i data-* -->
+          </div>
+
+          <!-- Paginazione -->
+          <nav
+            class="d-flex justify-content-center mt-4"
+            aria-label="Paginazione articoli"
+            data-i18n-attr="aria-label"
+            data-i18n-aria-label="articles.pagination.aria_label"
+          >
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <span class="page-link" data-i18n="articles.pagination.prev">Prec</span>
+              </li>
+              <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+              <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+              <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="?page=2" data-i18n="articles.pagination.next">Succ</a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+    </main>
+
+    <footer class="py-4 border-top" role="contentinfo">
+      <div
+        class="container d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3"
+      >
+        <small class="text-muted"
+          >&copy;
+          <time id="year" datetime="2025">2025</time>
+          Scaledia</small
+        >
+        <nav
+          aria-label="Link social"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="footer.social_aria"
+        >
+          <a
+            class="text-muted me-3"
+            href="https://github.com/CrescenzoSorrentino"
+            data-i18n="social.github"
+            >GitHub</a
+          >
+          <a
+            class="text-muted"
+            href="https://www.linkedin.com/in/crescenzo-sorrentino-989808354"
+            data-i18n="social.linkedin"
+            >LinkedIn</a
+          >
+        </nav>
+      </div>
+    </footer>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const q = (params.get("q") || "").trim().toLowerCase();
+        const cat = (params.get("categoria") || "").toLowerCase();
+        const sort = (params.get("sort") || "recenti").toLowerCase();
+
+        // sincronizza il form (progressive enhancement: il form funziona anche senza JS)
+        const qInput = document.querySelector("#q");
+        const catSel = document.querySelector("#categoria");
+        const sortSel = document.querySelector("#sort");
+        if (qInput) qInput.value = q;
+        if (catSel) catSel.value = cat;
+        if (sortSel) sortSel.value = sort;
+
+        // seleziona SOLO la griglia della lista articoli
+        const section = document.querySelector('section[aria-labelledby="lista-articoli"]');
+        if (!section) return;
+        const grid = section.querySelector(".row.g-4");
+        if (!grid) return;
+
+        const cards = Array.from(grid.querySelectorAll("article[data-category]"));
+
+        // filtro
+        const matches = (el) => {
+          const c = (el.dataset.category || "").toLowerCase();
+          const t = (el.dataset.title || "").toLowerCase();
+          const fulltextOk = !q || t.includes(q);
+          const catOk = !cat || c === cat;
+          return fulltextOk && catOk;
+        };
+
+        // mostra/nascondi
+        cards.forEach((el) => {
+          el.style.display = matches(el) ? "" : "none";
+        });
+
+        // aggiorna feedback
+        const visibleCards = cards.filter((el) => el.style.display !== "none");
+        const feedback = document.getElementById("risultati-filtro");
+        if (feedback) {
+          const n = visibleCards.length;
+          if (window.i18next) {
+            const catLabel = cat ? i18next.t(`articles.categories.${cat}`) || cat : "";
+            let text = n
+              ? i18next.t("articles.list.status_count", { count: n })
+              : i18next.t("articles.list.status_all");
+            if (q) text += i18next.t("articles.list.status_for", { q });
+            if (cat) text += i18next.t("articles.list.status_in", { category: catLabel });
+            feedback.textContent = text;
+          } else {
+            feedback.textContent = `${n} articol${n === 1 ? "o" : "i"} trovat${n === 1 ? "o" : "i"}`;
+            if (q) feedback.textContent += ` per "${q}"`;
+            if (cat) feedback.textContent += ` in ${cat}`;
+          }
+        }
+
+        // ordina visibili
+        const byDateDesc = (a, b) => (b.dataset.date || "").localeCompare(a.dataset.date || ""); // recenti
+        const byDateAsc = (a, b) => (a.dataset.date || "").localeCompare(b.dataset.date || ""); // vecchi
+        const byTitleAZ = (a, b) => (a.dataset.title || "").localeCompare(b.dataset.title || ""); // A-Z
+
+        let sorter = byDateDesc;
+        if (sort === "vecchi") sorter = byDateAsc;
+        if (sort === "alfabetico") sorter = byTitleAZ;
+
+        visibleCards.sort(sorter).forEach((el) => grid.appendChild(el));
+      })();
+    </script>
+
+    <script src="js/app.bundle.min.js" defer></script>
+    <script defer src="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"></script>
+  </body>
+</html>

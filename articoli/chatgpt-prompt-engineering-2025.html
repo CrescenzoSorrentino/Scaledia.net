@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title data-i18n="posts.chatgpt.title_tag">
+      ChatGPT e Prompt Engineering: guida pratica 2025 – Scaledia
+    </title>
+    <meta
+      name="description"
+      content="Guida pratica a ChatGPT e prompt engineering: principi, pattern riutilizzabili, esempi per sviluppatori, privacy, limiti e best practice aggiornate al 2025."
+      data-i18n-attr="content"
+      data-i18n-content="posts.chatgpt.meta_desc"
+    />
+    <link
+      rel="canonical"
+      href="https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html"
+    />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="theme-color" content="#0d6efd" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="ChatGPT e Prompt Engineering: guida pratica 2025 – Scaledia"
+      data-i18n-attr="content"
+      data-i18n-content="posts.chatgpt.og_title"
+    />
+    <meta
+      property="og:description"
+      content="Tecniche e modelli di prompt per ottenere risposte migliori con ChatGPT. Esempi, checklist e FAQ per sviluppatori."
+      data-i18n-attr="content"
+      data-i18n-content="posts.chatgpt.og_desc"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html"
+    />
+    <meta property="og:image" content="https://scaledia.net/assets/img/og/og-chatgpt-prompt-engineering-1200x630.jpg" />
+    <meta
+      property="og:image:alt"
+      content="Illustrazione dell'articolo su ChatGPT e prompt"
+      data-i18n-attr="content"
+      data-i18n-content="posts.chatgpt.og_image_alt"
+    />
+    <meta property="og:site_name" content="Scaledia" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="article:section" content="Guide" />
+    <meta property="article:published_time" content="2025-08-17T12:11:00+02:00" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="ChatGPT e Prompt Engineering: guida pratica 2025 – Scaledia"
+      data-i18n-attr="content"
+      data-i18n-content="posts.chatgpt.twitter_title"
+    />
+    <meta
+      name="twitter:description"
+      content="Tecniche e modelli di prompt con esempi pratici per sviluppatori."
+      data-i18n-attr="content"
+      data-i18n-content="posts.chatgpt.twitter_desc"
+    />
+    <meta name="twitter:image" content="https://scaledia.net/assets/img/og/og-chatgpt-prompt-engineering-1200x630.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Illustrazione dell'articolo su ChatGPT e prompt"
+      data-i18n-attr="content"
+      data-i18n-content="posts.chatgpt.twitter_image_alt"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://app.enzuzo.com" crossorigin>
+    <link rel="dns-prefetch" href="//app.enzuzo.com">
+
+    <!-- Enzuzo Cookie Bar (CSS non-blocking) -->
+    <link rel="stylesheet"
+          href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"
+          media="print"
+          onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261">
+    </noscript>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/theme.min.css" />
+
+    <!-- JSON-LD: Breadcrumb + BlogPosting + FAQ + HowTo -->
+    <script type="application/ld+json">
+      {
+        "@context":"https://schema.org",
+        "@graph":[
+          {"@type":"Organization","@id":"https://scaledia.net/#organization","name":"Scaledia","url":"https://scaledia.net/"},
+          {"@type":"WebSite","@id":"https://scaledia.net/#website","url":"https://scaledia.net/","name":"Scaledia","publisher":{"@id":"https://scaledia.net/#organization"},"inLanguage":"it-IT"},
+          {
+            "@type":"WebPage",
+            "@id":"https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html#webpage",
+            "url":"https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html",
+            "name":"ChatGPT e Prompt Engineering: guida pratica 2025 – Scaledia",
+            "isPartOf":{"@id":"https://scaledia.net/#website"},
+            "breadcrumb":{"@id":"https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html#breadcrumb"},
+            "primaryImageOfPage":{
+              "@type":"ImageObject","@id":"https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html#primaryimage",
+              "url":"https://scaledia.net/assets/img/og/og-chatgpt-prompt-engineering-1200x630.jpg",
+              "contentUrl":"https://scaledia.net/assets/img/og/og-chatgpt-prompt-engineering-1200x630.jpg",
+              "width":1200,"height":630
+            },
+            "inLanguage":"it-IT"
+          },
+          {
+            "@type":"BreadcrumbList",
+            "@id":"https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html#breadcrumb",
+            "itemListElement":[
+              {"@type":"ListItem","position":1,"name":"Home","item":"https://scaledia.net/"},
+              {"@type":"ListItem","position":2,"name":"Articoli","item":"https://scaledia.net/articoli.html"},
+              {"@type":"ListItem","position":3,"name":"ChatGPT e Prompt Engineering: guida pratica 2025","item":"https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html"}
+            ]
+          },
+          {
+            "@type":"BlogPosting",
+            "@id":"https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html#article",
+            "headline":"ChatGPT e Prompt Engineering: guida pratica 2025",
+            "alternativeHeadline":"Prompt migliori, risposte migliori: modelli, esempi e best practice",
+            "description":"Guida pratica a ChatGPT e prompt engineering: principi, pattern riutilizzabili, esempi per sviluppatori, privacy, limiti e best practice 2025.",
+            "image":{"@id":"https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html#primaryimage"},
+            "mainEntityOfPage":{"@id":"https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html#webpage"},
+            "author":{"@type":"Person","name":"Scaledia"},
+            "publisher":{"@id":"https://scaledia.net/#organization"},
+            "datePublished":"2025-08-17T12:11:00+02:00",
+            "dateModified":"2025-08-17T12:11:00+02:00",
+            "articleSection":"Guide",
+            "keywords":["AI","ChatGPT","prompt engineering","sviluppo web","produttività"],
+            "inLanguage":"it-IT",
+            "isAccessibleForFree":true,
+            "url":"https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html"
+          }
+        ]
+      }
+    </script>
+
+  </head>
+  <body>
+      <a class="visually-hidden-focusable" href="#contenuto" data-i18n="skip">Salta al contenuto</a>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" aria-label="Navigazione principale" data-i18n-attr="aria-label" data-i18n-aria-label="nav.primary_aria">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="../index.html" data-i18n="site.brand"
+          >Scaledia.net</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#primaryNav"
+          aria-controls="primaryNav"
+          aria-expanded="false"
+          aria-label="Apri/chiudi navigazione"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="nav.toggler_label"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primaryNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html" data-i18n="nav.home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../articoli.html" data-i18n="nav.articles">Articoli</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../servizi.html" data-i18n="nav.services">Servizi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../chi-siamo.html" data-i18n="nav.about">Chi siamo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../contatti.html" data-i18n="nav.contact">Contatti</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="py-4 border-bottom" role="banner">
+      <nav class="container" aria-label="breadcrumb" data-i18n-attr="aria-label" data-i18n-aria-label="aria.breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="../index.html" data-i18n="nav.home">Home</a></li>
+          <li class="breadcrumb-item">
+            <a href="../articoli.html" data-i18n="nav.articles">Articoli</a>
+          </li>
+          <li
+            class="breadcrumb-item active"
+            aria-current="page"
+            data-i18n="posts.chatgpt.breadcrumb"
+          >
+            ChatGPT e Prompt Engineering: guida pratica 2025
+          </li>
+        </ol>
+        <h1 id="page-title" class="h2 mb-1" data-i18n="posts.chatgpt.h1">
+          ChatGPT e Prompt Engineering: guida pratica 2025
+        </h1>
+        <p class="text-muted mb-0" data-i18n="posts.chatgpt.intro">
+          Prompt migliori, risposte migliori: modelli, esempi e best practice per sviluppatori e
+          team.
+        </p>
+      </nav>
+    </header>
+
+    <main id="contenuto" class="py-4" aria-labelledby="page-title" tabindex="-1">
+      <div class="container">
+        <div class="row g-4">
+          <aside class="col-lg-3">
+            <nav
+              class="toc"
+              aria-label="Indice dell'articolo"
+              data-i18n-attr="aria-label"
+              data-i18n-aria-label="article.toc.aria_label"
+            >
+              <h2 class="h6" data-i18n="article.toc.heading">In questa guida</h2>
+              <ol class="list-unstyled small">
+                <li><a href="#panoramica" data-i18n="article.sections.overview">Panoramica</a></li>
+                <li>
+                  <a href="#principi" data-i18n="posts.chatgpt.toc.principles"
+                    >Principi di prompt engineering</a
+                  >
+                </li>
+                <li>
+                  <a href="#prompt-dev" data-i18n="posts.chatgpt.toc.prompt_dev"
+                    >Prompt riutilizzabili per dev</a
+                  >
+                </li>
+                <li>
+                  <a href="#errori-privacy" data-i18n="posts.chatgpt.toc.errors_privacy"
+                    >Errori, privacy e limiti</a
+                  >
+                </li>
+                <li>
+                  <a href="#checklist" data-i18n="article.sections.checklist">Checklist rapida</a>
+                </li>
+                <li><a href="#faq" data-i18n="article.sections.faq">FAQ</a></li>
+              </ol>
+            </nav>
+          </aside>
+          <section class="col-lg-9">
+            <div class="mb-3 d-flex gap-2 align-items-center flex-wrap">
+              <span
+                class="badge rounded-pill text-bg-light text-secondary lead-badge"
+                data-i18n="articles.categories.performance"
+                >Performance</span
+              >
+              <span class="text-muted small"
+                ><span data-i18n="article.meta.published_on">Pubblicato il</span>
+                <time datetime="2025-08-17">17 ago 2025</time> ·
+                <span data-i18n="article.meta.reading_time">~12 min</span></span
+              >
+            </div>
+
+            <section id="panoramica" class="mb-4">
+              <h2 class="h4" data-i18n="article.sections.overview">Panoramica</h2>
+              <p data-i18n-html="posts.chatgpt.sections.overview_p_html">
+                Questa guida ti mostra come sfruttare ChatGPT in modo affidabile con tecniche di
+                <em>prompt engineering</em>: definizione dell'obiettivo, ruolo, contesto, vincoli,
+                esempi e formati di output. Troverai prompt riutilizzabili per analisi codice,
+                generazione di test, refactoring e documentazione.
+              </p>
+            </section>
+
+            <section id="principi" class="mb-4">
+              <h2 class="h4" data-i18n="posts.chatgpt.h2.principles">
+                Principi di prompt engineering
+              </h2>
+              <p data-i18n="posts.chatgpt.sections.principles_intro">
+                Per ottenere risultati consistenti, struttura i prompt con questi elementi:
+              </p>
+              <ul>
+                <li data-i18n-html="posts.chatgpt.sections.principles_bullets.li1_html">
+                  <strong>Ruolo</strong>: assegna un ruolo al modello (es. "Sei un senior JavaScript
+                  engineer").
+                </li>
+                <li data-i18n-html="posts.chatgpt.sections.principles_bullets.li2_html">
+                  <strong>Obiettivo</strong>: spiega cosa vuoi ottenere e perché.
+                </li>
+                <li data-i18n-html="posts.chatgpt.sections.principles_bullets.li3_html">
+                  <strong>Contesto</strong>: fornisci dati, vincoli, standard, stack.
+                </li>
+                <li data-i18n-html="posts.chatgpt.sections.principles_bullets.li4_html">
+                  <strong>Formato</strong>: specifica lo schema di output richiesto (tabella, JSON,
+                  elenco).
+                </li>
+                <li data-i18n-html="posts.chatgpt.sections.principles_bullets.li5_html">
+                  <strong>Esempi</strong>: aggiungi 1–2 esempi (<em>few‑shot</em>) per guidare lo
+                  stile.
+                </li>
+                <li data-i18n-html="posts.chatgpt.sections.principles_bullets.li6_html">
+                  <strong>Passi</strong>: chiedi di ragionare per step e verificare i requisiti
+                  prima dell'output finale.
+                </li>
+              </ul>
+              <pre><code class="language-text" data-i18n="posts.code.chatgpt_prompt_template_text">[RUOLO] Sei un senior JavaScript engineer attento a performance e accessibilità.
+[OBIETTIVO] Proponi un refactor di questo componente React per ridurre re-render.
+[CONTESTO] Usa memoization, chiavi stabili, evitare funzioni inline. Versione React 18.
+[FORMATO] Rispondi con: 1) Analisi 2) Refactor commentato 3) Checklist.
+[ESEMPIO] Input semplificato -&gt; Output con memo e useCallback.
+[PASSI] Pensa passo-passo. Conferma le assunzioni prima del codice.</code></pre>
+            </section>
+
+            <section id="prompt-dev" class="mb-4">
+              <h2 class="h4" data-i18n="posts.chatgpt.h2.prompt_dev">
+                Prompt riutilizzabili per sviluppatori
+              </h2>
+              <ul>
+                <li data-i18n-html="posts.chatgpt.sections.prompts_bullets.li1_html">
+                  <strong>Analisi codice</strong>: "Individua bug e edge case in [codice].
+                  Suggerisci test unitari in formato tabella."
+                </li>
+                <li data-i18n-html="posts.chatgpt.sections.prompts_bullets.li2_html">
+                  <strong>Refactoring</strong>: "Proponi un refactor senza cambiare il
+                  comportamento. Evidenzia trade‑off in 3 punti."
+                </li>
+                <li data-i18n-html="posts.chatgpt.sections.prompts_bullets.li3_html">
+                  <strong>Test</strong>: "Genera test Jest per coprire i rami non testati (branch
+                  coverage &gt; 90%)."
+                </li>
+                <li data-i18n-html="posts.chatgpt.sections.prompts_bullets.li4_html">
+                  <strong>Documentazione</strong>: "Scrivi un README breve con installazione, uso,
+                  esempi e limiti."
+                </li>
+              </ul>
+              <pre><code class="language-js" data-i18n="posts.code.chatgpt_prompt_js">// Esempio: prompt con blocco codice per ottenere output strutturati
+const prompt = `Sei un linter umano. Elenca in JSON: {"rule","file","line","reason"} per questo snippet JS.\n` + codice;
+</code></pre>
+            </section>
+
+            <section id="errori-privacy" class="mb-4">
+              <h2 class="h4" data-i18n="posts.chatgpt.h2.errors_privacy">
+                Errori comuni, privacy e limiti
+              </h2>
+              <p data-i18n-html="posts.chatgpt.sections.errors_privacy_p_html">
+                Evita prompt vaghi, obiettivi multipli nello stesso messaggio e richieste non
+                verificabili. Non incollare dati sensibili o proprietari; preferisci ambienti
+                aziendali con <em>logging</em> sicuro e redazione automatica. Ricorda che i modelli
+                possono allucinare: verifica sempre con test e fonti.
+              </p>
+            </section>
+
+            <section id="checklist" class="mb-4">
+              <h2 class="h4" data-i18n="article.sections.checklist">Checklist rapida</h2>
+              <ul>
+                <li data-i18n="posts.chatgpt.sections.checklist.li1">
+                  Definisci ruolo, obiettivo, contesto, formato, esempi.
+                </li>
+                <li data-i18n="posts.chatgpt.sections.checklist.li2">
+                  Chiedi ragionamento per step e verifica dei requisiti.
+                </li>
+                <li data-i18n="posts.chatgpt.sections.checklist.li3">
+                  Non condividere dati sensibili; valida sempre l'output.
+                </li>
+              </ul>
+            </section>
+
+            <section id="faq" class="mb-4">
+              <h2 class="h4" data-i18n="article.sections.faq">FAQ</h2>
+              <details class="mb-2">
+                <summary class="fw-semibold" data-i18n="posts.chatgpt.faq.q1">
+                  Che cos'è il prompt engineering?
+                </summary>
+                <p class="mb-0" data-i18n="posts.chatgpt.faq.a1">
+                  Tecniche per progettare richieste al modello in modo strutturato e ripetibile per
+                  ridurre ambiguità e migliorare qualità.
+                </p>
+              </details>
+              <details class="mb-2">
+                <summary class="fw-semibold" data-i18n="posts.chatgpt.faq.q2">
+                  Come ottenere risposte più accurate da ChatGPT?
+                </summary>
+                <p class="mb-0" data-i18n="posts.chatgpt.faq.a2">
+                  Definisci ruolo, contesto e vincoli; chiedi un formato; fornisci esempi; itera con
+                  feedback basato sui requisiti.
+                </p>
+              </details>
+              <details>
+                <summary class="fw-semibold" data-i18n="posts.chatgpt.faq.q3">
+                  Posso usare codice proprietario?
+                </summary>
+                <p class="mb-0" data-i18n="posts.chatgpt.faq.a3">
+                  Meglio evitare in ambienti pubblici. Usa strumenti aziendali con policy adeguate o
+                  dati sintetici/mascherati.
+                </p>
+              </details>
+            </section>
+
+            <div class="share-article my-4">
+              <p class="text-muted small mb-2">Condividi:</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-outline-secondary btn-sm" data-share="whatsapp" aria-label="Condividi su WhatsApp">WhatsApp</a>
+                <a class="btn btn-outline-secondary btn-sm" data-share="telegram" aria-label="Condividi su Telegram">Telegram</a>
+                <a class="btn btn-outline-secondary btn-sm" data-share="facebook" aria-label="Condividi su Facebook">Facebook</a>
+                <a class="btn btn-outline-secondary btn-sm" data-share="linkedin" aria-label="Condividi su LinkedIn">LinkedIn</a>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-share="native" aria-label="Condividi">Condividi</button>
+              </div>
+            </div>
+            <hr class="my-4" />
+
+            <section id="commenti" class="my-5">
+              <h2 class="h4 mb-3">Commenti</h2>
+              <div id="commentsNotice" class="alert alert-info small" role="note">
+                I commenti sono moderati tramite Cusdis e hanno il solo scopo di arricchire l’articolo: resta in tema e aggiungi valore. Grazie!
+              </div>
+              <div
+                id="cusdis_thread"
+                class="mb-4"
+                data-host="https://cusdis.com"
+                data-app-id=""
+                data-page-id=""
+                data-page-url=""
+                data-page-title=""
+                data-lang="it"
+              ></div>
+            </section>
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                var el = document.getElementById('cusdis_thread');
+                if (!el) return;
+                var doc = document;
+                var appId = window.CUSDIS_APP_ID || el.getAttribute('data-app-id') || '';
+                if (!appId) {
+                  try { el.parentElement.classList.add('d-none'); } catch (_) {}
+                  return;
+                }
+                try { el.parentElement.classList.remove('d-none'); } catch (_) {}
+                var canon = doc.querySelector('link[rel=\"canonical\"]');
+                var url = (canon && canon.href) || (location.origin ? location.origin + location.pathname : location.href);
+                var title = (doc.getElementById('page-title') && doc.getElementById('page-title').textContent) || doc.title;
+                el.setAttribute('data-app-id', appId);
+                el.setAttribute('data-host', 'https://cusdis.com');
+                el.setAttribute('data-page-url', url);
+                el.setAttribute('data-page-id', url);
+                el.setAttribute('data-page-title', title);
+                el.setAttribute('data-lang', (doc.documentElement.getAttribute('lang') || 'it').split('-')[0]);
+                var theme = (doc.documentElement.getAttribute('data-bs-theme') === 'dark') ? 'dark' : 'light';
+                el.setAttribute('data-theme', theme);
+                if (!doc.querySelector('script[src*=\"cusdis.com/js/cusdis.es.js\"]')) {
+                  var s = doc.createElement('script'); s.src = 'https://cusdis.com/js/cusdis.es.js'; s.async = true; s.defer = true; doc.body.appendChild(s);
+                }
+              });
+            </script>
+            <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+            <ul class="list-inline small text-muted">
+              <li class="list-inline-item">
+                <strong data-i18n="article.meta.category_label">Categoria:</strong>
+                <a
+                  href="../articoli.html?categoria=performance"
+                  data-i18n="articles.categories.performance"
+                  >Performance</a
+                >
+              </li>
+              <li class="list-inline-item">
+                <span data-i18n="article.meta.updated_label">Aggiornato:</span>
+                <time datetime="2025-08-17">17 ago 2025</time>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-4 border-top" role="contentinfo">
+      <div
+        class="container d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3"
+      >
+        <small class="text-muted"
+          >&copy; <time id="year" datetime="2025">2025</time> Scaledia</small
+        >
+        <nav
+          aria-label="Link social"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="footer.social_aria"
+        >
+          <a
+            class="text-muted me-3"
+            href="https://github.com/CrescenzoSorrentino"
+            data-i18n="social.github"
+            >GitHub</a
+          >
+          <a
+            class="text-muted"
+            href="https://www.linkedin.com/in/crescenzo-sorrentino-989808354"
+            data-i18n="social.linkedin"
+            >LinkedIn</a
+          >
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // anno footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+      <script src="/js/app.bundle.min.js" defer></script>
+      <script defer src="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"></script>
+  </body>
+</html>

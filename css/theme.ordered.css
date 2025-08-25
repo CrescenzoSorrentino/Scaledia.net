@@ -1,0 +1,331 @@
+/*!
+  Scaledia Theme — Reordered Build
+  Generated: 2025-08-24T07:32:32
+  Notes:
+  - Identical rules from original file, logically regrouped for maintainability.
+  - Order: Variables → Links → Focus → Headings → Buttons → Forms → Navbar → Cards → Card Title Hover → Pagination → Badge → Article components → Utilities → Filters → Helpers → Footer link utility → No-JS fallbacks → Reduced motion → Dark mode.
+*/
+
+/* === Variables === */
+:root {
+  /* Colori brand */
+  --bs-primary: #5865f2;
+  --bs-secondary: #6b7280;
+  --bs-success: #10b981;
+  --bs-info: #0ea5e9;
+  --bs-warning: #f59e0b;
+  --bs-danger: #ef4444;
+  --bs-dark: #0f172a;
+
+  /* Tipografia & base */
+  --bs-body-font-family:
+    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --bs-body-color: #1f2937;
+  --bs-body-bg: #ffffff;
+
+  /* Raggi arrotondamento */
+  --bs-border-radius: 0.6rem;
+  --bs-border-radius-sm: 0.4rem;
+  --bs-border-radius-lg: 0.9rem;
+  --bs-border-radius-xl: 1.25rem;
+
+  /* Link */
+  --bs-link-color: var(--bs-primary);
+  --bs-link-hover-color: #3f4de0;
+}
+
+/* === Links === */
+/* Link con sottolineatura più elegante */
+a {
+  text-decoration-color: rgba(88, 101, 242, 0.45);
+  text-underline-offset: 0.18em;
+}
+a:hover {
+  text-decoration-color: rgba(88, 101, 242, 0.9);
+}
+
+/* === Focus === */
+/* Focus visibile coerente */
+:focus-visible {
+  outline: 0.2rem solid rgba(88, 101, 242, 0.45);
+  outline-offset: 0.15rem;
+}
+
+/* === Headings === */
+/* Titoli */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.2px;
+}
+h2,
+.h2 {
+  font-weight: 700;
+}
+
+/* === Buttons === */
+/* Bottoni */
+.btn {
+  border-radius: var(--bs-border-radius);
+  box-shadow: 0 0.25rem 0.6rem rgba(16, 24, 40, 0.06);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn:focus-visible {
+  box-shadow: 0 0 0 0.25rem rgba(88, 101, 242, 0.25);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #4a59e6;
+  --bs-btn-hover-border-color: #4a59e6;
+  --bs-btn-active-bg: #3f4de0;
+  --bs-btn-active-border-color: #3f4de0;
+  --bs-btn-focus-shadow-rgb: 88, 101, 242;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #4a59e6;
+  --bs-btn-hover-border-color: #4a59e6;
+}
+
+/* === Forms === */
+/* Form */
+.form-control:focus {
+  border-color: #4a59e6;
+  box-shadow: 0 0 0 0.25rem rgba(88, 101, 242, 0.25);
+}
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(88, 101, 242, 0.25);
+  border-color: #4a59e6;
+}
+.form-select:focus {
+  border-color: #4a59e6;
+  box-shadow: 0 0 0 0.25rem rgba(88, 101, 242, 0.25);
+}
+
+/* === Navbar === */
+/* Navbar */
+.navbar {
+  --bs-navbar-padding-y: 0.75rem;
+}
+.navbar .navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.navbar .nav-link {
+  font-weight: 500;
+  color: rgba(15, 23, 42, 0.85);
+  border-radius: 0.5rem;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  background: rgba(88, 101, 242, 0.1);
+  color: #3f4de0;
+}
+
+/* === Cards === */
+/* Cards */
+.card {
+  border-radius: var(--bs-border-radius-lg);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+.card.shadow-sm {
+  box-shadow: 0 0.65rem 1.5rem rgba(0, 0, 0, 0.06);
+}
+.card-header {
+  background: linear-gradient(180deg, rgba(88, 101, 242, 0.1), rgba(88, 101, 242, 0));
+  font-weight: 600;
+}
+
+/* === Card Title Hover === */
+/* Card title hover (light mode) */
+.card a.link-dark {
+  transition: color 0.2s ease;
+}
+.card a.link-dark:hover,
+.card a.link-dark:focus-visible {
+  color: #3f4de0 !important;
+}
+
+/* === Pagination === */
+/* Pagination */
+.pagination {
+  gap: 0.5rem;
+}
+.page-link {
+  border-radius: var(--bs-border-radius);
+  color: var(--bs-primary);
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: 0 0.25rem 0.6rem rgba(16, 24, 40, 0.04);
+  min-width: 2.5rem;
+  text-align: center;
+}
+.page-link:hover {
+  color: #3f4de0;
+  background-color: rgba(88, 101, 242, 0.08);
+  border-color: #4a59e6;
+}
+.page-link:focus {
+  box-shadow: 0 0 0 0.25rem rgba(88, 101, 242, 0.25);
+  border-color: #4a59e6;
+}
+.page-item.active .page-link {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(88, 101, 242, 0.25);
+}
+.page-item.disabled .page-link {
+  color: #9ca3af;
+  background-color: #f3f4f6;
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: none;
+}
+
+/* === Badge === */
+/* Badge */
+.badge {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.badge.text-bg-light {
+  background-color: #eef2ff !important;
+  color: #3730a3 !important;
+}
+
+/* === Article components === */
+/* Article components */
+.toc { position: sticky; top: 1rem; }
+code { background: #f8f9fa; padding: 0.15rem 0.35rem; border-radius: 0.25rem; }
+pre code { display: block; padding: 1rem; border-radius: 0.5rem; background: #0b0b0b; color: #f8f9fa !important; overflow: auto; }
+.lead-badge { font-size: 0.85rem; }
+
+/* === Utilities === */
+/* Utilities consolidated from inline styles */
+.object-fit-cover { object-fit: cover; }
+.device-frame { position: relative; border-radius: 1rem; overflow: hidden; box-shadow: 0 1rem 2rem rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.06); background: #0b0b0b; aspect-ratio: 3/2; }
+.device-frame picture, .device-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% center; display: block; }
+.hero-split { background: radial-gradient(1200px 600px at -10% 20%, rgba(13,110,253,0.08) 0%, rgba(13,110,253,0) 60%); }
+.hero-split .kicker { letter-spacing: 0.04em; text-transform: uppercase; font-weight: 600; font-size: 0.9rem; color: #0d6efd; }
+
+/* === Filters === */
+/* Article list filters */
+.filters .form-select, .filters .form-control { min-width: 160px; }
+@media (max-width: 575.98px) { .filters .form-select, .filters .form-control { width: 100%; } }
+
+/* === Helpers === */
+/* Helpers */
+.shadow-subtle {
+  box-shadow: 0 0.5rem 1.25rem rgba(2, 6, 23, 0.06) !important;
+}
+.rounded-xl {
+  border-radius: var(--bs-border-radius-xl) !important;
+}
+
+/* === Footer link utility === */
+/* Footer/link utility (se presenti) */
+.text-muted a {
+  color: inherit;
+}
+.text-muted a:hover {
+  color: var(--bs-primary);
+}
+
+/* === No-JS fallbacks === */
+/* No-JS fallbacks (replace css/noscript.css) */
+html:not(.js-enabled) .collapse,
+html:not(.js-enabled) .accordion-collapse { display: block !important; height: auto !important; visibility: visible !important; }
+html:not(.js-enabled) .navbar-toggler { display: none !important; }
+html:not(.js-enabled) .dropdown-menu { display: block !important; position: static !important; float: none !important; border: 0 !important; box-shadow: none !important; margin: 0 !important; }
+html:not(.js-enabled) .dropdown-toggle[aria-expanded] { pointer-events: none; }
+
+/* === Reduced motion === */
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; } }
+
+/* === Dark mode === */
+/* Dark mode overrides (Bootstrap 5.3 color modes) */
+[data-bs-theme='dark'] {
+  color-scheme: dark;
+  --bs-body-bg: #1a202c;
+  --bs-body-color: #f7fafc;
+  --bs-link-color: #93c5fd;
+  --bs-link-hover-color: #bfdbfe;
+  --bs-border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-bs-theme='dark'] .navbar .nav-link {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-bs-theme='dark'] .navbar .nav-link:hover,
+[data-bs-theme='dark'] .navbar .nav-link:focus {
+  background: rgba(147, 197, 253, 0.15);
+  color: #ffffff;
+}
+
+[data-bs-theme='dark'] .card {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0.65rem 1.5rem rgba(0, 0, 0, 0.2);
+  background-color: #2d3748;
+}
+
+[data-bs-theme='dark'] .page-link {
+  color: #bfdbfe;
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-bs-theme='dark'] .page-link:hover {
+  color: #ffffff;
+  background-color: rgba(147, 197, 253, 0.2);
+  border-color: #bfdbfe;
+}
+
+[data-bs-theme='dark'] .page-item.disabled .page-link {
+  color: #a0aec0;
+  background-color: #2d3748;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Make light backgrounds darker in dark mode */
+[data-bs-theme='dark'] .bg-light {
+  background-color: #2d3748 !important;
+}
+
+/* Dark mode: ensure card titles are white */
+[data-bs-theme='dark'] {
+  --bs-card-title-color: #fff;
+}
+
+[data-bs-theme='dark'] .card h1,
+[data-bs-theme='dark'] .card h2,
+[data-bs-theme='dark'] .card h3,
+[data-bs-theme='dark'] .card h4,
+[data-bs-theme='dark'] .card h5,
+[data-bs-theme='dark'] .card h6,
+[data-bs-theme='dark'] .card .h1,
+[data-bs-theme='dark'] .card .h2,
+[data-bs-theme='dark'] .card .h3,
+[data-bs-theme='dark'] .card .h4,
+[data-bs-theme='dark'] .card .h5,
+[data-bs-theme='dark'] .card .h6 {
+  color: #fff;
+}
+
+/* Override Bootstrap utility forcing dark link color inside cards */
+[data-bs-theme='dark'] .card a.link-dark {
+  color: #fff !important;
+}
+[data-bs-theme='dark'] .card a.link-dark:hover,
+[data-bs-theme='dark'] .card a.link-dark:focus {
+  color: #bfdbfe !important;
+}

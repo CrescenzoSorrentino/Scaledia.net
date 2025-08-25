@@ -1,0 +1,811 @@
+{
+  "about": {
+    "contact": {
+      "text_html": "¿Tienes sugerencias o quieres colaborar? Escríbenos: <a href=\"mailto:info@scaledia.net\">info@scaledia.net</a>.",
+      "title": "Contáctanos"
+    },
+    "find": {
+      "cta_articles": "Explora los artículos",
+      "cta_services": "Descubre los servicios",
+      "item1_html": "Servicios: <a href=\"servizi.html#prezzi\">desarrollo front‑end y creación de sitios web</a>.",
+      "item2": "Guías paso a paso sobre HTML, CSS y JavaScript.",
+      "item3": "Snippets y patrones listos para usar para maquetaciones y componentes.",
+      "item4": "Profundizaciones sobre SEO técnico, accesibilidad y rendimiento.",
+      "title": "Qué encontrarás en Scaledia"
+    },
+    "intro": "Nuestra misión y valores para una web más accesible, rápida y mantenible.",
+    "meta_desc": "Scaledia ofrece artículos y servicios de consultoría, formación y desarrollo web sobre HTML, CSS y JavaScript, con foco en accesibilidad y rendimiento.",
+    "mission": {
+      "lead_html": "En Scaledia compartimos conocimientos prácticos sobre <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>, con ejemplos reutilizables y buenas prácticas.",
+      "point1_html": "Hacer <strong>simples</strong> y concretos los conceptos complejos.",
+      "point2_html": "Promover la <strong>accesibilidad</strong> y el <strong>rendimiento</strong> como requisitos fundamentales.",
+      "point3_html": "Fomentar un código <strong>limpio</strong>, <strong>semántico</strong> y fácil de mantener.",
+      "title": "Misión"
+    },
+    "og_desc": "Scaledia: artículos y servicios de consultoría, formación y desarrollo en HTML, CSS y JavaScript, con foco en accesibilidad y rendimiento.",
+    "og_image_alt": "Scaledia: guías y tutoriales sobre HTML, CSS y JavaScript",
+    "og_title": "Quiénes somos – Scaledia",
+    "title": "Quiénes somos",
+    "title_tag": "Quiénes somos – Scaledia",
+    "twitter_desc": "Artículos y servicios: consultoría, formación y desarrollo web centrados en accesibilidad y rendimiento.",
+    "twitter_image_alt": "Scaledia: guías y tutoriales sobre HTML, CSS y JavaScript",
+    "twitter_title": "Quiénes somos – Scaledia",
+    "values": {
+      "card1": {
+        "text": "Contenidos concisos, ejemplos reales, sin adornos.",
+        "title": "Claridad"
+      },
+      "card2": {
+        "text": "Accesibilidad desde el diseño: semántica correcta, colores accesibles, navegación por teclado.",
+        "title": "Inclusión"
+      },
+      "card3": {
+        "text": "Enfoque en estándares web, rendimiento y mediciones objetivas.",
+        "title": "Calidad"
+      },
+      "title": "Valores"
+    }
+  },
+  "aria": {
+    "breadcrumb": "Ruta de navegación"
+  },
+  "article": {
+    "badge": {
+      "guide": "Guías"
+    },
+    "meta": {
+      "category_label": "Categoría:",
+      "published_on": "Publicado el",
+      "reading_time": "~12 min",
+      "updated_label": "Actualizado:"
+    },
+    "sections": {
+      "checklist": "Lista de comprobación rápida",
+      "faq": "FAQ",
+      "overview": "Resumen"
+    },
+    "toc": {
+      "aria_label": "Índice del artículo",
+      "heading": "En esta guía"
+    }
+  },
+  "articles": {
+    "cards": {
+      "accessibility": {
+        "desc": "ARIA, WAI y WCAG: cómo hacer la web inclusiva para todos.",
+        "svg": "Accesibilidad web",
+        "title": "Accesibilidad web: la guía completa"
+      },
+      "chatgpt": {
+        "desc": "Técnicas y patrones de prompts con ejemplos prácticos para desarrolladores.",
+        "svg": "ChatGPT y Prompts",
+        "title": "ChatGPT y Prompt Engineering 2025"
+      },
+      "grid": {
+        "desc": "Patrones comunes, ejemplos reutilizables y consejos para maquetaciones responsive.",
+        "svg": "Flexbox vs CSS Grid",
+        "title": "Flexbox vs CSS Grid"
+      },
+      "html": {
+        "desc": "Guía completa de HTML semántico para construir páginas accesibles y SEO‑friendly.",
+        "svg": "HTML semántico",
+        "title": "HTML semántico: guía práctica"
+      },
+      "js_performance": {
+        "desc": "Code splitting, carga diferida, debounce/throttle y métricas.",
+        "svg": "Rendimiento JS",
+        "title": "Rendimiento de JavaScript"
+      },
+      "vitals": {
+        "desc": "Guía actualizada de LCP, INP y CLS con herramientas y buenas prácticas.",
+        "svg": "Vitals",
+        "title": "Core Web Vitals 2025"
+      }
+    },
+    "categories": {
+      "accessibilita": "Accesibilidad",
+      "css": "CSS",
+      "html": "HTML",
+      "javascript": "JavaScript",
+      "performance": "Rendimiento"
+    },
+    "donate": {
+      "coffee": "Invítame a un café",
+      "paypal": "Donar con PayPal",
+      "text": "Si el contenido de Scaledia te resulta útil, considera una pequeña donación. ¡Gracias!",
+      "title": "Apoya el blog"
+    },
+    "filters": {
+      "apply": "Aplicar",
+      "aria_label": "Filtrar artículos",
+      "category_all": "Todas las categorías",
+      "category_label": "Categoría",
+      "search_label": "Buscar",
+      "search_placeholder": "Buscar artículos…",
+      "sort_az": "Título A–Z",
+      "sort_label": "Ordenar",
+      "sort_old": "Más antiguos",
+      "sort_recent": "Más recientes"
+    },
+    "intro": "Guías, tutoriales y ejemplos sobre HTML, CSS, JavaScript, rendimiento y accesibilidad.",
+    "list": {
+      "heading": "Lista de artículos",
+      "status_all": "Todos los artículos",
+      "status_count_one": "{{count}} artículo encontrado",
+      "status_count_other": "{{count}} artículos encontrados",
+      "status_for": " para \"{{q}}\"",
+      "status_in": " en {{category}}"
+    },
+    "meta_desc": "Todos los artículos del blog de Scaledia sobre desarrollo web: HTML, CSS, JavaScript, rendimiento, accesibilidad y buenas prácticas.",
+    "og_desc": "Todas las guías y tutoriales sobre HTML, CSS y JavaScript.",
+    "og_image_alt": "Scaledia: lista de artículos sobre HTML, CSS y JavaScript",
+    "og_title": "Artículos – Scaledia",
+    "pagination": {
+      "aria_label": "Paginación de artículos",
+      "next": "Siguiente",
+      "prev": "Anterior"
+    },
+    "title": "Todos los artículos",
+    "title_tag": "Artículos – Scaledia: guías de HTML, CSS y JavaScript",
+    "twitter_desc": "Todos los artículos y guías sobre HTML, CSS y JavaScript.",
+    "twitter_image_alt": "Scaledia: lista de artículos sobre HTML, CSS y JavaScript",
+    "twitter_title": "Artículos – Scaledia: guías de HTML, CSS y JavaScript"
+  },
+  "contact": {
+    "form": {
+      "email_label": "Correo electrónico",
+      "help_html": "Al enviar se abrirá tu cliente de correo con los datos pre‑rellenados. ¿Dudas con los paquetes? Consulta <a href=\"servizi.html#prezzi\" class=\"link-secondary\">Servicios</a>.",
+      "message_label": "Mensaje",
+      "name_label": "Nombre",
+      "package_business": "Business",
+      "package_help_html": "Consulta los detalles de los paquetes en <a href=\"servizi.html#prezzi\">Servicios</a>.",
+      "package_label": "Servicio/Paquete",
+      "package_placeholder": "Selecciona una opción",
+      "package_pro": "Pro",
+      "package_starter": "Starter",
+      "privacy_label": "He leído la política de privacidad y consiento el tratamiento de los datos.",
+      "submit": "Enviar",
+      "title": "Formulario de contacto"
+    },
+    "intro": "Escríbenos para feedback, sugerencias o propuestas de colaboración.",
+    "meta_desc": "Contacta con Scaledia: escríbenos por correo o usa el formulario para enviar un mensaje. Nos encanta recibir sugerencias y propuestas de colaboración.",
+    "more": {
+      "alert_html": "¿Prefieres no usar el formulario? Escribe directamente a <a href=\"mailto:info@scaledia.net\" class=\"alert-link\">info@scaledia.net</a>.",
+      "linkedin_profile": "Perfil",
+      "title": "Más contactos"
+    },
+    "og_desc": "Contacta con Scaledia por correo o mediante el formulario de contacto.",
+    "og_image_alt": "Scaledia: guías y tutoriales sobre HTML, CSS y JavaScript",
+    "og_title": "Contacto – Scaledia",
+    "title": "Contacto",
+    "title_tag": "Contacto – Scaledia",
+    "twitter_desc": "Escríbenos para sugerencias, feedback o colaboraciones.",
+    "twitter_image_alt": "Scaledia: guías y tutoriales sobre HTML, CSS y JavaScript",
+    "twitter_title": "Contacto – Scaledia",
+    "write": {
+      "text_html": "Puedes contactarnos directamente por correo: <a href=\"mailto:info@scaledia.net\">info@scaledia.net</a>.",
+      "title": "Escríbenos"
+    }
+  },
+  "darkMode": "Modo oscuro",
+  "footer": {
+    "social_aria": "Enlaces sociales"
+  },
+  "home": {
+    "card1": {
+      "btn_details": "Ver detalles",
+      "desc": "Landing page o mini sitio (1–3 páginas) con rendimiento y SEO de base.",
+      "title": "Landing/Starter"
+    },
+    "card2": {
+      "badge": "Más popular",
+      "btn_details": "Ver detalles",
+      "desc": "Hasta 8 páginas, UI a medida, formulario de contacto, SEO/a11y avanzados.",
+      "title": "Sitio de presentación"
+    },
+    "card3": {
+      "btn_more": "Saber más",
+      "desc": "Blog, app web, sistema de diseño, auditorías de rendimiento y accesibilidad.",
+      "title": "Pro / Personalizado"
+    },
+    "cta_packages": "Ver paquetes",
+    "cta_quote": "Solicitar presupuesto",
+    "hero_lead": "Construimos interfaces modernas con HTML, CSS y JavaScript (Bootstrap), optimizadas para SEO, rendimiento y accesibilidad.",
+    "hero_tagline": "Código limpio, plazos claros, resultados medibles.",
+    "hero_title": "Sitios web rápidos, accesibles y listos para escalar",
+    "kicker": "Servicios front‑end",
+    "latest_btn_all": "Ver todos",
+    "latest_btn_all_aria": "Ver todos los artículos del blog",
+    "latest_cards": {
+      "chatgpt": {
+        "desc": "Técnicas y patrones de prompts con ejemplos prácticos para desarrolladores.",
+        "svg": "ChatGPT y Prompts",
+        "title": "ChatGPT y Prompt Engineering 2025"
+      },
+      "html": {
+        "desc": "Cómo usar etiquetas semánticas para mejorar accesibilidad, SEO y mantenibilidad del código.",
+        "svg": "HTML semántico",
+        "title": "HTML semántico: guía práctica de header, main, article y aside"
+      },
+      "vitals": {
+        "desc": "Guía actualizada de LCP, INP y CLS con herramientas y buenas prácticas.",
+        "svg": "Vitals",
+        "title": "Core Web Vitals 2025"
+      }
+    },
+    "latest_title": "Del blog: últimos artículos",
+    "meta_desc": "Construimos sitios rápidos, accesibles y amigables con el SEO. HTML, CSS, JavaScript (Bootstrap). Descubre nuestros servicios y paquetes. Del blog: guías sobre HTML, CSS y JS.",
+    "og_desc": "Sitios modernos, rápidos y accesibles. Descubre nuestros paquetes y contáctanos para un presupuesto.",
+    "og_image_alt": "Scaledia: servicios front‑end para sitios web",
+    "og_title": "Scaledia – Servicios Front‑End y Creación de Sitios Web",
+    "services_link_all": "Ver todos los servicios",
+    "services_title": "Nuestros servicios",
+    "title_tag": "Scaledia – Servicios Front‑End y Creación de Sitios Web",
+    "twitter_desc": "Sitios rápidos, accesibles y amigables con el SEO. Descubre nuestros servicios y paquetes.",
+    "twitter_image_alt": "Scaledia: servicios front‑end",
+    "twitter_title": "Scaledia – Servicios Front‑End y Creación de Sitios Web"
+  },
+  "lang_en": "Inglés (EN)",
+  "lang_it": "Italiano (IT)",
+  "lang_es": "Español (ES)",
+  "language": "Idioma",
+  "nav": {
+    "about": "Quiénes somos",
+    "articles": "Artículos",
+    "contact": "Contacto",
+    "home": "Inicio",
+    "services": "Servicios",
+    "toggler_label": "Abrir/cerrar navegación",
+    "primary_aria": "Navegación principal"
+  },
+  "posts": {
+    "accessibility": {
+      "breadcrumb": "Accesibilidad web: la guía completa",
+      "faq": {
+        "a1": "La usabilidad trata de la eficacia y eficiencia para el usuario medio; la accesibilidad garantiza que personas con diferentes capacidades puedan usar el producto. Son complementarias.",
+        "a2": "No. El nivel recomendado es AA. El nivel AAA a menudo no es factible para todo el contenido; evalúa caso por caso.",
+        "a3": "Integrar la accesibilidad desde el inicio cuesta menos que adaptarla después. Planifica auditorías, formación y componentes reutilizables para reducir costes.",
+        "q1": "¿Cuál es la diferencia entre usabilidad y accesibilidad?",
+        "q2": "¿Siempre tengo que cumplir el nivel AAA?",
+        "q3": "¿Cuánto cuesta hacer accesible un sitio?"
+      },
+      "h1": "Accesibilidad web: la guía completa",
+      "h2": {
+        "audit_testing_seo": "Auditoría, pruebas y SEO",
+        "fundamentals": "Fundamentos y normativa",
+        "wcag_principles": "Principios WCAG (POUR)"
+      },
+      "intro": "Normativa, WCAG y buenas prácticas para diseñar sitios inclusivos, usables y conformes.",
+      "meta_desc": "Guía completa de accesibilidad web: principios WCAG (POUR), normativa, ejemplos prácticos, pruebas y herramientas. Checklist operativa y FAQs para sitios inclusivos.",
+      "og_desc": "Normativa, principios WCAG, ejemplos, pruebas y herramientas. Checklist y FAQs para hacer tu sitio accesible.",
+      "og_image_alt": "Ilustración de accesibilidad web",
+      "og_title": "Accesibilidad web: la guía completa – Scaledia",
+      "sections": {
+        "audit_bullets": {
+          "li1_html": "<strong>Herramientas rápidas:</strong> Lighthouse, axe DevTools, WAVE, Color Contrast Analyser.",
+          "li2_html": "<strong>Lector de pantalla:</strong> NVDA/JAWS (Windows), VoiceOver (macOS/iOS), TalkBack (Android).",
+          "li3_html": "<strong>Pruebas con teclado:</strong> Tab/Shift+Tab para alcanzar todos los controles; usa <code>Skip to content</code> y gestiona el foco tras modales.",
+          "li4_html": "<strong>SEO:</strong> semántica, jerarquía de encabezados y texto alternativo mejoran el descubrimiento y los rich snippets."
+        },
+        "audit_intro_html": "Integra la accesibilidad en el ciclo de desarrollo: un design system con componentes accesibles, linting y pruebas automáticas y manuales.",
+        "checklist": {
+          "li1_html": "Contraste texto/fondo conforme (al menos 4.5:1, 3:1 para texto grande).",
+          "li2_html": "Posible navegación solo con teclado y foco siempre visible.",
+          "li3_html": "Las imágenes tienen <code>alt</code> significativo; las decorativas usan <code>alt=\"\"</code>.",
+          "li4_html": "Los formularios tienen <code>&lt;label&gt;</code> asociado y mensajes de error útiles.",
+          "li5_html": "Encabezados y landmarks semánticos; sin saltos de nivel injustificados.",
+          "li6_html": "El contenido no depende solo del color; los estados también se expresan textualmente.",
+          "li7_html": "Los componentes interactivos tienen roles/atributos ARIA correctos y un nombre accesible.",
+          "li8_html": "Se respetan las preferencias del usuario (reducir movimiento, zoom/redimensionar, tema de alto contraste)."
+        },
+        "fundamentals_bullets": {
+          "li1_html": "<strong>Ámbito:</strong> contenidos, interfaces, documentos, multimedia.",
+          "li2_html": "<strong>Niveles:</strong> A (básico), AA (recomendado), AAA (avanzado).",
+          "li3_html": "<strong>Beneficios:</strong> inclusión, mejor UX, ventajas SEO, reducción de riesgos legales."
+        },
+        "fundamentals_intro_html": "Las <strong>WCAG</strong> (Web Content Accessibility Guidelines) definen los requisitos técnicos para contenidos accesibles. En Europa, la <strong>EN 301 549</strong> implementa WCAG para servicios digitales públicos; muchos países tienen leyes nacionales, y fuera de la UE aplican referencias como <strong>ADA</strong> y <strong>Section 508</strong>.",
+        "overview_p_html": "La accesibilidad web garantiza que sitios y aplicaciones puedan ser usados por todas las personas, incluidas aquellas con discapacidades visuales, auditivas, motoras y cognitivas. En esta guía verás el panorama normativo, los principios WCAG, ejemplos prácticos y cómo probar tu proyecto para lograr al menos conformidad <strong>WCAG 2.2 nivel AA</strong>.",
+        "wcag_bullets": {
+          "li1_html": "<strong>Perceptible:</strong> texto alternativo para imágenes, subtítulos para vídeo, contraste de color suficiente.",
+          "li2_html": "<strong>Operable:</strong> totalmente accesible con teclado, foco visible, evitar trampas de foco.",
+          "li3_html": "<strong>Comprensible:</strong> lenguaje claro, etiquetas claras, mensajes de error útiles.",
+          "li4_html": "<strong>Robusto:</strong> marcado válido, roles/atributos ARIA correctos, compatibilidad con tecnologías de asistencia."
+        }
+      },
+      "title_tag": "Accesibilidad web: la guía completa – Scaledia",
+      "toc": {
+        "audit_testing_seo": "Auditoría, pruebas y SEO",
+        "fundamentals": "Fundamentos y normativa",
+        "wcag_principles": "Principios WCAG (POUR)"
+      },
+      "twitter_desc": "Normativa, principios WCAG, ejemplos, pruebas y herramientas. Checklist y FAQs para hacer tu sitio accesible.",
+      "twitter_image_alt": "Ilustración de accesibilidad web",
+      "twitter_title": "Accesibilidad web: la guía completa – Scaledia"
+    },
+    "chatgpt": {
+      "breadcrumb": "ChatGPT y Prompt Engineering: guía práctica 2025",
+      "faq": {
+        "a1": "Técnicas para diseñar peticiones al modelo de forma estructurada y repetible para reducir la ambigüedad y mejorar la calidad.",
+        "a2": "Define rol, contexto y restricciones; solicita un formato; aporta ejemplos; itera con feedback basado en requisitos.",
+        "a3": "Mejor evitar en entornos públicos. Usa herramientas empresariales con políticas adecuadas o datos sintéticos/enmascarados.",
+        "q1": "¿Qué es el prompt engineering?",
+        "q2": "¿Cómo obtener respuestas más precisas de ChatGPT?",
+        "q3": "¿Puedo usar código propietario?"
+      },
+      "h1": "ChatGPT y Prompt Engineering: guía práctica 2025",
+      "h2": {
+        "errors_privacy": "Errores comunes, privacidad y límites",
+        "principles": "Principios de prompt engineering",
+        "prompt_dev": "Prompts reutilizables para desarrolladores"
+      },
+      "intro": "Mejores prompts, mejores respuestas: patrones, ejemplos y buenas prácticas para desarrolladores y equipos.",
+      "meta_desc": "Guía práctica de ChatGPT y prompt engineering: principios, patrones reutilizables, ejemplos para desarrolladores, privacidad, límites y buenas prácticas actualizadas a 2025.",
+      "og_desc": "Técnicas y patrones de prompts para obtener mejores respuestas con ChatGPT. Ejemplos, checklist y FAQs para desarrolladores.",
+      "og_image_alt": "Ilustración del artículo sobre ChatGPT y prompts",
+      "og_title": "ChatGPT y Prompt Engineering: guía práctica 2025 – Scaledia",
+      "sections": {
+        "checklist": {
+          "li1": "Define rol, objetivo, contexto, formato y ejemplos.",
+          "li2": "Pide razonamiento paso a paso y verificación de requisitos.",
+          "li3": "No compartas datos sensibles; valida siempre la salida."
+        },
+        "errors_privacy_p_html": "Evita prompts vagos, múltiples objetivos en el mismo mensaje y peticiones no verificables. No pegues datos sensibles o propietarios; prefiere entornos empresariales con registros seguros y redacción automática. Recuerda que los modelos pueden alucinar: verifica siempre con pruebas y fuentes.",
+        "overview_p_html": "Esta guía muestra cómo usar ChatGPT de forma fiable con técnicas de prompt engineering: define objetivo, rol, contexto, restricciones, ejemplos y formatos de salida. Encontrarás prompts reutilizables para análisis de código, generación de tests, refactorización y documentación.",
+        "principles_bullets": {
+          "li1_html": "<strong>Rol</strong>: asigna un rol al modelo (p. ej., \"Eres un ingeniero senior de JavaScript\").",
+          "li2_html": "<strong>Objetivo</strong>: explica qué quieres lograr y por qué.",
+          "li3_html": "<strong>Contexto</strong>: aporta datos, restricciones, estándares, stack.",
+          "li4_html": "<strong>Formato</strong>: especifica el esquema de salida requerido (tabla, JSON, lista).",
+          "li5_html": "<strong>Ejemplos</strong>: añade 1–2 ejemplos (<em>few‑shot</em>) para guiar el estilo.",
+          "li6_html": "<strong>Pasos</strong>: pide razonar paso a paso y verificar requisitos antes de la salida final."
+        },
+        "principles_intro": "Para obtener resultados consistentes, estructura los prompts con estos elementos:",
+        "prompts_bullets": {
+          "li1_html": "<strong>Análisis de código</strong>: \"Encuentra bugs y casos límite en [código]. Sugiere tests unitarios en formato tabla.\"",
+          "li2_html": "<strong>Refactorización</strong>: \"Propón un refactor sin cambiar el comportamiento. Destaca trade‑offs en 3 puntos.\"",
+          "li3_html": "<strong>Tests</strong>: \"Genera tests de Jest para cubrir ramas no probadas (cobertura de ramas &gt; 90%).\"",
+          "li4_html": "<strong>Documentación</strong>: \"Escribe un README corto con instalación, uso, ejemplos y limitaciones.\""
+        }
+      },
+      "title_tag": "ChatGPT y Prompt Engineering: guía práctica 2025 – Scaledia",
+      "toc": {
+        "errors_privacy": "Errores, privacidad y límites",
+        "principles": "Principios de prompt engineering",
+        "prompt_dev": "Prompts reutilizables para devs"
+      },
+      "twitter_desc": "Técnicas y patrones de prompts con ejemplos prácticos para desarrolladores.",
+      "twitter_image_alt": "Ilustración del artículo sobre ChatGPT y prompts",
+      "twitter_title": "ChatGPT y Prompt Engineering: guía práctica 2025 – Scaledia"
+    },
+    "code": {
+      "a11y_focus_css": "/* Foco visible y de alto contraste */\n:focus { outline: 3px solid #0d6efd; outline-offset: 2px; }\n\n/* prefers-reduced-motion ya respetado en el tema */\n",
+      "a11y_form_html": "<!-- Formulario accesible: etiqueta, texto de ayuda, errores -->\n<form novalidate aria-describedby=\"f-help\">\n  <div class=\"mb-3\">\n    <label for=\"email\" class=\"form-label\">Correo electrónico</label>\n    <input id=\"email\" name=\"email\" type=\"email\" class=\"form-control\" aria-describedby=\"email-help email-err\" required>\n    <div id=\"email-help\" class=\"form-text\">Usa una dirección válida.</div>\n    <div id=\"email-err\" class=\"invalid-feedback\" role=\"alert\">Introduce un correo válido.</div>\n  </div>\n  <button class=\"btn btn-primary\">Enviar</button>\n</form>\n",
+      "a11y_landmarks_html": "<!-- Ejemplo: estructura semántica y landmarks -->\n<header role=\"banner\">...</header>\n<nav aria-label=\"Ruta de navegación\">...</nav>\n<main id=\"content\" role=\"main\" tabindex=\"-1\">...</main>\n<footer role=\"contentinfo\">...</footer>\n",
+      "a11y_modal_focus_js": "// Gestión del foco en un modal de Bootstrap como ejemplo\nconst modalEl = document.getElementById('myModal');\nmodalEl?.addEventListener('shown.bs.modal', () => {\n  modalEl.querySelector('[autofocus]')?.focus();\n});\n",
+      "chatgpt_prompt_js": "// Ejemplo: prompt con bloque de código para obtener salidas estructuradas\nconst prompt = `Eres un linter humano. Enumera en JSON: {\"rule\",\"file\",\"line\",\"reason\"} para este fragmento JS.\n` + code;\n",
+      "chatgpt_prompt_template_text": "[ROL] Eres un ingeniero senior de JavaScript centrado en rendimiento y accesibilidad.\n[OBJETIVO] Propón un refactor de este componente React para reducir re-renderizados.\n[CONTEXTO] Usa memoización, claves estables, evita funciones inline. Versión de React 18.\n[FORMATO] Responde con: 1) Análisis 2) Refactor comentado 3) Checklist.\n[EJEMPLO] Entrada simplificada -> Salida con memo y useCallback.\n[PASOS] Piensa paso a paso. Confirma las suposiciones antes del código.\n",
+      "debounce_js": "function debounce(fn, wait = 200) {\n  let t;\n  return (...args) => {\n    clearTimeout(t);\n    t = setTimeout(() => fn.apply(null, args), wait);\n  };\n}\n\nconst onSearch = debounce((q) => fetch('/api?q='+encodeURIComponent(q)), 300);\nconst input = document.querySelector('#search');\ninput.addEventListener('input', (e) => onSearch(e.target.value));\n",
+      "dynamic_import_js": "document.getElementById('open-chart').addEventListener('click', async () => {\n  const { renderChart } = await import(/* webpackChunkName: \"chart\" */ './chart.js');\n  renderChart();\n});\n",
+      "figure_demo": "<figure>\n  <img src=\"image.jpg\" alt=\"Diagrama de landmarks de una página\" width=\"800\" height=\"450\" loading=\"lazy\">\n  <figcaption>Ejemplo de estructura semántica con landmarks.</figcaption>\n</figure>",
+      "flex_cards_css": ".cards { display:flex; flex-wrap:wrap; gap:1rem; }\n.card { flex:1 1 260px; /* crecer, encoger, base */ }\n",
+      "flex_grid_patterns_css": "/* Layout base de página con Grid */\n.page { display:grid; min-height:100dvh; gap:1rem;\n  grid-template-columns: 240px 1fr;\n  grid-template-rows: auto 1fr auto;\n  grid-template-areas:\n    \"header header\"\n    \"sidebar main\"\n    \"footer footer\";\n}\nheader{ grid-area:header } .sidebar{ grid-area:sidebar }\nmain{ grid-area:main } footer{ grid-area:footer }\n\n/* Objeto media con Flexbox */\n.media { display:flex; gap:1rem; align-items:flex-start }\n.media img { width:120px; flex:0 0 auto; }\n.media .content { flex:1 1 auto }\n",
+      "grid_gallery_css": ".gallery { display:grid; gap:1rem;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n}\n",
+      "intersection_observer_js": "const el = document.querySelector('#reviews-widget');\nconst io = new IntersectionObserver(async ([entry], obs) => {\n  if (!entry.isIntersecting) return;\n  const mod = await import('./reviews-widget.js');\n  mod.mount(el);\n  obs.disconnect();\n});\nio.observe(el);\n",
+      "landmarks_demo": "<header>\n  <nav aria-label=\"Principal\">...</nav>\n</header>\n<main id=\"content\">\n  <article>\n    <h1>Título de la página</h1>\n    <section aria-labelledby=\"section1\">\n      <h2 id=\"section1\">Sección 1</h2>\n      <p>Texto.</p>\n    </section>\n  </article>\n  <aside aria-label=\"Lecturas adicionales\">...</aside>\n</main>\n<footer>...</footer>",
+      "po_inp_js": "new PerformanceObserver((entryList) => {\n  for (const e of entryList.getEntries()) {\n    if (e.name !== 'click' && e.name !== 'keydown' && e.name !== 'pointerdown') continue;\n    console.log('INP candidate', Math.max(e.processingStart - e.startTime, e.duration).toFixed(0), 'ms');\n  }\n}).observe({ type: 'event', buffered: true, durationThreshold: 16 });\n",
+      "po_lcp_js": "new PerformanceObserver((entryList) => {\n  const entries = entryList.getEntries();\n  const last = entries[entries.length - 1];\n  console.log('LCP', last.startTime.toFixed(0), 'ms');\n}).observe({ type: 'largest-contentful-paint', buffered: true });\n",
+      "template_example_js": "// Ejemplo opcional\nfunction example() {\n  console.log('Snippet de ejemplo');\n}\n",
+      "throttle_js": "function throttle(fn, limit = 100) {\n  let last = 0, timer;\n  return (...args) => {\n    const now = Date.now();\n    if (now - last >= limit) {\n      last = now;\n      fn.apply(null, args);\n    } else if (!timer) {\n      const remaining = limit - (now - last);\n      timer = setTimeout(() => {\n        last = Date.now();\n        timer = null;\n        fn.apply(null, args);\n      }, remaining);\n    }\n  };\n}\n\nwindow.addEventListener('scroll', throttle(() => {\n  // trabajo ligero: actualizar barra de progreso, etc.\n}, 100));\n",
+      "web_vitals_import_js": "import { onLCP, onINP, onCLS } from 'web-vitals';\n\nonLCP(console.log);\nonINP(console.log);\nonCLS(console.log);\n"
+    },
+    "flexbox": {
+      "a11y_focus_css": "/* Foco visible y de alto contraste */\n:focus { outline: 3px solid #0d6efd; outline-offset: 2px; }\n\n/* prefers-reduced-motion ya respetado en el tema */\n",
+      "a11y_form_html": "<!-- Formulario accesible: etiqueta, texto de ayuda, errores -->\n<form novalidate aria-describedby=\"f-help\">\n  <div class=\"mb-3\">\n    <label for=\"email\" class=\"form-label\">Correo electrónico</label>\n    <input id=\"email\" name=\"email\" type=\"email\" class=\"form-control\" aria-describedby=\"email-help email-err\" required>\n    <div id=\"email-help\" class=\"form-text\">Usa una dirección válida.</div>\n    <div id=\"email-err\" class=\"invalid-feedback\" role=\"alert\">Introduce un correo válido.</div>\n  </div>\n  <button class=\"btn btn-primary\">Enviar</button>\n</form>\n",
+      "a11y_landmarks_html": "<!-- Ejemplo: estructura semántica y landmarks -->\n<header role=\"banner\">...</header>\n<nav aria-label=\"Ruta de navegación\">...</nav>\n<main id=\"content\" role=\"main\" tabindex=\"-1\">...</main>\n<footer role=\"contentinfo\">...</footer>\n",
+      "a11y_modal_focus_js": "// Gestión del foco en un modal de Bootstrap como ejemplo\nconst modalEl = document.getElementById('myModal');\nmodalEl?.addEventListener('shown.bs.modal', () => {\n  modalEl.querySelector('[autofocus]')?.focus();\n});\n",
+      "breadcrumb": "Flexbox vs CSS Grid",
+      "chatgpt_prompt_js": "// Ejemplo: prompt con bloque de código para obtener salidas estructuradas\nconst prompt = `Eres un linter humano. Enumera en JSON: {\"rule\",\"file\",\"line\",\"reason\"} para este fragmento JS.\n` + code;\n",
+      "chatgpt_prompt_template_text": "[ROL] Eres un ingeniero senior de JavaScript centrado en rendimiento y accesibilidad.\n[OBJETIVO] Propón un refactor de este componente React para reducir re-renderizados.\n[CONTEXTO] Usa memoización, claves estables, evita funciones inline. Versión de React 18.\n[FORMATO] Responde con: 1) Análisis 2) Refactor comentado 3) Checklist.\n[EJEMPLO] Entrada simplificada -> Salida con memo y useCallback.\n[PASOS] Piensa paso a paso. Confirma las suposiciones antes del código.\n",
+      "debounce_js": "function debounce(fn, wait = 200) {\n  let t;\n  return (...args) => {\n    clearTimeout(t);\n    t = setTimeout(() => fn.apply(null, args), wait);\n  };\n}\n\nconst onSearch = debounce((q) => fetch('/api?q='+encodeURIComponent(q)), 300);\nconst input = document.querySelector('#search');\ninput.addEventListener('input', (e) => onSearch(e.target.value));\n",
+      "dynamic_import_js": "document.getElementById('open-chart').addEventListener('click', async () => {\n  const { renderChart } = await import(/* webpackChunkName: \"chart\" */ './chart.js');\n  renderChart();\n});\n",
+      "faq": {
+        "a1": "Si el layout es bidimensional y las columnas deben alinearse en filas consistentes, es preferible Grid. Para filas fluidas de tarjetas sin alineación de filas, Flexbox es suficiente.",
+        "a2": "Sí. Usa Grid para el layout macro (página/sección) y Flexbox dentro de los componentes (tarjetas, navbar) para alineaciones más simples.",
+        "a3": "El soporte de subgrid ya está muy extendido en navegadores modernos y ayuda a alinear elementos hijos a la cuadrícula del contenedor. Proporciona un fallback sencillo si es necesario.",
+        "q1": "¿Flexbox o Grid es mejor para maquetaciones con columnas variables?",
+        "q2": "¿Puedo combinarlos en el mismo componente?",
+        "q3": "¿Está soportado subgrid?"
+      },
+      "h1": "Flexbox vs CSS Grid: cuándo usar cada uno",
+      "h2": {
+        "patterns": "Patrones comunes",
+        "perf_a11y": "Rendimiento y accesibilidad",
+        "when": "Cuándo usar Flexbox o Grid"
+      },
+      "intersection_observer_js": "const el = document.querySelector('#reviews-widget');\nconst io = new IntersectionObserver(async ([entry], obs) => {\n  if (!entry.isIntersecting) return;\n  const mod = await import('./reviews-widget.js');\n  mod.mount(el);\n  obs.disconnect();\n});\nio.observe(el);\n",
+      "intro": "Diferencias, casos de uso y patrones para elegir la herramienta adecuada en cada maquetación.",
+      "meta_desc": "Comparación práctica entre Flexbox y CSS Grid: diferencias, casos de uso, patrones reutilizables, ejemplos de código, accesibilidad y rendimiento para layouts responsive.",
+      "og_desc": "Diferencias, casos de uso y ejemplos para elegir entre Flexbox y Grid en maquetaciones responsive.",
+      "og_image_alt": "Ilustración del artículo",
+      "og_title": "Flexbox vs CSS Grid: cuándo usar cada uno – Scaledia",
+      "po_inp_js": "new PerformanceObserver((entryList) => {\n  for (const e of entryList.getEntries()) {\n    if (e.name !== 'click' && e.name !== 'keydown' && e.name !== 'pointerdown') continue;\n    console.log('INP candidate', Math.max(e.processingStart - e.startTime, e.duration).toFixed(0), 'ms');\n  }\n}).observe({ type: 'event', buffered: true, durationThreshold: 16 });\n",
+      "po_lcp_js": "new PerformanceObserver((entryList) => {\n  const entries = entryList.getEntries();\n  const last = entries[entries.length - 1];\n  console.log('LCP', last.startTime.toFixed(0), 'ms');\n}).observe({ type: 'largest-contentful-paint', buffered: true });\n",
+      "sections": {
+        "checklist": {
+          "li1_html": "¿El layout es de una sola dimensión? Usa Flexbox; si no, considera Grid.",
+          "li2_html": "¿Necesitas una rejilla regular y alineada? Grid con <code>repeat()</code> + <code>minmax()</code>.",
+          "li3_html": "¿Alineaciones y distribución en una fila/columna? Flexbox con <code>gap</code>.",
+          "li4_html": "Orden del DOM coherente con la lectura; evita reordenaciones artificiales.",
+          "li5_html": "Prueba los breakpoints y cómo se adapta el contenido real."
+        },
+        "overview_p": "Flexbox y CSS Grid son los dos sistemas modernos de layout en la web. Flexbox destaca en la distribución y alineación a lo largo de una sola dimensión (fila o columna), mientras que Grid está diseñado para layouts bidimensionales con filas y columnas. En esta guía aprenderás cuándo elegir uno u otro, con ejemplos prácticos y patrones reutilizables.",
+        "patterns_bullets": {
+          "li1_html": "<strong>Navbar/Toolbar</strong>: Flexbox para alinear logo, menú y CTA; usa <code>gap</code> y <code>justify-content: space-between</code>.",
+          "li2_html": "<strong>Rejilla de tarjetas</strong>: Grid para rejillas responsive regulares; Flexbox para listas con anchos fluidos no alineados a columnas fijas.",
+          "li3_html": "<strong>Objeto media</strong> (imagen + texto): Flexbox con <code>align-items</code> y gestión del wrapping.",
+          "li4_html": "<strong>Layout de página</strong>: Grid para header, sidebar, main, footer con <code>grid-template-areas</code>.",
+          "li5_html": "<strong>Alineaciones verticales complejas</strong>: Grid con <code>align-content</code>/<code>justify-content</code> a nivel de grid."
+        },
+        "perf_bullets": {
+          "li1_html": "<strong>Responsive</strong>: combina Grid/Flex con container queries o media queries.",
+          "li2_html": "<strong>Compatibilidad</strong>: fallbacks sencillos (p. ej., una columna) si necesitas navegadores antiguos.",
+          "li3_html": "<strong>Mantenibilidad</strong>: usa variables CSS, clases utilitarias y limita las excepciones por componente."
+        },
+        "perf_intro_html": "Ambos módulos rinden bien en navegadores modernos. Evita el anidamiento profundo, prefiere <code>gap</code> frente a espaciadores y mantén el orden del DOM lógico: usar <code>order</code> (Flexbox) o posicionamiento complejo (Grid) que cambie el flujo puede desorientar a usuarios de tecnología asistiva.",
+        "when": {
+          "example_flex_h3": "Ejemplo Flexbox (filas de tarjetas)",
+          "example_grid_h3": "Ejemplo Grid (galería responsive)",
+          "flex_bullets": {
+            "li1_html": "Alinear elementos en <em>una dimensión</em> (p. ej., navbar, toolbar, chips)",
+            "li2_html": "Distribuir el espacio con <code>gap</code>, <code>justify-content</code>, <code>align-items</code>",
+            "li3_html": "Gestionar el wrapping horizontal de tarjetas con anchos flexibles"
+          },
+          "flex_intro_html": "Usa <strong>Flexbox</strong> cuando necesites:",
+          "grid_bullets": {
+            "li1_html": "Un layout <em>bidimensional</em> con filas y columnas explícitas",
+            "li2_html": "Alinear áreas con <code>grid-template-areas</code> o construir rejillas responsive con <code>minmax()</code> y <code>auto-fit</code>",
+            "li3_html": "Control preciso del espaciado y la alineación tanto horizontal como verticalmente"
+          },
+          "grid_intro_html": "Usa <strong>Grid</strong> cuando necesites:"
+        }
+      },
+      "template_example_js": "// Ejemplo opcional\nfunction example() {\n  console.log('Snippet de ejemplo');\n}\n",
+      "throttle_js": "function throttle(fn, limit = 100) {\n  let last = 0, timer;\n  return (...args) => {\n    const now = Date.now();\n    if (now - last >= limit) {\n      last = now;\n      fn.apply(null, args);\n    } else if (!timer) {\n      const remaining = limit - (now - last);\n      timer = setTimeout(() => {\n        last = Date.now();\n        timer = null;\n        fn.apply(null, args);\n      }, remaining);\n    }\n  };\n}\n\nwindow.addEventListener('scroll', throttle(() => {\n  // trabajo ligero: actualizar barra de progreso, etc.\n}, 100));\n",
+      "title_tag": "Flexbox vs CSS Grid: cuándo usar cada uno – Scaledia",
+      "toc": {
+        "patterns": "Patrones comunes",
+        "perf_a11y": "Rendimiento y accesibilidad",
+        "when": "Cuándo usar Flexbox o Grid"
+      },
+      "twitter_desc": "Diferencias, casos de uso y ejemplos para elegir entre Flexbox y Grid en maquetaciones responsive.",
+      "twitter_image_alt": "Ilustración del artículo",
+      "twitter_title": "Flexbox vs CSS Grid: cuándo usar cada uno – Scaledia",
+      "web_vitals_import_js": "import { onLCP, onINP, onCLS } from 'web-vitals';\n\nonLCP(console.log);\nonINP(console.log);\nonCLS(console.log);\n"
+    },
+    "js_performance": {
+      "breadcrumb": "Rendimiento de JavaScript",
+      "faq": {
+        "a1": "Debounce retrasa la ejecución hasta que el usuario se detiene; throttle limita la frecuencia máxima en un intervalo. Ambos reducen la carga del hilo principal.",
+        "a2": "Para widgets fuera de la vista, gráficos, editores ricos o rutas no esenciales para el primer render. Mejora el TTI/INP percibido.",
+        "a3": "Usa la librería web‑vitals para obtener valores estandarizados y enviarlos a un endpoint RUM para su análisis.",
+        "q1": "¿Cuál es la diferencia entre debounce y throttle?",
+        "q2": "¿Cuándo merece la pena la carga diferida?",
+        "q3": "¿Cómo mido LCP/INP en producción?"
+      },
+      "h1": "Rendimiento de JavaScript: guía práctica",
+      "h2": {
+        "debounce_throttle": "Interacciones fluidas: debounce y throttle",
+        "loading_split": "Carga y code splitting",
+        "measure_monitor": "Medir y monitorizar el rendimiento"
+      },
+      "intro": "Code splitting, carga diferida, debounce/throttle y métricas para sitios más rápidos.",
+      "meta_desc": "Rendimiento de JavaScript: code splitting, carga diferida, debounce/throttle y métricas Web Vitals. Ejemplos prácticos para reducir tiempos y bloqueos del hilo principal.",
+      "og_desc": "Code splitting, carga diferida, debounce/throttle y Web Vitals para sitios más rápidos.",
+      "og_image_alt": "Ilustración del artículo",
+      "og_title": "Rendimiento de JavaScript: guía práctica – Scaledia",
+      "sections": {
+        "checklist": {
+          "li1_html": "Analiza el bundle: elimina dependencias no usadas y habilita minificación/treeshaking",
+          "li2_html": "Aplica code splitting por ruta/funcionalidad y carga diferida con <code>import()</code>",
+          "li3_html": "Debounce/throttle para eventos de alta frecuencia (scroll, resize, input)",
+          "li4_html": "Evita trabajo pesado en el hilo principal; descarga a un <code>Web Worker</code> cuando sea posible",
+          "li5_html": "Monitoriza LCP/INP y corrige regresiones en CI/CD"
+        },
+        "debounce_intro_html": "Reduce trabajo para eventos de alta frecuencia (scroll, resize, input) con utilidades de limitación de tasa.",
+        "debounce_tips_p_html": "Prefiere operaciones idempotentes y evita el layout thrashing (lecturas/escrituras de layout repetidas). Usa <code>requestAnimationFrame</code> para actualizaciones visuales.",
+        "loading_intro_html": "Carga solo lo que necesitas, cuando lo necesitas. Usa <code>import()</code> para dividir el bundle por <em>ruta</em>/funcionalidad y cargar bajo demanda.",
+        "loading_tips_p_html": "Consejos: evita efectos globales en módulos bajo demanda, exporta funciones puras; usa <code>preload</code>/<code>prefetch</code> para mejorar la velocidad percibida en navegaciones posteriores.",
+        "measure_intro_html": "Mide antes de optimizar. Sigue los <strong>Core Web Vitals</strong> y observa impactos en el hilo principal.",
+        "measure_tips_p_html": "En producción usa <code>web-vitals</code> para calcular el INP final y envía datos a un endpoint RUM para optimizaciones iterativas.",
+        "overview_p_html": "El rendimiento de JavaScript afecta directamente a la velocidad percibida y a las conversiones. En esta guía veremos cómo reducir trabajo en el <strong>hilo principal</strong> con <strong>code splitting</strong> y <strong>carga diferida</strong>, lograr <strong>interacciones fluidas</strong> con debounce/throttle y <strong>medir</strong> métricas clave como <abbr title=\"Largest Contentful Paint\">LCP</abbr> e <abbr title=\"Interaction to Next Paint\">INP</abbr>."
+      },
+      "title_tag": "Rendimiento de JavaScript: guía práctica – Scaledia",
+      "toc": {
+        "debounce_throttle": "Interacciones fluidas: debounce y throttle",
+        "loading_split": "Carga y code splitting",
+        "measure_monitor": "Medir y monitorizar el rendimiento"
+      },
+      "twitter_desc": "Code splitting, carga diferida, debounce/throttle y Web Vitals para sitios más rápidos.",
+      "twitter_image_alt": "Ilustración del artículo",
+      "twitter_title": "Rendimiento de JavaScript: guía práctica – Scaledia"
+    },
+    "semantic_html": {
+      "breadcrumb": "HTML semántico: guía práctica",
+      "code": {
+        "figure_demo": "<figure>\n  <img src=\"image.jpg\" alt=\"Diagrama de landmarks de una página\" width=\"800\" height=\"450\" loading=\"lazy\">\n  <figcaption>Ejemplo de estructura semántica con landmarks.</figcaption>\n</figure>",
+        "flex_cards_css": ".cards { display:flex; flex-wrap:wrap; gap:1rem; }\n.card { flex:1 1 260px; /* crecer, encoger, base */ }\n",
+        "flex_grid_patterns_css": "/* Layout base de página con Grid */\n.page { display:grid; min-height:100dvh; gap:1rem;\n  grid-template-columns: 240px 1fr;\n  grid-template-rows: auto 1fr auto;\n  grid-template-areas:\n    \"header header\"\n    \"sidebar main\"\n    \"footer footer\";\n}\nheader{ grid-area:header } .sidebar{ grid-area:sidebar }\nmain{ grid-area:main } footer{ grid-area:footer }\n\n/* Objeto media con Flexbox */\n.media { display:flex; gap:1rem; align-items:flex-start }\n.media img { width:120px; flex:0 0 auto; }\n.media .content { flex:1 1 auto }\n",
+        "grid_gallery_css": ".gallery { display:grid; gap:1rem;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n}\n",
+        "landmarks_demo": "<header>\n  <nav aria-label=\"Principal\">...</nav>\n</header>\n<main id=\"content\">\n  <article>\n    <h1>Título de la página</h1>\n    <section aria-labelledby=\"section1\">\n      <h2 id=\"section1\">Sección 1</h2>\n      <p>Texto.</p>\n    </section>\n  </article>\n  <aside aria-label=\"Lecturas adicionales\">...</aside>\n</main>\n<footer>...</footer>"
+      },
+      "faq": {
+        "a1": "No. Debe haber solo uno por página. Para zonas importantes pero no principales usa <section> o <aside>.",
+        "a2": "Sí, cada página o artículo debe tener un título principal (<h1>) que describa el contenido. Otras secciones empiezan en <h2>.",
+        "a3": "Úsalos cuando un patrón de UI no tenga equivalente nativo o para exponer estados (p. ej., aria-expanded). Evita roles redundantes en elementos ya semánticos.",
+        "q1": "¿Puedo tener más de un <main> en una página?",
+        "q2": "¿Siempre necesito un <h1>?",
+        "q3": "¿Cuándo debo usar role y atributos ARIA?"
+      },
+      "h1": "HTML semántico: guía práctica",
+      "intro": "Cómo diseñar un marcado claro, accesible y SEO‑friendly con ejemplos y listas de comprobación.",
+      "meta_desc": "Guía práctica de HTML semántico: landmarks, encabezados, listas, tablas, enlaces y botones, imágenes y figuras, formularios y ARIA. Ejemplos, checklists y FAQs para sitios accesibles y SEO‑friendly.",
+      "og_desc": "Landmarks, encabezados, medios y formularios: buenas prácticas de HTML semántico con ejemplos, checklists y FAQs para accesibilidad y SEO.",
+      "og_image_alt": "Layout de página con landmarks HTML (header, nav, main, aside, footer)",
+      "og_title": "HTML semántico: guía práctica – Scaledia",
+      "sections": {
+        "access_bullets": {
+          "li1_html": "<strong>Primera regla de ARIA:</strong> si existe una etiqueta nativa, úsala; evita sobreescribir su rol.",
+          "li2_html": "<strong>Foco:</strong> mantiene un orden de tabulación lógico y usa <code>tabindex=\"-1\"</code> solo para anclas de salto.",
+          "li3_html": "<strong>SEO:</strong> encabezados claros, uso adecuado de <code>meta</code>, enlaces descriptivos e imágenes con <code>alt</code> mejoran la interpretación y el posicionamiento.",
+          "li4_html": "<strong>Verificación:</strong> Lighthouse, WAVE, axe DevTools y el validador del W3C ayudan a encontrar problemas de semántica y accesibilidad."
+        },
+        "access_intro": "El HTML semántico proporciona roles y relaciones nativas que las tecnologías de asistencia comprenden. Usa ARIA para cubrir huecos, no para reemplazar etiquetas correctas.",
+        "checklist": {
+          "li1": "Landmarks definidos: header, nav, main, aside, footer.",
+          "li2": "Un único h1, jerarquía de encabezados consistente.",
+          "li3": "Enlaces y botones usan las etiquetas correctas y son operables con teclado.",
+          "li4": "Las imágenes tienen texto alternativo significativo; las figuras incluyen figcaption cuando sea necesario.",
+          "li5": "Las tablas tienen caption, scope y asociaciones cuando corresponde.",
+          "li6": "Los formularios tienen etiquetas asociadas, grupos con fieldset/legend y mensajes enlazados mediante aria-describedby.",
+          "li7": "Comprobaciones con Lighthouse/WAVE/validador sin errores bloqueantes."
+        },
+        "landmark_bullets": {
+          "li1_html": "Solo un <code>&lt;main&gt;</code> por página, único y no oculto.",
+          "li2_html": "Usa <code>&lt;nav&gt;</code> para grupos de enlaces de navegación: principal, breadcrumb, pie (con <code>aria-label</code> descriptivo).",
+          "li3_html": "<code>&lt;article&gt;</code> para contenido autocontenido y reutilizable; <code>&lt;section&gt;</code> para agrupar contenido relacionado con un encabezado.",
+          "li4_html": "<code>&lt;aside&gt;</code> para contenido complementario; <code>&lt;footer&gt;</code> puede existir a nivel de página y dentro de un artículo."
+        },
+        "landmark_intro_html": "Define los <em>landmarks</em> principales para ayudar a usuarios y tecnologías de asistencia a navegar rápidamente por la página.",
+        "overview_p": "El HTML semántico usa elementos significativos para describir la estructura y el rol del contenido. Esto mejora la accesibilidad, el SEO y el mantenimiento. En esta guía verás cómo diseñar los landmarks de la página, establecer correctamente los encabezados, elegir las etiquetas adecuadas para contenidos y controles y cuándo usar ARIA.",
+        "patterns_bullets": {
+          "li1_html": "<strong>Encabezados:</strong> un único <code>&lt;h1&gt;</code>; usa <code>&lt;h2&gt;</code> para secciones y <code>&lt;h3&gt;</code> para subsecciones, sin saltar niveles.",
+          "li2_html": "<strong>Texto:</strong> <code>&lt;p&gt;</code> para párrafos, <code>&lt;strong&gt;</code> y <code>&lt;em&gt;</code> para énfasis semántico.",
+          "li3_html": "<strong>Listas:</strong> <code>&lt;ul&gt;</code>/<code>&lt;ol&gt;</code> para listas; <code>&lt;dl&gt;</code> para definiciones.",
+          "li4_html": "<strong>Medios:</strong> usa <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code> para imágenes con leyenda; proporciona siempre un <code>alt</code> significativo.",
+          "li5_html": "<strong>Enlaces y botones:</strong> enlaces para navegación (<code>&lt;a href&gt;</code>), botones para acciones (<code>&lt;button&gt;</code>); evita divs clicables.",
+          "li6_html": "<strong>Tablas:</strong> define <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>/<code>&lt;tbody&gt;</code>, <code>&lt;th scope&gt;</code>; usa <code>headers</code>/<code>id</code> en tablas complejas."
+        },
+        "patterns_intro": "Adopta la etiqueta más expresiva para cada tipo de contenido."
+      },
+      "title_tag": "HTML semántico: guía práctica – Scaledia",
+      "toc": {
+        "accessibilita_aria_seo": "Accesibilidad, ARIA y SEO",
+        "pattern_comuni": "Patrones comunes",
+        "struttura_landmark": "Estructura y landmarks"
+      },
+      "twitter_desc": "HTML semántico con ejemplos y checklist: landmarks, encabezados, enlaces y botones, imágenes/figuras, tablas y formularios.",
+      "twitter_image_alt": "Estructura de HTML semántico con landmarks y encabezados",
+      "twitter_title": "HTML semántico: guía práctica – Scaledia"
+    },
+    "template": {
+      "breadcrumb": "[TÍTULO DEL ARTÍCULO]",
+      "h1": "[TÍTULO DEL ARTÍCULO]",
+      "intro": "[SUBTÍTULO / PROPUESTA DE VALOR DEL ARTÍCULO].",
+      "meta_desc": "[META DESCRIPCIÓN: 150–160 caracteres que resuman el artículo según los temas solicitados].",
+      "og_desc": "[Descripción breve de los temas tratados].",
+      "og_image_alt": "Ilustración del artículo",
+      "og_title": "[TÍTULO DEL ARTÍCULO] – Scaledia",
+      "title_tag": "[TÍTULO DEL ARTÍCULO] – Scaledia",
+      "twitter_desc": "[Descripción breve de los temas tratados].",
+      "twitter_image_alt": "Ilustración del artículo",
+      "twitter_title": "[TÍTULO DEL ARTÍCULO] – Scaledia"
+    },
+    "vitals": {
+      "breadcrumb": "Core Web Vitals 2025",
+      "faq": {
+        "a1": "LCP ≤ 2,5 s; INP ≤ 200 ms; CLS ≤ 0,1. Mantén al menos el 75% de las visitas dentro de estos valores.",
+        "a2": "Mide con PageSpeed Insights y Search Console, luego actúa sobre la imagen LCP, reduce JS y reserva espacio para los medios.",
+        "q1": "¿Cuáles son umbrales \"buenos\"?",
+        "q2": "¿Por dónde empezar?"
+      },
+      "h1": "Core Web Vitals 2025: medir y mejorar LCP, INP, CLS",
+      "h2": {
+        "cls": "Optimizar CLS",
+        "inp": "Optimizar INP",
+        "lcp": "Optimizar LCP",
+        "measurement": "Medición: campo y laboratorio",
+        "what": "Qué son los Core Web Vitals"
+      },
+      "intro": "Métricas, herramientas y buenas prácticas actualizadas para optimizar UX y SEO técnico.",
+      "meta_desc": "Guía actualizada de Core Web Vitals 2025: qué son LCP, INP y CLS, cómo medirlos y cómo mejorarlos con acciones prácticas sobre rendimiento, UX y frontend.",
+      "og_desc": "LCP, INP y CLS: métricas, umbrales, medición y optimizaciones prácticas para sitios más rápidos y usables.",
+      "og_image_alt": "Diagrama de Core Web Vitals (LCP, INP, CLS)",
+      "og_title": "Core Web Vitals 2025: medir y mejorar LCP, INP, CLS – Scaledia",
+      "sections": {
+        "checklist": {
+          "li1": "Preload de la imagen LCP y de fuentes críticas.",
+          "li2": "Code splitting y diferir scripts no críticos.",
+          "li3": "Reservar espacio para medios y componentes dinámicos.",
+          "li4": "Monitorización continua con Web Vitals en producción."
+        },
+        "cls_bullets": {
+          "li1_html": "Reserva <strong>espacio</strong> para imágenes/anuncios con atributos <code>width</code>/<code>height</code> o aspect-ratio.",
+          "li2_html": "Evita inyectar contenido por encima del primer pliegue tras la carga.",
+          "li3_html": "Usa <strong>lazy loading</strong> para medios fuera de pantalla."
+        },
+        "inp_bullets": {
+          "li1_html": "Reduce la <strong>carga de JS</strong> (code splitting, lazy‑load, elimina código muerto).",
+          "li2_html": "Evita <strong>tareas largas</strong> moviendo trabajo pesado a <code>requestIdleCallback</code> o a un Web Worker.",
+          "li3_html": "Usa <strong>debounce/throttle</strong> para eventos de alta frecuencia."
+        },
+        "lcp_bullets": {
+          "li1_html": "Optimiza <strong>imágenes críticas</strong> (tamaño correcto, formato moderno, preload de la imagen LCP).",
+          "li2_html": "Usa <strong>font-display: swap</strong> y preconnect a los CDNs necesarios.",
+          "li3_html": "Reduce <strong>bloqueo de renderizado</strong> (CSS crítico inline, diferir scripts no esenciales)."
+        },
+        "measure_bullets": {
+          "li1_html": "<strong>PageSpeed Insights</strong> y <strong>Lighthouse</strong> para pruebas de laboratorio y sugerencias.",
+          "li2_html": "<strong>CrUX</strong> (Chrome UX Report) y <strong>Search Console</strong> para datos de usuarios reales.",
+          "li3_html": "Librería <strong>Web Vitals</strong> para medir directamente en producción."
+        },
+        "measure_intro_html": "Para una evaluación precisa, combina <em>datos de laboratorio</em> y <em>datos de campo</em>:",
+        "what_bullets": {
+          "li1_html": "<strong>LCP</strong>: tiempo para renderizar el mayor elemento de contenido (objetivo ≤ 2,5 s).",
+          "li2_html": "<strong>INP</strong>: capacidad de respuesta global a las interacciones (objetivo ≤ 200 ms).",
+          "li3_html": "<strong>CLS</strong>: estabilidad visual (objetivo ≤ 0,1)."
+        },
+        "what_p_html": "Core Web Vitals son un conjunto de métricas que miden aspectos clave de la experiencia de usuario: <strong>LCP</strong> (Largest Contentful Paint), <strong>INP</strong> (Interaction to Next Paint) y <strong>CLS</strong> (Cumulative Layout Shift). Google usa estas métricas como señales de calidad de página y, en cierta medida, para la visibilidad en la Búsqueda."
+      },
+      "title_tag": "Core Web Vitals 2025: medir y mejorar LCP, INP, CLS – Scaledia",
+      "toc": {
+        "cls": "Optimizar CLS",
+        "inp": "Optimizar INP",
+        "lcp": "Optimizar LCP",
+        "measurement": "Medición: campo y laboratorio",
+        "what": "Qué son los Core Web Vitals"
+      },
+      "twitter_desc": "Métricas CWV actualizadas (LCP, INP, CLS): cómo medirlas y mejorarlas con herramientas y buenas prácticas.",
+      "twitter_image_alt": "Diagrama de Core Web Vitals (LCP, INP, CLS)",
+      "twitter_title": "Core Web Vitals 2025: medir y mejorar LCP, INP, CLS – Scaledia"
+    }
+  },
+  "services": {
+    "benefits": {
+      "card1": {
+        "text": "Medimos el éxito con KPIs objetivos: rendimiento, accesibilidad, SEO y usabilidad.",
+        "title": "Calidad medible"
+      },
+      "card2": {
+        "text": "Frameworks y componentes listos para usar para reducir tiempos y costes manteniendo alta la calidad.",
+        "title": "Time‑to‑market"
+      },
+      "card3": {
+        "text": "Estructura semántica, CSS modular, JS mínimo: mantenimiento y escalabilidad sencillos.",
+        "title": "Código limpio"
+      },
+      "title": "Por qué elegirnos"
+    },
+    "cta": {
+      "button": "Contáctanos ahora",
+      "text": "Cuéntanos objetivos y target: te responderemos en 24/48 horas con un presupuesto.",
+      "title": "Hablemos de tu proyecto"
+    },
+    "faq": {
+      "a1": "De 1 a 4 semanas según el paquete y las funcionalidades solicitadas.",
+      "a2": "Podemos ayudar a elegir el hosting y con la configuración básica; para el contenido proporcionamos guía editorial y estructural.",
+      "a3": "Sí, incluimos semántica correcta, meta etiquetas esenciales, datos estructurados y rendimiento para facilitar la indexación.",
+      "q1": "¿Cuánto tarda un sitio web?",
+      "q2": "¿También gestionáis contenidos y hosting?",
+      "q3": "¿El sitio estará optimizado para SEO?",
+      "title": "Preguntas frecuentes"
+    },
+    "hero_lead": "Construimos interfaces modernas con HTML, CSS y JavaScript (Bootstrap) optimizadas para SEO, rendimiento y accesibilidad. Desde <strong>sitios de presentación</strong> y <strong>landing pages</strong> hasta <strong>blogs</strong> y <strong>aplicaciones web</strong>.",
+    "meta_desc": "Desarrollo front‑end profesional: sitios web rápidos, accesibles y optimizados para SEO. Landing pages, sitios de presentación, blogs y apps web. Solicita un presupuesto gratuito.",
+    "offers": {
+      "item1": "UI responsive y componentes reutilizables",
+      "item2": "Accesibilidad WCAG y buenas prácticas",
+      "item3": "Optimización de rendimiento (Lighthouse/Core Web Vitals)",
+      "item4": "SEO técnico (semántica, meta, datos estructurados)",
+      "title": "Qué ofrecemos"
+    },
+    "og_desc": "Sitios modernos, rápidos y accesibles. HTML, CSS, JS y Bootstrap. Presupuestos rápidos y transparentes.",
+    "og_image_alt": "Scaledia: servicios de desarrollo front‑end para sitios web",
+    "og_title": "Servicios Front‑End – Creación de Sitios Web – Scaledia",
+    "packages": {
+      "business": {
+        "badge": "Más popular",
+        "desc": "Sitio de presentación completo (hasta 8 páginas)",
+        "item1": "Componentes de UI a medida",
+        "item2": "Formulario de contacto + integraciones",
+        "item3": "A11y y SEO avanzados",
+        "price": "desde 1490 €",
+        "title": "Business"
+      },
+      "note": "Los precios son orientativos y varían según las funcionalidades solicitadas.",
+      "pro": {
+        "cta": "Hablemos",
+        "desc": "Blog/App web o necesidades a medida",
+        "item1": "Design system y librería de componentes",
+        "item2": "Perf de build (code splitting, minify)",
+        "item3": "Auditoría CWV y accesibilidad",
+        "price": "a presupuesto",
+        "title": "Pro"
+      },
+      "starter": {
+        "desc": "Landing page o mini sitio (1–3 páginas)",
+        "item1": "Diseño responsive",
+        "item2": "SEO básico y analítica",
+        "item3": "Rendimiento optimizado",
+        "price": "desde 690 €",
+        "title": "Starter"
+      },
+      "title": "Paquetes"
+    },
+    "process": {
+      "step1": {
+        "text": "Recogida de requisitos y KPIs. Definición de plazos y entregables.",
+        "title": "1. Brief & Objetivos"
+      },
+      "step2": {
+        "text": "Wireframes y elecciones técnicas. Accesibilidad desde el diseño.",
+        "title": "2. Diseño & Prototipo"
+      },
+      "step3": {
+        "text": "Componentes modulares, rendimiento y SEO técnico.",
+        "title": "3. Desarrollo"
+      },
+      "step4": {
+        "text": "QA, auditoría CWV, checklist de a11y, despliegue y documentación.",
+        "title": "4. Testing & Release"
+      },
+      "title": "Cómo trabajamos"
+    },
+    "title_tag": "Servicios Front‑End – Creación de Sitios Web – Scaledia",
+    "twitter_desc": "Sitios rápidos, accesibles y SEO‑friendly. Solicita un presupuesto gratuito.",
+    "twitter_image_alt": "Scaledia: servicios front‑end",
+    "twitter_title": "Servicios Front‑End – Creación de Sitios Web – Scaledia"
+  },
+  "more": "Más",
+  "clients_title": "Nuestros clientes",
+  "clients_subtitle": "Una selección de sitios web que hemos creado y/o gestionamos",
+  "settings": "Ajustes",
+  "settingsTitle": "Ajustes",
+  "appearance": "Aspecto",
+  "accessibility": "Accesibilidad",
+  "highContrast": "Alto contraste",
+  "reduceMotion": "Reducir animaciones",
+  "largeText": "Texto grande",
+  "underlineLinks": "Subrayar enlaces",
+  "followSystem": "Seguir sistema",
+  "textSpacing": "Aumentar espaciado del texto",
+  "dyslexicFont": "Fuente apta para dislexia",
+  "site": {
+    "brand": "Scaledia.net"
+  },
+  "skip": "Saltar al contenido",
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "share": {
+    "label": "Compartir:",
+    "native": "Compartir",
+    "copy": "Copiar enlace",
+    "copied": "¡Copiado!",
+    "error": "Error",
+    "whatsapp_aria": "Compartir en WhatsApp",
+    "telegram_aria": "Compartir en Telegram",
+    "facebook_aria": "Compartir en Facebook",
+    "linkedin_aria": "Compartir en LinkedIn"
+  }
+}

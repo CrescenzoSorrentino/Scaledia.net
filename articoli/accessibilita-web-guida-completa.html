@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title data-i18n="posts.accessibility.title_tag">
+      Accessibilità web: la guida completa – Scaledia
+    </title>
+    <meta
+      name="description"
+      content="Guida completa all’accessibilità web: principi WCAG (POUR), normative, esempi pratici, test e strumenti. Checklist operativa e FAQ per siti inclusivi."
+      data-i18n-attr="content"
+      data-i18n-content="posts.accessibility.meta_desc"
+    />
+    <link
+      rel="canonical"
+      href="https://scaledia.net/articoli/accessibilita-web-guida-completa.html"
+    />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="theme-color" content="#0d6efd" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Accessibilità web: la guida completa – Scaledia"
+      data-i18n-attr="content"
+      data-i18n-content="posts.accessibility.og_title"
+    />
+    <meta
+      property="og:description"
+      content="Normative, principi WCAG, esempi, test e strumenti. Checklist e FAQ per rendere il tuo sito accessibile."
+      data-i18n-attr="content"
+      data-i18n-content="posts.accessibility.og_desc"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://scaledia.net/articoli/accessibilita-web-guida-completa.html"
+    />
+    <meta property="og:image" content="https://scaledia.net/assets/img/og/og-accessibilita-1200x630.jpg" />
+    <meta
+      property="og:image:alt"
+      content="Illustrazione sulla accessibilità web"
+      data-i18n-attr="content"
+      data-i18n-content="posts.accessibility.og_image_alt"
+    />
+    <meta property="og:site_name" content="Scaledia" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="article:section" content="Guide" />
+    <meta property="article:published_time" content="2025-08-17T11:30:00+02:00" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Accessibilità web: la guida completa – Scaledia"
+      data-i18n-attr="content"
+      data-i18n-content="posts.accessibility.twitter_title"
+    />
+    <meta
+      name="twitter:description"
+      content="Normative, principi WCAG, esempi, test e strumenti. Checklist e FAQ per rendere il tuo sito accessibile."
+      data-i18n-attr="content"
+      data-i18n-content="posts.accessibility.twitter_desc"
+    />
+    <meta name="twitter:image" content="https://scaledia.net/assets/img/og/og-accessibilita-1200x630.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Illustrazione sulla accessibilità web"
+      data-i18n-attr="content"
+      data-i18n-content="posts.accessibility.twitter_image_alt"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://app.enzuzo.com" crossorigin>
+    <link rel="dns-prefetch" href="//app.enzuzo.com">
+
+    <!-- Enzuzo Cookie Bar (CSS non-blocking) -->
+    <link rel="stylesheet"
+          href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"
+          media="print"
+          onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261">
+    </noscript>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/theme.min.css" />
+
+    <!-- JSON-LD: Breadcrumb + BlogPosting + FAQ + HowTo -->
+    <script type="application/ld+json">
+      {
+        "@context":"https://schema.org",
+        "@graph":[
+          {
+            "@type":"Organization",
+            "@id":"https://scaledia.net/#organization",
+            "name":"Scaledia",
+            "url":"https://scaledia.net/"
+          },
+          {
+            "@type":"WebSite",
+            "@id":"https://scaledia.net/#website",
+            "url":"https://scaledia.net/",
+            "name":"Scaledia",
+            "publisher":{"@id":"https://scaledia.net/#organization"},
+            "inLanguage":"it-IT"
+          },
+          {
+            "@type":"WebPage",
+            "@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#webpage",
+            "url":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html",
+            "name":"Accessibilità web: la guida completa – Scaledia",
+            "isPartOf":{"@id":"https://scaledia.net/#website"},
+            "breadcrumb":{"@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#breadcrumb"},
+            "primaryImageOfPage":{
+              "@type":"ImageObject",
+              "@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#primaryimage",
+              "url":"https://scaledia.net/assets/img/og/og-accessibilita-1200x630.jpg",
+              "contentUrl":"https://scaledia.net/assets/img/og/og-accessibilita-1200x630.jpg",
+              "width":1200,"height":630
+            },
+            "inLanguage":"it-IT"
+          },
+          {
+            "@type":"BreadcrumbList",
+            "@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#breadcrumb",
+            "itemListElement":[
+              {"@type":"ListItem","position":1,"name":"Home","item":"https://scaledia.net/"},
+              {"@type":"ListItem","position":2,"name":"Articoli","item":"https://scaledia.net/articoli.html"},
+              {"@type":"ListItem","position":3,"name":"Accessibilità web: la guida completa","item":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html"}
+            ]
+          },
+          {
+            "@type":"BlogPosting",
+            "@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#article",
+            "headline":"Accessibilità web: la guida completa",
+            "alternativeHeadline":"Normative, WCAG e pratiche per siti inclusivi",
+            "description":"Guida completa all’accessibilità web con principi WCAG, esempi pratici, strumenti di test e checklist operativa.",
+            "image":{"@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#primaryimage"},
+            "mainEntityOfPage":{"@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#webpage"},
+            "author":{"@type":"Person","name":"Scaledia"},
+            "publisher":{"@id":"https://scaledia.net/#organization"},
+            "datePublished":"2025-08-17T11:30:00+02:00",
+            "dateModified":"2025-08-17T11:30:00+02:00",
+            "articleSection":"Guide",
+            "keywords":["accessibilità web","WCAG","inclusività","usabilità","SEO"],
+            "inLanguage":"it-IT",
+            "isAccessibleForFree":true,
+            "url":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html"
+          },
+          {
+            "@type":"FAQPage",
+            "@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#faq",
+            "mainEntity":[
+              {"@type":"Question","name":"Cos’è l’accessibilità web?","acceptedAnswer":{"@type":"Answer","text":"L’accessibilità web è la pratica di progettare e sviluppare siti e applicazioni utilizzabili da quante più persone possibili, incluse persone con disabilità permanenti o situazionali."}},
+              {"@type":"Question","name":"Cosa sono le WCAG?","acceptedAnswer":{"@type":"Answer","text":"Le Web Content Accessibility Guidelines sono linee guida del W3C organizzate intorno ai principi Percepibile, Operabile, Comprensibile e Robusto (POUR) con livelli A, AA e AAA."}},
+              {"@type":"Question","name":"Come posso testare rapidamente un sito?","acceptedAnswer":{"@type":"Answer","text":"Usa strumenti come Lighthouse, axe DevTools e screen reader (NVDA/VoiceOver), verifica contrasto dei colori e la navigazione via tastiera per le aree interattive."}}
+            ],
+            "inLanguage":"it-IT",
+            "mainEntityOfPage":{"@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#webpage"}
+          },
+          {
+            "@type":"HowTo",
+            "@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#howto",
+            "name":"Checklist rapida per conformità WCAG AA",
+            "inLanguage":"it-IT",
+            "mainEntityOfPage":{"@id":"https://scaledia.net/articoli/accessibilita-web-guida-completa.html#webpage"},
+            "step":[
+              {"@type":"HowToStep","name":"Definisci struttura semantica e landmark ARIA"},
+              {"@type":"HowToStep","name":"Garantisci contrasto sufficiente e stati focus visibili"},
+              {"@type":"HowToStep","name":"Associa etichette ai controlli e testi alternativi alle immagini"},
+              {"@type":"HowToStep","name":"Abilita navigazione da tastiera e gestisci il focus"},
+              {"@type":"HowToStep","name":"Esegui test con strumenti automatici e con utenti"}
+            ]
+          }
+        ]
+      }
+    </script>
+
+  </head>
+  <body>
+      <a class="visually-hidden-focusable" href="#contenuto" data-i18n="skip">Salta al contenuto</a>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" aria-label="Navigazione principale" data-i18n-attr="aria-label" data-i18n-aria-label="nav.primary_aria">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="../index.html" data-i18n="site.brand"
+          >Scaledia.net</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#primaryNav"
+          aria-controls="primaryNav"
+          aria-expanded="false"
+          aria-label="Apri/chiudi navigazione"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="nav.toggler_label"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primaryNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="../index.html" data-i18n="nav.home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../articoli.html" data-i18n="nav.articles">Articoli</a></li>
+            <li class="nav-item"><a class="nav-link" href="../servizi.html" data-i18n="nav.services">Servizi</a></li>
+            <li class="nav-item"><a class="nav-link" href="../chi-siamo.html" data-i18n="nav.about">Chi siamo</a></li>
+            <li class="nav-item"><a class="nav-link" href="../contatti.html" data-i18n="nav.contact">Contatti</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="py-4 border-bottom" role="banner">
+      <nav class="container" aria-label="breadcrumb" data-i18n-attr="aria-label" data-i18n-aria-label="aria.breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="../index.html" data-i18n="nav.home">Home</a></li>
+          <li class="breadcrumb-item">
+            <a href="../articoli.html" data-i18n="nav.articles">Articoli</a>
+          </li>
+          <li
+            class="breadcrumb-item active"
+            aria-current="page"
+            data-i18n="posts.accessibility.breadcrumb"
+          >
+            Accessibilità web: la guida completa
+          </li>
+        </ol>
+        <h1 id="page-title" class="h2 mb-1" data-i18n="posts.accessibility.h1">
+          Accessibilità web: la guida completa
+        </h1>
+        <p class="text-muted mb-0" data-i18n="posts.accessibility.intro">
+          Normative, WCAG e best practice per progettare siti inclusivi, usabili e conformi.
+        </p>
+      </nav>
+    </header>
+
+    <main id="contenuto" class="py-4" aria-labelledby="page-title" tabindex="-1">
+      <div class="container">
+        <div class="row g-4">
+          <aside class="col-lg-3">
+            <nav
+              class="toc"
+              aria-label="Indice dell'articolo"
+              data-i18n-attr="aria-label"
+              data-i18n-aria-label="article.toc.aria_label"
+            >
+              <h2 class="h6" data-i18n="article.toc.heading">In questa guida</h2>
+              <ol class="list-unstyled small">
+                <li><a href="#panoramica" data-i18n="article.sections.overview">Panoramica</a></li>
+                <li>
+                  <a href="#fondamentali" data-i18n="posts.accessibility.toc.fundamentals"
+                    >Fondamentali e normative</a
+                  >
+                </li>
+                <li>
+                  <a href="#principi-pour" data-i18n="posts.accessibility.toc.wcag_principles"
+                    >Principi WCAG (POUR)</a
+                  >
+                </li>
+                <li>
+                  <a href="#audit-testing" data-i18n="posts.accessibility.toc.audit_testing_seo"
+                    >Audit, testing e SEO</a
+                  >
+                </li>
+                <li>
+                  <a href="#checklist" data-i18n="article.sections.checklist">Checklist rapida</a>
+                </li>
+                <li><a href="#faq" data-i18n="article.sections.faq">FAQ</a></li>
+              </ol>
+            </nav>
+          </aside>
+          <section class="col-lg-9">
+            <div class="mb-3 d-flex gap-2 align-items-center flex-wrap">
+              <span
+                class="badge rounded-pill text-bg-light text-secondary lead-badge"
+                data-i18n="articles.categories.accessibilita"
+                >Accessibilità</span
+              >
+              <span class="text-muted small"
+                ><span data-i18n="article.meta.published_on">Pubblicato il</span>
+                <time datetime="2025-08-17">17 ago 2025</time> ·
+                <span data-i18n="article.meta.reading_time">~12 min</span></span
+              >
+            </div>
+
+            <section id="panoramica" class="mb-4">
+              <h2 class="h4" data-i18n="article.sections.overview">Panoramica</h2>
+              <p data-i18n-html="posts.accessibility.sections.overview_p_html">
+                L’accessibilità web garantisce che siti e applicazioni siano utilizzabili da tutte
+                le persone, incluse quelle con disabilità visive, uditive, motorie e cognitive. In
+                questa guida vedrai il quadro normativo, i principi WCAG, esempi pratici di
+                implementazione e come testare il tuo progetto per raggiungere almeno la conformità
+                <strong>WCAG 2.2 livello AA</strong>.
+              </p>
+            </section>
+
+            <section id="fondamentali" class="mb-4">
+              <h2 class="h4" data-i18n="posts.accessibility.h2.fundamentals">
+                Fondamentali e normative
+              </h2>
+              <p data-i18n-html="posts.accessibility.sections.fundamentals_intro_html">
+                Le <strong>WCAG</strong> (Web Content Accessibility Guidelines) definiscono i
+                requisiti tecnici per contenuti accessibili. In Europa la
+                <strong>EN 301 549</strong> recepisce le WCAG per i servizi digitali pubblici; in
+                molti Paesi esistono anche leggi nazionali e, in contesti extra-UE, riferimenti come
+                <strong>ADA</strong> e <strong>Section 508</strong>.
+              </p>
+              <ul>
+                <li data-i18n-html="posts.accessibility.sections.fundamentals_bullets.li1_html">
+                  <strong>Ambito:</strong> contenuti, interfacce, documenti, multimedia.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.fundamentals_bullets.li2_html">
+                  <strong>Livelli:</strong> A (base), AA (consigliato), AAA (avanzato).
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.fundamentals_bullets.li3_html">
+                  <strong>Benefici:</strong> inclusione, migliore UX, vantaggi SEO, riduzione rischi
+                  legali.
+                </li>
+              </ul>
+              <pre><code class="language-html" data-i18n="posts.code.a11y_landmarks_html">&lt;!-- Esempio: struttura semantica e landmark --&gt;
+&lt;header role="banner"&gt;...&lt;/header&gt;
+&lt;nav aria-label="Breadcrumb"&gt;...&lt;/nav&gt;
+&lt;main id="contenuto" role="main" tabindex="-1"&gt;...&lt;/main&gt;
+&lt;footer role="contentinfo"&gt;...&lt;/footer&gt;
+</code></pre>
+            </section>
+
+            <section id="principi-pour" class="mb-4">
+              <h2 class="h4" data-i18n="posts.accessibility.h2.wcag_principles">
+                Principi WCAG (POUR)
+              </h2>
+              <ul>
+                <li data-i18n-html="posts.accessibility.sections.wcag_bullets.li1_html">
+                  <strong>Percepibile:</strong> testo alternativo per immagini, sottotitoli per
+                  video, sufficiente contrasto colore.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.wcag_bullets.li2_html">
+                  <strong>Operabile:</strong> tutto controllabile da tastiera, focus visibile,
+                  evitare trappole di focus.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.wcag_bullets.li3_html">
+                  <strong>Comprensibile:</strong> linguaggio semplice, etichette chiare, messaggi di
+                  errore utili.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.wcag_bullets.li4_html">
+                  <strong>Robusto:</strong> markup valido, ruoli/attributi ARIA corretti,
+                  compatibilità con assistive technologies.
+                </li>
+              </ul>
+              <pre><code class="language-html" data-i18n="posts.code.a11y_form_html">&lt;!-- Form accessibile: label, help text, errori --&gt;
+&lt;form novalidate aria-describedby="f-help"&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="email" class="form-label"&gt;Email&lt;/label&gt;
+    &lt;input id="email" name="email" type="email" class="form-control" aria-describedby="email-help email-err" required&gt;
+    &lt;div id="email-help" class="form-text"&gt;Usa un indirizzo valido.&lt;/div&gt;
+    &lt;div id="email-err" class="invalid-feedback" role="alert"&gt;Inserisci una email valida.&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn-primary"&gt;Invia&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+              <pre><code class="language-css" data-i18n="posts.code.a11y_focus_css">/* Focus visibile e contrastato */
+:focus { outline: 3px solid #0d6efd; outline-offset: 2px; }
+
+/* Media prefers-reduced-motion già rispettato nel tema */
+</code></pre>
+            </section>
+
+            <section id="audit-testing" class="mb-4">
+              <h2 class="h4" data-i18n="posts.accessibility.h2.audit_testing_seo">
+                Audit, testing e SEO
+              </h2>
+              <p data-i18n-html="posts.accessibility.sections.audit_intro_html">
+                Integra l’accessibilità nel ciclo di sviluppo: design system con componenti
+                accessibili, linting, test automatici e manuali.
+              </p>
+              <ul>
+                <li data-i18n-html="posts.accessibility.sections.audit_bullets.li1_html">
+                  <strong>Strumenti rapidi:</strong> Lighthouse, axe DevTools, WAVE, Color Contrast
+                  Analyser.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.audit_bullets.li2_html">
+                  <strong>Screen reader:</strong> NVDA/JAWS (Windows), VoiceOver (macOS/iOS),
+                  TalkBack (Android).
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.audit_bullets.li3_html">
+                  <strong>Test tastiera:</strong> Tab/Shift+Tab per raggiungere tutti i controlli;
+                  usa <code>Skip to content</code> e gestisci il focus dopo modali.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.audit_bullets.li4_html">
+                  <strong>SEO:</strong> semantica, heading gerarchici e alternative text migliorano
+                  findability e rich snippet.
+                </li>
+              </ul>
+              <pre><code class="language-js" data-i18n="posts.code.a11y_modal_focus_js">// Gestione focus su modale Bootstrap come esempio
+const modalEl = document.getElementById('myModal');
+modalEl?.addEventListener('shown.bs.modal', () => {
+  modalEl.querySelector('[autofocus]')?.focus();
+});
+</code></pre>
+            </section>
+
+            <section id="checklist" class="mb-4">
+              <h2 class="h4" data-i18n="article.sections.checklist">Checklist rapida</h2>
+              <ul>
+                <li data-i18n-html="posts.accessibility.sections.checklist.li1_html">
+                  Contrasto testo/sfondo conforme (almeno 4.5:1, 3:1 per testo grande).
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.checklist.li2_html">
+                  Navigazione solo tastiera possibile e focus sempre visibile.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.checklist.li3_html">
+                  Immagini con <code>alt</code> descrittivo; decorative con <code>alt=""</code>.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.checklist.li4_html">
+                  Form con <code>&lt;label&gt;</code> associati e messaggi d’errore utili.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.checklist.li5_html">
+                  Heading e landmark semantici; nessun salto di livello ingiustificato.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.checklist.li6_html">
+                  Contenuti non dipendono solo dal colore; stati forniti anche testualmente.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.checklist.li7_html">
+                  Componenti interattivi con ruoli/attributi ARIA corretti e nome accessibile.
+                </li>
+                <li data-i18n-html="posts.accessibility.sections.checklist.li8_html">
+                  Preferenze utente rispettate (reduced motion, zoom/resize, tema contrasto).
+                </li>
+              </ul>
+            </section>
+
+            <section id="faq" class="mb-4">
+              <h2 class="h4" data-i18n="article.sections.faq">FAQ</h2>
+              <details class="mb-2">
+                <summary class="fw-semibold" data-i18n="posts.accessibility.faq.q1">
+                  Qual è la differenza tra usabilità e accessibilità?
+                </summary>
+                <p class="mb-0" data-i18n="posts.accessibility.faq.a1">
+                  L’usabilità riguarda l’efficacia ed efficienza per l’utente medio; l’accessibilità
+                  garantisce che persone con diverse abilità possano comunque usare il prodotto.
+                  Sono complementari.
+                </p>
+              </details>
+              <details class="mb-2">
+                <summary class="fw-semibold" data-i18n="posts.accessibility.faq.q2">
+                  Devo rispettare sempre il livello AAA?
+                </summary>
+                <p class="mb-0" data-i18n="posts.accessibility.faq.a2">
+                  No. Il livello raccomandato è AA. Il livello AAA è spesso non praticabile per
+                  tutti i contenuti; valuta caso per caso.
+                </p>
+              </details>
+              <details>
+                <summary class="fw-semibold" data-i18n="posts.accessibility.faq.q3">
+                  Quanto costa rendere accessibile un sito?
+                </summary>
+                <p class="mb-0" data-i18n="posts.accessibility.faq.a3">
+                  Integrare l’accessibilità fin dall’inizio costa meno che correggere in
+                  retrospettiva. Prevedi audit, formazione e componenti riutilizzabili per ridurre i
+                  costi.
+                </p>
+              </details>
+            </section>
+
+            <div class="share-article my-4">
+              <p class="text-muted small mb-2">Condividi:</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-outline-secondary btn-sm" data-share="whatsapp" aria-label="Condividi su WhatsApp">WhatsApp</a>
+                <a class="btn btn-outline-secondary btn-sm" data-share="telegram" aria-label="Condividi su Telegram">Telegram</a>
+                <a class="btn btn-outline-secondary btn-sm" data-share="facebook" aria-label="Condividi su Facebook">Facebook</a>
+                <a class="btn btn-outline-secondary btn-sm" data-share="linkedin" aria-label="Condividi su LinkedIn">LinkedIn</a>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-share="native" aria-label="Condividi">Condividi</button>
+              </div>
+            </div>
+            <hr class="my-4" />
+
+            <section id="commenti" class="my-5">
+              <h2 class="h4 mb-3">Commenti</h2>
+              <div id="commentsNotice" class="alert alert-info small" role="note">
+                I commenti sono moderati tramite Cusdis e hanno il solo scopo di arricchire l’articolo: resta in tema e aggiungi valore. Grazie!
+              </div>
+              <div
+                id="cusdis_thread"
+                class="mb-4"
+                data-host="https://cusdis.com"
+                data-app-id=""
+                data-page-id=""
+                data-page-url=""
+                data-page-title=""
+                data-lang="it"
+              ></div>
+            </section>
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                var el = document.getElementById('cusdis_thread');
+                if (!el) return;
+                var doc = document;
+                var appId = window.CUSDIS_APP_ID || el.getAttribute('data-app-id') || '';
+                if (!appId) {
+                  try { el.parentElement.classList.add('d-none'); } catch (_) {}
+                  return;
+                }
+                try { el.parentElement.classList.remove('d-none'); } catch (_) {}
+                var canon = doc.querySelector('link[rel=\"canonical\"]');
+                var url = (canon && canon.href) || (location.origin ? location.origin + location.pathname : location.href);
+                var title = (doc.getElementById('page-title') && doc.getElementById('page-title').textContent) || doc.title;
+                el.setAttribute('data-app-id', appId);
+                el.setAttribute('data-host', 'https://cusdis.com');
+                el.setAttribute('data-page-url', url);
+                el.setAttribute('data-page-id', url);
+                el.setAttribute('data-page-title', title);
+                el.setAttribute('data-lang', (doc.documentElement.getAttribute('lang') || 'it').split('-')[0]);
+                var theme = (doc.documentElement.getAttribute('data-bs-theme') === 'dark') ? 'dark' : 'light';
+                el.setAttribute('data-theme', theme);
+                if (!doc.querySelector('script[src*=\"cusdis.com/js/cusdis.es.js\"]')) {
+                  var s = doc.createElement('script'); s.src = 'https://cusdis.com/js/cusdis.es.js'; s.async = true; s.defer = true; doc.body.appendChild(s);
+                }
+              });
+            </script>
+            <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+            <ul class="list-inline small text-muted">
+              <li class="list-inline-item">
+                <strong data-i18n="article.meta.category_label">Categoria:</strong>
+                <a
+                  href="../articoli.html?categoria=accessibilita"
+                  data-i18n="articles.categories.accessibilita"
+                  >Accessibilità</a
+                >
+              </li>
+              <li class="list-inline-item">
+                <span data-i18n="article.meta.updated_label">Aggiornato:</span>
+                <time datetime="2025-08-17">17 ago 2025</time>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-4 border-top" role="contentinfo">
+      <div
+        class="container d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3"
+      >
+        <small class="text-muted"
+          >&copy; <time id="year" datetime="2025">2025</time> Scaledia</small
+        >
+        <nav
+          aria-label="Link social"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="footer.social_aria"
+        >
+          <a
+            class="text-muted me-3"
+            href="https://github.com/CrescenzoSorrentino"
+            data-i18n="social.github"
+            >GitHub</a
+          >
+          <a
+            class="text-muted"
+            href="https://www.linkedin.com/in/crescenzo-sorrentino-989808354"
+            data-i18n="social.linkedin"
+            >LinkedIn</a
+          >
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+      <script src="/js/app.bundle.min.js" defer></script>
+      <script defer src="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"></script>
+  </body>
+</html>

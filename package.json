@@ -1,0 +1,14 @@
+{
+  "name": "bootstrapScaledia",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static site – code formatting setup",
+  "scripts": {
+    "format": "npx prettier --write \"**/*.{html,css,js,json,md}\"",
+    "format:check": "npx prettier --check \"**/*.{html,css,js,json,md}\"",
+    "lint:i18n": "node tools/check-i18n.js",
+    "i18n:check": "node tools/check-i18n.js",
+    "i18n:sort": "node tools/sort-i18n.js",
+    "check:articles": "node tools/check-article-metadata.js"
+  }
+}

@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title data-i18n="posts.flexbox.title_tag">
+      Flexbox vs CSS Grid: quando usare l’uno o l’altra – Scaledia
+    </title>
+    <meta
+      name="description"
+      content="Confronto pratico tra Flexbox e CSS Grid: differenze, casi d’uso, pattern riutilizzabili, esempi di codice, accessibilità e performance per layout responsive."
+      data-i18n-attr="content"
+      data-i18n-content="posts.flexbox.meta_desc"
+    />
+    <link rel="canonical" href="https://scaledia.net/articoli/flexbox-vs-grid.html" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="theme-color" content="#0d6efd" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Flexbox vs CSS Grid: quando usare l’uno o l’altra – Scaledia"
+      data-i18n-attr="content"
+      data-i18n-content="posts.flexbox.og_title"
+    />
+    <meta
+      property="og:description"
+      content="Differenze, casi d’uso ed esempi per scegliere tra Flexbox e Grid nei layout responsive."
+      data-i18n-attr="content"
+      data-i18n-content="posts.flexbox.og_desc"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://scaledia.net/articoli/flexbox-vs-grid.html" />
+    <meta property="og:image" content="https://scaledia.net/assets/img/og/og-flexbox-vs-grid-1200x630.jpg" />
+    <meta
+      property="og:image:alt"
+      content="Illustrazione dell'articolo"
+      data-i18n-attr="content"
+      data-i18n-content="posts.flexbox.og_image_alt"
+    />
+    <meta property="og:site_name" content="Scaledia" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="article:section" content="CSS" />
+    <meta property="article:published_time" content="2025-08-17T11:02:00+02:00" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Flexbox vs CSS Grid: quando usare l’uno o l’altra – Scaledia"
+      data-i18n-attr="content"
+      data-i18n-content="posts.flexbox.twitter_title"
+    />
+    <meta
+      name="twitter:description"
+      content="Differenze, casi d’uso ed esempi per scegliere tra Flexbox e Grid nei layout responsive."
+      data-i18n-attr="content"
+      data-i18n-content="posts.flexbox.twitter_desc"
+    />
+    <meta name="twitter:image" content="https://scaledia.net/assets/img/og/og-flexbox-vs-grid-1200x630.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Illustrazione dell'articolo"
+      data-i18n-attr="content"
+      data-i18n-content="posts.flexbox.twitter_image_alt"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://app.enzuzo.com" crossorigin>
+    <link rel="dns-prefetch" href="//app.enzuzo.com">
+
+    <!-- Enzuzo Cookie Bar (CSS non-blocking) -->
+    <link rel="stylesheet"
+          href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"
+          media="print"
+          onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261">
+    </noscript>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/theme.min.css" />
+
+    <!-- JSON-LD: Breadcrumb + BlogPosting + FAQ + HowTo -->
+    <script type="application/ld+json">
+      {
+        "@context":"https://schema.org",
+        "@graph":[
+          {"@type":"Organization","@id":"https://scaledia.net/#organization","name":"Scaledia","url":"https://scaledia.net/"},
+          {"@type":"WebSite","@id":"https://scaledia.net/#website","url":"https://scaledia.net/","name":"Scaledia","publisher":{"@id":"https://scaledia.net/#organization"},"inLanguage":"it-IT"},
+          {
+            "@type":"WebPage",
+            "@id":"https://scaledia.net/articoli/flexbox-vs-grid.html#webpage",
+            "url":"https://scaledia.net/articoli/flexbox-vs-grid.html",
+            "name":"Flexbox vs CSS Grid: quando usare l’uno o l’altra – Scaledia",
+            "isPartOf":{"@id":"https://scaledia.net/#website"},
+            "breadcrumb":{"@id":"https://scaledia.net/articoli/flexbox-vs-grid.html#breadcrumb"},
+            "primaryImageOfPage":{
+              "@type":"ImageObject","@id":"https://scaledia.net/articoli/flexbox-vs-grid.html#primaryimage",
+              "url":"https://scaledia.net/assets/img/og/og-flexbox-vs-grid-1200x630.jpg",
+              "contentUrl":"https://scaledia.net/assets/img/og/og-flexbox-vs-grid-1200x630.jpg",
+              "width":1200,"height":630
+            },
+            "inLanguage":"it-IT"
+          },
+          {
+            "@type":"BreadcrumbList",
+            "@id":"https://scaledia.net/articoli/flexbox-vs-grid.html#breadcrumb",
+            "itemListElement":[
+              {"@type":"ListItem","position":1,"name":"Home","item":"https://scaledia.net/"},
+              {"@type":"ListItem","position":2,"name":"Articoli","item":"https://scaledia.net/articoli.html"},
+              {"@type":"ListItem","position":3,"name":"Flexbox vs CSS Grid","item":"https://scaledia.net/articoli/flexbox-vs-grid.html"}
+            ]
+          },
+          {
+            "@type":"BlogPosting",
+            "@id":"https://scaledia.net/articoli/flexbox-vs-grid.html#article",
+            "headline":"Flexbox vs CSS Grid: quando usare l’uno o l’altra",
+            "alternativeHeadline":"Casi d’uso pratici, pattern e best practice per layout responsive",
+            "description":"Confronto pratico tra Flexbox e CSS Grid: differenze, casi d’uso e pattern riutilizzabili.",
+            "image":{"@id":"https://scaledia.net/articoli/flexbox-vs-grid.html#primaryimage"},
+            "mainEntityOfPage":{"@id":"https://scaledia.net/articoli/flexbox-vs-grid.html#webpage"},
+            "author":{"@type":"Person","name":"Scaledia"},
+            "publisher":{"@id":"https://scaledia.net/#organization"},
+            "datePublished":"2025-08-17T11:02:00+02:00",
+            "dateModified":"2025-08-17T11:02:00+02:00",
+            "articleSection":"CSS",
+            "keywords":["CSS","Flexbox","Grid","layout","responsive"],
+            "inLanguage":"it-IT",
+            "isAccessibleForFree":true,
+            "url":"https://scaledia.net/articoli/flexbox-vs-grid.html"
+          }
+        ]
+      }
+    </script>
+
+  </head>
+  <body>
+      <a class="visually-hidden-focusable" href="#contenuto" data-i18n="skip">Salta al contenuto</a>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" aria-label="Navigazione principale" data-i18n-attr="aria-label" data-i18n-aria-label="nav.primary_aria">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="../index.html" data-i18n="site.brand"
+          >Scaledia.net</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#primaryNav"
+          aria-controls="primaryNav"
+          aria-expanded="false"
+          aria-label="Apri/chiudi navigazione"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="nav.toggler_label"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primaryNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html" data-i18n="nav.home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../articoli.html" data-i18n="nav.articles">Articoli</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../servizi.html" data-i18n="nav.services">Servizi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../chi-siamo.html" data-i18n="nav.about">Chi siamo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../contatti.html" data-i18n="nav.contact">Contatti</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="py-4 border-bottom" role="banner">
+      <nav class="container" aria-label="breadcrumb" data-i18n-attr="aria-label" data-i18n-aria-label="aria.breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="../index.html" data-i18n="nav.home">Home</a></li>
+          <li class="breadcrumb-item">
+            <a href="../articoli.html" data-i18n="nav.articles">Articoli</a>
+          </li>
+          <li
+            class="breadcrumb-item active"
+            aria-current="page"
+            data-i18n="posts.flexbox.breadcrumb"
+          >
+            Flexbox vs CSS Grid
+          </li>
+        </ol>
+        <h1 id="page-title" class="h2 mb-1" data-i18n="posts.flexbox.h1">
+          Flexbox vs CSS Grid: quando usare l’uno o l’altra
+        </h1>
+        <p class="text-muted mb-0" data-i18n="posts.flexbox.intro">
+          Differenze, casi d’uso e pattern per scegliere lo strumento giusto in ogni layout.
+        </p>
+      </nav>
+    </header>
+
+    <main id="contenuto" class="py-4" aria-labelledby="page-title" tabindex="-1">
+      <div class="container">
+        <div class="row g-4">
+          <aside class="col-lg-3">
+            <nav
+              class="toc"
+              aria-label="Indice dell'articolo"
+              data-i18n-attr="aria-label"
+              data-i18n-aria-label="article.toc.aria_label"
+            >
+              <h2 class="h6" data-i18n="article.toc.heading">In questa guida</h2>
+              <ol class="list-unstyled small">
+                <li><a href="#panoramica" data-i18n="article.sections.overview">Panoramica</a></li>
+                <li>
+                  <a href="#quando-usare" data-i18n="posts.flexbox.toc.when"
+                    >Quando usare Flexbox o Grid</a
+                  >
+                </li>
+                <li>
+                  <a href="#pattern-comuni" data-i18n="posts.flexbox.toc.patterns"
+                    >Pattern comuni</a
+                  >
+                </li>
+                <li>
+                  <a href="#performance-accessibilita" data-i18n="posts.flexbox.toc.perf_a11y"
+                    >Performance e accessibilità</a
+                  >
+                </li>
+                <li>
+                  <a href="#checklist" data-i18n="article.sections.checklist">Checklist rapida</a>
+                </li>
+                <li><a href="#faq" data-i18n="article.sections.faq">FAQ</a></li>
+              </ol>
+            </nav>
+          </aside>
+          <section class="col-lg-9">
+            <div class="mb-3 d-flex gap-2 align-items-center flex-wrap">
+              <span
+                class="badge rounded-pill text-bg-light text-secondary lead-badge"
+                data-i18n="articles.categories.css"
+                >CSS</span
+              >
+              <span class="text-muted small"
+                ><span data-i18n="article.meta.published_on">Pubblicato il</span>
+                <time datetime="2025-08-17">17 ago 2025</time> ·
+                <span data-i18n="article.meta.reading_time">~12 min</span></span
+              >
+            </div>
+
+            <section id="panoramica" class="mb-4">
+              <h2 class="h4" data-i18n="article.sections.overview">Panoramica</h2>
+              <p data-i18n="posts.flexbox.sections.overview_p">
+                Flexbox e CSS Grid sono i due sistemi di layout moderni del web. Flexbox eccelle
+                nella distribuzione e nell’allineamento lungo una sola dimensione (riga o colonna),
+                mentre Grid è progettato per layout bidimensionali con righe e colonne. In questa
+                guida capirai quando scegliere l’uno o l’altra, con esempi pratici e pattern
+                riutilizzabili.
+              </p>
+            </section>
+
+            <section id="quando-usare" class="mb-4">
+              <h2 class="h4" data-i18n="posts.flexbox.h2.when">Quando usare Flexbox o Grid</h2>
+              <p data-i18n-html="posts.flexbox.sections.when.flex_intro_html">
+                Usa <strong>Flexbox</strong> quando devi:
+              </p>
+              <ul>
+                <li data-i18n-html="posts.flexbox.sections.when.flex_bullets.li1_html">
+                  Allineare elementi in <em>una dimensione</em> (es. navbar, toolbar, chip)
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.when.flex_bullets.li2_html">
+                  Distribuire spazio con <code>gap</code>, <code>justify-content</code>,
+                  <code>align-items</code>
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.when.flex_bullets.li3_html">
+                  Gestire il wrapping orizzontale di card con larghezze flessibili
+                </li>
+              </ul>
+              <p data-i18n-html="posts.flexbox.sections.when.grid_intro_html">
+                Usa <strong>Grid</strong> quando ti serve:
+              </p>
+              <ul>
+                <li data-i18n-html="posts.flexbox.sections.when.grid_bullets.li1_html">
+                  Un layout <em>bidimensionale</em> con righe e colonne esplicite
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.when.grid_bullets.li2_html">
+                  Allineare aree con <code>grid-template-areas</code> o creare griglie responsive
+                  con <code>minmax()</code> e <code>auto-fit</code>
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.when.grid_bullets.li3_html">
+                  Controllo preciso su spaziature e allineamenti sia orizzontali che verticali
+                </li>
+              </ul>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <h3 class="h6" data-i18n="posts.flexbox.sections.when.example_flex_h3">
+                    Esempio Flexbox (righe di card)
+                  </h3>
+                  <pre><code class="language-css" data-i18n="posts.code.flex_cards_css">.cards { display:flex; flex-wrap:wrap; gap:1rem; }
+.card { flex:1 1 260px; /* crescita, riduzione, base */ }
+</code></pre>
+                </div>
+                <div class="col-md-6">
+                  <h3 class="h6" data-i18n="posts.flexbox.sections.when.example_grid_h3">
+                    Esempio Grid (gallery responsive)
+                  </h3>
+                  <pre><code class="language-css" data-i18n="posts.code.grid_gallery_css">.gallery { display:grid; gap:1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+</code></pre>
+                </div>
+              </div>
+            </section>
+
+            <section id="pattern-comuni" class="mb-4">
+              <h2 class="h4" data-i18n="posts.flexbox.h2.patterns">Pattern comuni</h2>
+              <ul>
+                <li data-i18n-html="posts.flexbox.sections.patterns_bullets.li1_html">
+                  <strong>Navbar/Toolbar</strong>: Flexbox per allineare logo, menu e CTA; usa
+                  <code>gap</code> e <code>justify-content: space-between</code>.
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.patterns_bullets.li2_html">
+                  <strong>Card grid</strong>: Grid per griglie responsive regolari; Flexbox per
+                  liste con larghezze fluide non allineate a colonne fisse.
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.patterns_bullets.li3_html">
+                  <strong>Media object</strong> (immagine + testo): Flexbox con
+                  <code>align-items</code> e gestione del wrapping.
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.patterns_bullets.li4_html">
+                  <strong>Layout di pagina</strong>: Grid per header, sidebar, main, footer con
+                  <code>grid-template-areas</code>.
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.patterns_bullets.li5_html">
+                  <strong>Allineamenti verticali complessi</strong>: Grid con
+                  <code>align-content</code>/<code>justify-content</code> a livello di griglia.
+                </li>
+              </ul>
+              <pre><code class="language-css" data-i18n="posts.code.flex_grid_patterns_css">/* Layout base di pagina con Grid */
+.page { display:grid; min-height:100dvh; gap:1rem;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+header{ grid-area:header } .sidebar{ grid-area:sidebar }
+main{ grid-area:main } footer{ grid-area:footer }
+
+/* Media object con Flexbox */
+.media { display:flex; gap:1rem; align-items:flex-start }
+.media img { width:120px; flex:0 0 auto; }
+.media .content { flex:1 1 auto }
+</code></pre>
+            </section>
+
+            <section id="performance-accessibilita" class="mb-4">
+              <h2 class="h4" data-i18n="posts.flexbox.h2.perf_a11y">Performance e accessibilità</h2>
+              <p data-i18n-html="posts.flexbox.sections.perf_intro_html">
+                Entrambi i moduli sono performanti nei browser moderni. Evita annidamenti profondi,
+                preferisci <code>gap</code> agli spaziatori e mantieni l’ordine logico del DOM:
+                usare <code>order</code> (Flexbox) o posizionamenti complessi (Grid) che alterano il
+                flusso può disorientare chi usa tecnologie assistive.
+              </p>
+              <ul>
+                <li data-i18n-html="posts.flexbox.sections.perf_bullets.li1_html">
+                  <strong>Responsive</strong>: combina Grid/Flex con container queries o media
+                  queries.
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.perf_bullets.li2_html">
+                  <strong>Compatibilità</strong>: fallback semplici (es. una colonna) se servono
+                  browser datati.
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.perf_bullets.li3_html">
+                  <strong>Mantenibilità</strong>: usa variabili CSS, classi utilitarie e limita le
+                  eccezioni per componente.
+                </li>
+              </ul>
+            </section>
+
+            <section id="checklist" class="mb-4">
+              <h2 class="h4" data-i18n="article.sections.checklist">Checklist rapida</h2>
+              <ul>
+                <li data-i18n-html="posts.flexbox.sections.checklist.li1_html">
+                  Il layout è mono‑dimensionale? Usa Flexbox; altrimenti valuta Grid.
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.checklist.li2_html">
+                  Serve una griglia regolare e allineata? Grid con <code>repeat()</code> +
+                  <code>minmax()</code>.
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.checklist.li3_html">
+                  Allineamenti e distribuzione su una riga/colonna? Flexbox con <code>gap</code>.
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.checklist.li4_html">
+                  Ordine DOM coerente con la lettura, evita riordinamenti artificiali.
+                </li>
+                <li data-i18n-html="posts.flexbox.sections.checklist.li5_html">
+                  Testa i breakpoints e l’adattamento dei contenuti reali.
+                </li>
+              </ul>
+            </section>
+
+            <section id="faq" class="mb-4">
+              <h2 class="h4" data-i18n="article.sections.faq">FAQ</h2>
+              <details class="mb-2">
+                <summary class="fw-semibold" data-i18n="posts.flexbox.faq.q1">
+                  Meglio Flexbox o Grid per layout a colonne variabili?
+                </summary>
+                <p class="mb-0" data-i18n="posts.flexbox.faq.a1">
+                  Se il layout è bidimensionale e le colonne devono allinearsi a righe coerenti,
+                  Grid è preferibile. Per righe di card fluide senza righe allineate, Flexbox basta.
+                </p>
+              </details>
+              <details class="mb-2">
+                <summary class="fw-semibold" data-i18n="posts.flexbox.faq.q2">
+                  Posso combinarli nello stesso componente?
+                </summary>
+                <p class="mb-0" data-i18n="posts.flexbox.faq.a2">
+                  Sì: ad esempio una card list in Grid, e l’interno di ogni card in Flexbox per
+                  centrare e distribuire elementi.
+                </p>
+              </details>
+              <details>
+                <summary class="fw-semibold" data-i18n="posts.flexbox.faq.q3">
+                  Subgrid è supportato?
+                </summary>
+                <p class="mb-0" data-i18n-html="posts.flexbox.faq.a3">
+                  Il supporto a <code>subgrid</code> è ormai diffuso nei browser moderni e aiuta ad
+                  allineare elementi figli alla griglia del contenitore. Valuta un fallback semplice
+                  se necessario.
+                </p>
+              </details>
+            </section>
+
+            <div class="share-article my-4">
+              <p class="text-muted small mb-2">Condividi:</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-outline-secondary btn-sm" data-share="whatsapp" aria-label="Condividi su WhatsApp">WhatsApp</a>
+                <a class="btn btn-outline-secondary btn-sm" data-share="telegram" aria-label="Condividi su Telegram">Telegram</a>
+                <a class="btn btn-outline-secondary btn-sm" data-share="facebook" aria-label="Condividi su Facebook">Facebook</a>
+                <a class="btn btn-outline-secondary btn-sm" data-share="linkedin" aria-label="Condividi su LinkedIn">LinkedIn</a>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-share="native" aria-label="Condividi">Condividi</button>
+              </div>
+            </div>
+            <hr class="my-4" />
+
+            <section id="commenti" class="my-5">
+              <h2 class="h4 mb-3">Commenti</h2>
+              <div id="commentsNotice" class="alert alert-info small" role="note">
+                I commenti sono moderati tramite Cusdis e hanno il solo scopo di arricchire l’articolo: resta in tema e aggiungi valore. Grazie!
+              </div>
+              <div
+                id="cusdis_thread"
+                class="mb-4"
+                data-host="https://cusdis.com"
+                data-app-id=""
+                data-page-id=""
+                data-page-url=""
+                data-page-title=""
+                data-lang="it"
+              ></div>
+            </section>
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                var el = document.getElementById('cusdis_thread');
+                if (!el) return;
+                var doc = document;
+                var appId = window.CUSDIS_APP_ID || el.getAttribute('data-app-id') || '';
+                if (!appId) {
+                  try { el.parentElement.classList.add('d-none'); } catch (_) {}
+                  return;
+                }
+                try { el.parentElement.classList.remove('d-none'); } catch (_) {}
+                var canon = doc.querySelector('link[rel="canonical"]');
+                var url = (canon && canon.href) || (location.origin ? location.origin + location.pathname : location.href);
+                var title = (doc.getElementById('page-title') && doc.getElementById('page-title').textContent) || doc.title;
+                el.setAttribute('data-app-id', appId);
+                el.setAttribute('data-host', 'https://cusdis.com');
+                el.setAttribute('data-page-url', url);
+                el.setAttribute('data-page-id', url);
+                el.setAttribute('data-page-title', title);
+                el.setAttribute('data-lang', (doc.documentElement.getAttribute('lang') || 'it').split('-')[0]);
+                var theme = (doc.documentElement.getAttribute('data-bs-theme') === 'dark') ? 'dark' : 'light';
+                el.setAttribute('data-theme', theme);
+                if (!doc.querySelector('script[src*="cusdis.com/js/cusdis.es.js"]')) {
+                  var s = doc.createElement('script'); s.src = 'https://cusdis.com/js/cusdis.es.js'; s.async = true; s.defer = true; doc.body.appendChild(s);
+                }
+              });
+            </script>
+            <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+            <ul class="list-inline small text-muted">
+              <li class="list-inline-item">
+                <strong data-i18n="article.meta.category_label">Categoria:</strong>
+                <a href="../articoli.html?categoria=css" data-i18n="articles.categories.css">CSS</a>
+              </li>
+              <li class="list-inline-item">
+                <span data-i18n="article.meta.updated_label">Aggiornato:</span>
+                <time datetime="2025-08-17">17 ago 2025</time>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-4 border-top" role="contentinfo">
+      <div
+        class="container d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3"
+      >
+        <small class="text-muted"
+          >&copy; <time id="year" datetime="2025">2025</time> Scaledia</small
+        >
+        <nav
+          aria-label="Link social"
+          data-i18n-attr="aria-label"
+          data-i18n-aria-label="footer.social_aria"
+        >
+          <a
+            class="text-muted me-3"
+            href="https://github.com/CrescenzoSorrentino"
+            data-i18n="social.github"
+            >GitHub</a
+          >
+          <a
+            class="text-muted"
+            href="https://www.linkedin.com/in/crescenzo-sorrentino-989808354"
+            data-i18n="social.linkedin"
+            >LinkedIn</a
+          >
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // anno footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+      <script src="/js/app.bundle.min.js" defer></script>
+      <script defer src="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"></script>
+  </body>
+</html>
