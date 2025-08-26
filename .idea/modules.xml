@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Scaledia.iml" filepath="$PROJECT_DIR$/.idea/Scaledia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Scaledia.net.iml" filepath="$PROJECT_DIR$/.idea/Scaledia.net.iml" />
     </modules>
   </component>
 </project>
