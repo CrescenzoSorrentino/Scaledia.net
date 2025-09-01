@@ -14,7 +14,7 @@
       "title": "What you’ll find on Scaledia"
     },
     "intro": "Our mission and values for a more accessible, fast and maintainable web.",
-    "meta_desc": "Scaledia offers articles and services for consulting, training and web development on HTML, CSS and JavaScript, focusing on accessibility and performance.",
+    "meta_desc": "About Scaledia: consulting, training and web development on HTML, CSS and JavaScript with a focus on accessibility and performance.",
     "mission": {
       "lead_html": "On Scaledia we share practical knowledge on <strong>HTML</strong>, <strong>CSS</strong> and <strong>JavaScript</strong>, with reusable examples and best practices.",
       "point1_html": "Make complex concepts <strong>simple</strong> and concrete.",
@@ -26,7 +26,7 @@
     "og_image_alt": "Scaledia: guides and tutorials on HTML, CSS and JavaScript",
     "og_title": "About – Scaledia",
     "title": "About us",
-    "title_tag": "About – Scaledia",
+    "title_tag": "About | Scaledia: front‑end consulting",
     "twitter_desc": "Articles and services: consulting, training and web development focused on accessibility and performance.",
     "twitter_image_alt": "Scaledia: guides and tutorials on HTML, CSS and JavaScript",
     "twitter_title": "About – Scaledia",
@@ -146,7 +146,7 @@
       "prev": "Prev"
     },
     "title": "All articles",
-    "title_tag": "Articles – Scaledia: HTML, CSS and JavaScript guides",
+    "title_tag": "Web Development Blog: HTML, CSS and JavaScript guides | Scaledia",
     "twitter_desc": "All articles and guides on HTML, CSS and JavaScript.",
     "twitter_image_alt": "Scaledia: list of articles on HTML, CSS and JavaScript",
     "twitter_title": "Articles – Scaledia: HTML, CSS and JavaScript guides"
@@ -168,7 +168,7 @@
       "title": "Contact form"
     },
     "intro": "Write us for feedback, suggestions or collaboration proposals.",
-    "meta_desc": "Contact Scaledia: write us via email or use the form to send a message. We’re happy to receive suggestions and collaboration proposals.",
+    "meta_desc": "Contact Scaledia via email or form: quotes, collaborations and support. Quick response.",
     "more": {
       "alert_html": "Prefer not to use the form? Write directly to <a href=\"mailto:info@scaledia.net\" class=\"alert-link\">info@scaledia.net</a>.",
       "linkedin_profile": "Profile",
@@ -178,7 +178,7 @@
     "og_image_alt": "Scaledia: guides and tutorials on HTML, CSS and JavaScript",
     "og_title": "Contact – Scaledia",
     "title": "Contact",
-    "title_tag": "Contact – Scaledia",
+    "title_tag": "Contact: request a quote | Scaledia",
     "twitter_desc": "Write us for suggestions, feedback or collaborations.",
     "twitter_image_alt": "Scaledia: guides and tutorials on HTML, CSS and JavaScript",
     "twitter_title": "Contact – Scaledia",
@@ -234,13 +234,13 @@
       }
     },
     "latest_title": "From the blog: latest articles",
-    "meta_desc": "We build fast, accessible and SEO‑friendly websites. HTML, CSS, JavaScript (Bootstrap). Discover our services and packages. From the blog: guides on HTML, CSS and JS.",
+    "meta_desc": "We build fast, accessible and SEO‑friendly websites. Front‑end development in HTML, CSS, JavaScript and Bootstrap. Discover services and packages.",
     "og_desc": "Modern, fast and accessible sites. Discover our packages and contact us for a quote.",
     "og_image_alt": "Scaledia: front‑end services for websites",
     "og_title": "Scaledia – Front-End Services and Website Creation",
     "services_link_all": "See all services",
     "services_title": "Our services",
-    "title_tag": "Scaledia – Front-End Services and Website Creation",
+    "title_tag": "Front-End Services and Fast Website Creation | Scaledia",
     "twitter_desc": "Fast, accessible and SEO‑friendly websites. Discover our services and packages.",
     "twitter_image_alt": "Scaledia: front‑end services",
     "twitter_title": "Scaledia – Front-End Services and Website Creation"
@@ -276,7 +276,7 @@
         "wcag_principles": "WCAG principles (POUR)"
       },
       "intro": "Regulations, WCAG and best practices to design inclusive, usable and compliant sites.",
-      "meta_desc": "Complete guide to web accessibility: WCAG (POUR) principles, regulations, practical examples, tests and tools. Operational checklist and FAQs for inclusive sites.",
+      "meta_desc": "Web accessibility: WCAG (POUR) principles, regulations, examples, tests and tools. Checklist and FAQs to make your site inclusive.",
       "og_desc": "Regulations, WCAG principles, examples, tests and tools. Checklist and FAQs to make your site accessible.",
       "og_image_alt": "Web accessibility illustration",
       "og_title": "Web accessibility: the complete guide – Scaledia",
@@ -339,7 +339,7 @@
         "prompt_dev": "Reusable prompts for developers"
       },
       "intro": "Better prompts, better answers: patterns, examples and best practices for developers and teams.",
-      "meta_desc": "Practical guide to ChatGPT and prompt engineering: principles, reusable patterns, examples for developers, privacy, limits and best practices updated to 2025.",
+      "meta_desc": "Guide to ChatGPT and prompt engineering: principles, reusable patterns, examples for developers, privacy and best practices 2025.",
       "og_desc": "Techniques and prompt patterns to get better answers with ChatGPT. Examples, checklist and FAQs for developers.",
       "og_image_alt": "Article illustration about ChatGPT and prompts",
       "og_title": "ChatGPT and Prompt Engineering: practical guide 2025 – Scaledia",
@@ -424,7 +424,7 @@
       },
       "intersection_observer_js": "const el = document.querySelector('#reviews-widget');\nconst io = new IntersectionObserver(async ([entry], obs) => {\n  if (!entry.isIntersecting) return;\n  const mod = await import('./reviews-widget.js');\n  mod.mount(el);\n  obs.disconnect();\n});\nio.observe(el);\n",
       "intro": "Differences, use cases and patterns to pick the right tool in any layout.",
-      "meta_desc": "Practical comparison between Flexbox and CSS Grid: differences, use cases, reusable patterns, code examples, accessibility and performance for responsive layouts.",
+      "meta_desc": "Flexbox vs CSS Grid: differences, use cases, patterns and examples for responsive layouts, with notes on accessibility and performance.",
       "og_desc": "Differences, use cases and examples to choose between Flexbox and Grid in responsive layouts.",
       "og_image_alt": "Article illustration",
       "og_title": "Flexbox vs CSS Grid: when to use each – Scaledia",
@@ -499,7 +499,7 @@
         "measure_monitor": "Measure and monitor performance"
       },
       "intro": "Code splitting, lazy loading, debounce/throttle and metrics for faster sites.",
-      "meta_desc": "JavaScript performance: code splitting, lazy loading, debounce/throttle and Web Vitals metrics. Practical examples to reduce time and main-thread blocks.",
+      "meta_desc": "JavaScript performance: code splitting, lazy loading, debounce/throttle and Web Vitals. Examples to reduce time and main‑thread blocks.",
       "og_desc": "Code splitting, lazy loading, debounce/throttle and Web Vitals metrics for faster sites.",
       "og_image_alt": "Article illustration",
       "og_title": "JavaScript performance: practical guide – Scaledia",
@@ -548,7 +548,7 @@
       },
       "h1": "Semantic HTML: practical guide",
       "intro": "How to design clear, accessible and SEO-friendly markup with examples and checklists.",
-      "meta_desc": "Practical guide to semantic HTML: landmarks, headings, lists, tables, links and buttons, images and figures, forms and ARIA. Examples, checklists and FAQs for accessible, SEO-friendly sites.",
+      "meta_desc": "Semantic HTML: landmarks, headings, tables, links, images, forms and ARIA. Examples, checklists and FAQs for accessible, SEO‑friendly sites.",
       "og_desc": "Landmarks, headings, media and forms: semantic HTML best practices with examples, checklists and FAQs for accessibility and SEO.",
       "og_image_alt": "Page layout with HTML landmarks (header, nav, main, aside, footer)",
       "og_title": "Semantic HTML: practical guide – Scaledia",
@@ -628,7 +628,7 @@
         "what": "What are Core Web Vitals"
       },
       "intro": "Updated metrics, tools and best practices to optimize UX and technical SEO.",
-      "meta_desc": "Updated guide to Core Web Vitals 2025: what LCP, INP and CLS are, how to measure them and how to improve them with practical actions on performance, UX and frontend.",
+      "meta_desc": "Core Web Vitals 2025: what LCP, INP and CLS are, how to measure them and improve them with practical actions on performance and UX.",
       "og_desc": "LCP, INP and CLS: metrics, thresholds, measurements and practical optimizations for faster, more usable sites.",
       "og_image_alt": "Core Web Vitals diagram (LCP, INP, CLS)",
       "og_title": "Core Web Vitals 2025: measure and improve LCP, INP, CLS – Scaledia",
@@ -711,7 +711,7 @@
       "title": "Frequently asked questions"
     },
     "hero_lead": "We build modern interfaces with HTML, CSS and JavaScript (Bootstrap) optimized for SEO, performance and accessibility. From <strong>showcase sites</strong> and <strong>landing pages</strong> to <strong>blogs</strong> and <strong>web apps</strong>.",
-    "meta_desc": "Professional front-end development: fast, accessible and SEO‑optimized websites. Landing pages, showcase sites, blogs and web apps. Request a free quote.",
+    "meta_desc": "Front-end development: fast, accessible and SEO‑optimized websites. Landing pages, showcase sites, blogs and web apps. Free quote.",
     "offers": {
       "item1": "Responsive UI and reusable components",
       "item2": "WCAG accessibility and best practices",
@@ -771,7 +771,7 @@
       },
       "title": "How we work"
     },
-    "title_tag": "Front-End Services – Website Creation – Scaledia",
+    "title_tag": "Front-End Services: Fast Website Creation | Scaledia",
     "twitter_desc": "Fast, accessible and SEO‑friendly websites. Request a free quote.",
     "twitter_image_alt": "Scaledia: front‑end services",
     "twitter_title": "Front-End Services – Website Creation – Scaledia"
