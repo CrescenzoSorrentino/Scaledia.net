@@ -6,14 +6,29 @@
 
     <title data-i18n="home.title_tag">Servizi Front‑End e Creazione Siti Web Veloci | Scaledia</title>
 
-	  <!-- Google tag (gtag.js) -->
-	  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50TEXSN8V2"></script>
+	  <!-- Google tag (gtag.js) - deferred -->
 	  <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-50TEXSN8V2');
+          (function(){
+            var GA_ID = 'G-50TEXSN8V2';
+            function loadGA(){
+              if (window.__gaLoaded) return; window.__gaLoaded = true;
+              var s = document.createElement('script');
+              s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+              s.async = true;
+              s.onload = function(){
+                try{
+                  gtag('js', new Date());
+                  gtag('config', GA_ID, { anonymize_ip: true });
+                }catch(_){}
+              };
+              document.head.appendChild(s);
+            }
+            function idle(cb){ (window.requestIdleCallback||function(f){setTimeout(f,1500)})(cb); }
+            if (document.readyState === 'complete') { idle(loadGA); }
+            else { window.addEventListener('load', function(){ idle(loadGA); }); }
+          })();
 	  </script>
 
     <meta
@@ -105,13 +120,23 @@
 
 
 
-    <!-- Bootstrap 5.3.2 CSS -->
+    <!-- Bootstrap 5.3.2 CSS (preload non-blocking) -->
     <link
+      rel="preload"
+      as="style"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"
+      />
+    </noscript>
     <link rel="stylesheet" href="/css/theme.min.css" />
 
     <!-- Preload immagine hero -->
