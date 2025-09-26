@@ -14,7 +14,7 @@
       "title": "Cosa trovi su Scaledia"
     },
     "intro": "La nostra missione e i nostri valori per un web più accessibile, veloce e mantenibile.",
-    "meta_desc": "Scaledia offre articoli e servizi di consulenza, formazione e sviluppo web su HTML, CSS e JavaScript, con focus su accessibilità e performance.",
+    "meta_desc": "Chi è Scaledia: consulenza, formazione e sviluppo web su HTML, CSS e JavaScript con focus su accessibilità e performance.",
     "mission": {
       "lead_html": "Su Scaledia condividiamo conoscenza pratica su <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>, con esempi riutilizzabili e best practice.",
       "point1_html": "Rendere i concetti complessi <strong>semplici</strong> e concreti.",
@@ -26,7 +26,7 @@
     "og_image_alt": "Scaledia: guide e tutorial su HTML, CSS e JavaScript",
     "og_title": "Chi siamo – Scaledia",
     "title": "Chi siamo",
-    "title_tag": "Chi siamo – Scaledia",
+    "title_tag": "Chi siamo | Scaledia: consulenza front‑end",
     "twitter_desc": "Articoli e servizi: consulenza, formazione e sviluppo web con focus su accessibilità e performance.",
     "twitter_image_alt": "Scaledia: guide e tutorial su HTML, CSS e JavaScript",
     "twitter_title": "Chi siamo – Scaledia",
@@ -146,7 +146,7 @@
       "prev": "Prec"
     },
     "title": "Tutti gli articoli",
-    "title_tag": "Articoli – Scaledia: guide HTML, CSS e JavaScript",
+    "title_tag": "Blog Sviluppo Web: guide HTML, CSS, JavaScript | Scaledia",
     "twitter_desc": "Tutti gli articoli e le guide su HTML, CSS e JavaScript.",
     "twitter_image_alt": "Scaledia: elenco articoli su HTML, CSS e JavaScript",
     "twitter_title": "Articoli – Scaledia: guide HTML, CSS e JavaScript"
@@ -168,7 +168,7 @@
       "title": "Modulo di contatto"
     },
     "intro": "Scrivici per feedback, suggerimenti o proposte di collaborazione.",
-    "meta_desc": "Contatta Scaledia: scrivici via email o utilizza il modulo per inviare un messaggio. Siamo felici di ricevere suggerimenti e proposte di collaborazione.",
+    "meta_desc": "Contatta Scaledia via email o modulo: preventivi, collaborazioni e supporto. Rispondiamo rapidamente.",
     "more": {
       "alert_html": "Preferisci non usare il modulo? Scrivi direttamente a <a href=\"mailto:info@scaledia.net\" class=\"alert-link\">info@scaledia.net</a>.",
       "linkedin_profile": "Profilo",
@@ -178,7 +178,7 @@
     "og_image_alt": "Scaledia: guide e tutorial su HTML, CSS e JavaScript",
     "og_title": "Contatti – Scaledia",
     "title": "Contatti",
-    "title_tag": "Contatti – Scaledia",
+    "title_tag": "Contatti: richiedi preventivo | Scaledia",
     "twitter_desc": "Scrivici per suggerimenti, feedback o collaborazioni.",
     "twitter_image_alt": "Scaledia: guide e tutorial su HTML, CSS e JavaScript",
     "twitter_title": "Contatti – Scaledia",
@@ -234,13 +234,13 @@
       }
     },
     "latest_title": "Dal blog: ultimi articoli",
-    "meta_desc": "Realizziamo siti web veloci, accessibili e SEO‑friendly. HTML, CSS, JavaScript (Bootstrap). Scopri i nostri servizi e pacchetti. Dal blog: guide su HTML, CSS e JS.",
+    "meta_desc": "Realizziamo siti web veloci, accessibili e SEO‑friendly. Sviluppo front‑end in HTML, CSS, JavaScript e Bootstrap. Scopri servizi e pacchetti.",
     "og_desc": "Siti moderni, veloci e accessibili. Scopri i nostri pacchetti e contattaci per un preventivo.",
     "og_image_alt": "Scaledia: servizi front‑end per siti web",
     "og_title": "Scaledia – Servizi Front‑End e Creazione Siti Web",
     "services_link_all": "Scopri tutti i servizi",
     "services_title": "I nostri servizi",
-    "title_tag": "Scaledia – Servizi Front‑End e Creazione Siti Web",
+    "title_tag": "Servizi Front‑End e Creazione Siti Web Veloci | Scaledia",
     "twitter_desc": "Siti web veloci, accessibili e SEO‑friendly. Scopri i nostri servizi e pacchetti.",
     "twitter_image_alt": "Scaledia: servizi front‑end",
     "twitter_title": "Scaledia – Servizi Front‑End e Creazione Siti Web"
@@ -276,7 +276,7 @@
         "wcag_principles": "Principi WCAG (POUR)"
       },
       "intro": "Normative, WCAG e best practice per progettare siti inclusivi, usabili e conformi.",
-      "meta_desc": "Guida completa all’accessibilità web: principi WCAG (POUR), normative, esempi pratici, test e strumenti. Checklist operativa e FAQ per siti inclusivi.",
+      "meta_desc": "Accessibilità web: principi WCAG (POUR), normative, esempi, test e strumenti. Checklist e FAQ per rendere il tuo sito inclusivo.",
       "og_desc": "Normative, principi WCAG, esempi, test e strumenti. Checklist e FAQ per rendere il tuo sito accessibile.",
       "og_image_alt": "Illustrazione sulla accessibilità web",
       "og_title": "Accessibilità web: la guida completa – Scaledia",
@@ -339,7 +339,7 @@
         "prompt_dev": "Prompt riutilizzabili per sviluppatori"
       },
       "intro": "Prompt migliori, risposte migliori: modelli, esempi e best practice per sviluppatori e team.",
-      "meta_desc": "Guida pratica a ChatGPT e prompt engineering: principi, pattern riutilizzabili, esempi per sviluppatori, privacy, limiti e best practice aggiornate al 2025.",
+      "meta_desc": "Guida a ChatGPT e prompt engineering: principi, pattern riutilizzabili, esempi per sviluppatori, privacy e best practice 2025.",
       "og_desc": "Tecniche e modelli di prompt per ottenere risposte migliori con ChatGPT. Esempi, checklist e FAQ per sviluppatori.",
       "og_image_alt": "Illustrazione dell'articolo su ChatGPT e prompt",
       "og_title": "ChatGPT e Prompt Engineering: guida pratica 2025 – Scaledia",
@@ -415,7 +415,7 @@
         "when": "Quando usare Flexbox o Grid"
       },
       "intro": "Differenze, casi d’uso e pattern per scegliere lo strumento giusto in ogni layout.",
-      "meta_desc": "Confronto pratico tra Flexbox e CSS Grid: differenze, casi d’uso, pattern riutilizzabili, esempi di codice, accessibilità e performance per layout responsive.",
+      "meta_desc": "Flexbox vs CSS Grid: differenze, casi d’uso, pattern ed esempi per layout responsive, con note su accessibilità e performance.",
       "og_desc": "Differenze, casi d’uso ed esempi per scegliere tra Flexbox e Grid nei layout responsive.",
       "og_image_alt": "Illustrazione dell'articolo",
       "og_title": "Flexbox vs CSS Grid: quando usare l’uno o l’altra – Scaledia",
@@ -534,7 +534,7 @@
       },
       "h1": "HTML semantico: guida pratica",
       "intro": "Come progettare markup chiaro, accessibile e SEO-friendly con esempi e checklist.",
-      "meta_desc": "Guida pratica all'HTML semantico: landmark, heading, liste, tabelle, link e bottoni, immagini e figure, form e ARIA. Esempi, checklist e FAQ per siti accessibili e SEO-friendly.",
+      "meta_desc": "HTML semantico: landmark, heading, tabelle, link, immagini, form e ARIA. Esempi, checklist e FAQ per siti accessibili e SEO‑friendly.",
       "og_desc": "Landmark, heading, media e form: best practice di HTML semantico con esempi, checklist e FAQ per accessibilità e SEO.",
       "og_image_alt": "Schema di pagina con landmark HTML (header, nav, main, aside, footer)",
       "og_title": "HTML semantico: guida pratica – Scaledia",
@@ -614,7 +614,7 @@
         "what": "Cosa sono i Core Web Vitals"
       },
       "intro": "Metriche aggiornate, strumenti e best practice per ottimizzare la UX e la SEO tecnica.",
-      "meta_desc": "Guida aggiornata ai Core Web Vitals 2025: cosa sono LCP, INP e CLS, come misurarli e come migliorarli con interventi pratici su performance, UX e frontend.",
+      "meta_desc": "Core Web Vitals 2025: cosa sono LCP, INP e CLS, come misurarli e migliorarli con interventi pratici su performance e UX.",
       "og_desc": "LCP, INP e CLS: metriche, soglie, misurazioni e ottimizzazioni pratiche per siti più veloci e usabili.",
       "og_image_alt": "Diagramma Core Web Vitals (LCP, INP, CLS)",
       "og_title": "Core Web Vitals 2025: misurare e migliorare LCP, INP, CLS – Scaledia",
@@ -697,7 +697,7 @@
       "title": "Domande frequenti"
     },
     "hero_lead": "Realizziamo interfacce moderne con HTML, CSS e JavaScript (Bootstrap) ottimizzate per SEO, performance e accessibilità. Dal <strong>sito vetrina</strong> alla <strong>landing page</strong>, fino a <strong>blog</strong> e <strong>web app</strong>.",
-    "meta_desc": "Sviluppo front‑end professionale: creazione siti veloci, accessibili e ottimizzati SEO. Landing page, siti vetrina, blog e web app. Richiedi un preventivo gratuito.",
+    "meta_desc": "Sviluppo front‑end: creazione siti veloci, accessibili e ottimizzati SEO. Landing page, siti vetrina, blog e web app. Preventivo gratuito.",
     "offers": {
       "item1": "UI responsive e componenti riutilizzabili",
       "item2": "Accessibilità WCAG e best practice",
@@ -757,7 +757,7 @@
       },
       "title": "Come lavoriamo"
     },
-    "title_tag": "Servizi Front‑End – Creazione Siti Web – Scaledia",
+    "title_tag": "Servizi Front‑End: Creazione Siti Web Veloci | Scaledia",
     "twitter_desc": "Siti web veloci, accessibili e SEO‑friendly. Richiedi un preventivo gratuito.",
     "twitter_image_alt": "Scaledia: servizi front‑end",
     "twitter_title": "Servizi Front‑End – Creazione Siti Web – Scaledia"

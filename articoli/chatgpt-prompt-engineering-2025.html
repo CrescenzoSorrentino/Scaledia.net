@@ -8,19 +8,33 @@
       ChatGPT e Prompt Engineering: guida pratica 2025 – Scaledia
     </title>
 
-	  <!-- Google tag (gtag.js) -->
-	  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRBTLD0G9F"></script>
+	  <!-- Google tag (gtag.js) - deferred -->
 	  <script>
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-GRBTLD0G9F');
+          function gtag(){dataLayer.push(arguments);}    
+          (function(){
+            var GA_ID = 'G-GRBTLD0G9F';
+            function loadGA(){
+              if (window.__gaLoaded) return; window.__gaLoaded = true;
+              var s = document.createElement('script');
+              s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+              s.async = true;
+              s.onload = function(){
+                try{
+                  gtag('js', new Date());
+                  gtag('config', GA_ID, { anonymize_ip: true });
+                }catch(_){}}
+              document.head.appendChild(s);
+            }
+            function idle(cb){ (window.requestIdleCallback||function(f){setTimeout(f,1500)})(cb); }
+            if (document.readyState === 'complete') { idle(loadGA); }
+            else { window.addEventListener('load', function(){ idle(loadGA); }); }
+          })();
 	  </script>
 
     <meta
       name="description"
-      content="Guida pratica a ChatGPT e prompt engineering: principi, pattern riutilizzabili, esempi per sviluppatori, privacy, limiti e best practice aggiornate al 2025."
+      content="Guida a ChatGPT e prompt engineering: principi, pattern riutilizzabili, esempi per sviluppatori, privacy e best practice 2025."
       data-i18n-attr="content"
       data-i18n-content="posts.chatgpt.meta_desc"
     />
@@ -28,7 +42,9 @@
       rel="canonical"
       href="https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html"
     />
-<meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="alternate" href="https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html" hreflang="it" />
+    <link rel="alternate" href="https://scaledia.net/articoli/chatgpt-prompt-engineering-2025.html" hreflang="x-default" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <meta name="theme-color" content="#0d6efd" />
 
@@ -61,6 +77,8 @@
     <meta property="og:locale" content="it_IT" />
     <meta property="article:section" content="Guide" />
     <meta property="article:published_time" content="2025-08-17T12:11:00+02:00" />
+    <meta property="article:modified_time" content="2025-08-17T12:11:00+02:00" />
+    <meta property="og:updated_time" content="2025-08-17T12:11:00+02:00" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -76,7 +94,7 @@
       data-i18n-attr="content"
       data-i18n-content="posts.chatgpt.twitter_desc"
     />
-    <meta name="twitter:image" content="https://scaledia.net/assets/img/og/og-chatgpt-prompt-engineering-1200x630.jpg" />
+    <meta name="twitter:image" content="https://scaledia.net/assets/img/og/og-chatgpt-prompt-engineering-2025-1200x630.webp" />
     <meta
       name="twitter:image:alt"
       content="Illustrazione dell'articolo su ChatGPT e prompt"
@@ -103,14 +121,26 @@
       <link rel="stylesheet" href="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261">
     </noscript>
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap (preload non-blocking) -->
     <link
+      rel="preload"
+      as="style"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link rel="stylesheet" href="/css/theme.min.css" />
+    <noscript>
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"
+      />
+    </noscript>
+    <!-- Theme CSS (preload non-blocking) -->
+    <link rel="preload" as="style" href="/css/theme.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/theme.min.css"></noscript>
 
     <!-- JSON-LD: Breadcrumb + BlogPosting + FAQ + HowTo -->
     <script type="application/ld+json">
@@ -546,7 +576,21 @@ const prompt = `Sei un linter umano. Elenca in JSON: {"rule","file","line","reas
       // anno footer
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-      <script src="/js/app.bundle.min.js" defer></script>
+      <script>
+        window.addEventListener('load', function () {
+          var s = document.createElement('script');
+          s.src = '/js/app.bundle.min.js';
+          s.defer = true;
+          s.onload = function () {
+            try {
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js').catch(function(){});
+              }
+            } catch (_) {}
+          };
+          document.head.appendChild(s);
+        });
+      </script>
       <script defer src="https://app.enzuzo.com/scripts/cookiebar/d252f6fc-814b-11f0-a293-83b5f2587261"></script>
   </body>
 </html>
